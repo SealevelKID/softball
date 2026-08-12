@@ -1,0 +1,270 @@
+:root {
+    --bg-color: #f4f7f6;
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-muted: #7f8c8d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 600px;
+    color: var(--primary-color);
+}
+
+/* 原本的搜尋列與按鈕樣式保留 */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 25px;
+    outline: none;
+}
+
+/* --- 截圖區塊與表格樣式 --- */
+#captureArea {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative; /* ⬅️ 新增這行：讓按鈕可以準確黏在右上角 */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #2c3e50;
+}
+
+th,
+td {
+    border: 1px solid #7f8c8d;
+    padding: 10px 5px;
+}
+
+/* 柔和粉彩標題底色 */
+.header-date {
+    background-color: #fde8e8;
+}
+
+.header-location {
+    background-color: #e8f4fd;
+}
+
+.header-time {
+    background-color: #fcf6e5;
+}
+
+.header-team {
+    background-color: #e8fdef;
+}
+
+/* 讓可編輯的儲存格滑鼠移入時有提示 */
+td[contenteditable="true"]:hover {
+    background-color: #f1f2f6;
+    cursor: text;
+}
+/* ========================================= */
+/* 補回：原本的膠囊按鈕與賽程卡片樣式 */
+/* ========================================= */
+
+#schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.clickable-tag {
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s;
+}
+
+.clickable-tag:hover {
+    text-decoration-color: var(--accent-color);
+}
+
+.card-body {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.rain-backup {
+    color: #e67e22;
+}
+
+.section-title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+/* ========================================= */
+/* 新增：統一的按鈕與選單樣式 */
+/* ========================================= */
+
+/* 統一的系統按鈕 (取代原本的 capsule-btn 與 btn) */
+.sys-btn {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #e0e6ed;
+    border: none;
+    font-weight: bold;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* 防止按鈕文字換行 */
+}
+
+/* 按鈕亮起 (Active) 與 主要操作 (Primary) 的底色統一 */
+.sys-btn.active, 
+.sys-btn.primary-action {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+
+.sys-btn:hover {
+    filter: brightness(1.1); /* 滑鼠游標移過去微亮 */
+}
+
+/* 確保導覽列按鈕與下載按鈕在同一行並排 */
+.nav-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ================= 新增：讓導覽按鈕平均填滿、自動換行 ================= */
+.nav-container .sys-btn {
+    flex: 1 1 auto; /* 讓按鈕具有彈性，自動將剩餘的空白寬度均分填滿 */
+    min-width: 85px; /* 設定最小舒適寬度：當螢幕太窄或字體太大時，按鈕會自動掉到下一排 */
+    text-align: center; /* 確保按鈕文字始終置中 */
+    padding: 12px 10px; /* 稍微加高按鈕的上下內距，讓阿伯的手指更好點擊 */
+    font-size: 1rem; /* 稍微放大按鈕字體 */
+}
+/* ===================================================================== */
+
+/* 篩選選單(日期/場地) 的容器與按鈕樣式 */
+#filter-container {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+/* ========================================= */
+/* 新增：搜尋下拉選單樣式 */
+/* ========================================= */
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #bdc3c7;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.dropdown-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f2f6;
+    color: var(--primary-color);
+    transition: background-color 0.2s;
+}
+
+.dropdown-list li:hover {
+    background-color: #f4f7f6;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+/* ========================================= */
+/* 新增：頁尾免責聲明 (Footer) 樣式 */
+/* ========================================= */
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed #bdc3c7; /* 上方加一條虛線分隔 */
+    font-size: 0.85rem;
+    color: #7f8c8d; /* 使用較淡的灰色，不搶奪主畫面的視覺焦點 */
+    line-height: 1.5;
+}
+
+.site-footer a {
+    color: #3498db; /* 連結使用與系統按鈕相同的藍色 */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #2980b9;
+    text-decoration: underline; /* 滑鼠移過去時出現底線 */
+}
