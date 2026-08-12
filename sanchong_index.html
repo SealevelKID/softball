@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>115年三重慢壘秋季聯賽賽程表</title>
+    <!-- 引入截圖套件與外部 CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="softball_style.css">
+</head>
+
+<body>
+    <!-- 新增一個 #app-container 把所有東西包起來，方便之後設定寬度與置中 -->
+    <div id="app-container">
+
+        <!-- ================= 新增：網頁最上方的固定主標題 ================= -->
+        <h2
+            style="text-align: center; color: #2c3e50; margin-top: 10px; margin-bottom: 20px; font-size: 1.5rem; font-weight: bold;">
+            115年三重慢壘秋季聯賽賽程表</h2>
+        <!-- ================================================================ -->
+
+        <!-- 頂部搜尋區塊與下拉選單 -->
+        <div style="position: relative; margin-bottom: 15px;">
+            <div class="search-container" style="margin-bottom: 0;">
+                <!-- 加上 autocomplete="off" 防止瀏覽器原生的歷史紀錄干擾 -->
+                <input type="text" id="search-input" placeholder="🔍 搜尋隊伍名稱 (如: 虎林)" autocomplete="off">
+                <button id="btn-search" class="sys-btn primary-action">搜尋</button>
+            </div>
+            <!-- 新增：搜尋下拉選單容器 (預設隱藏) -->
+            <ul id="search-dropdown" class="dropdown-list" style="display: none;"></ul>
+        </div>
+
+        <!-- 導覽列 -->
+        <div class="nav-container">
+            <button class="sys-btn" id="btn-home">首頁</button>
+            <button class="sys-btn" id="btn-back">返回</button>
+            <button class="sys-btn active" id="btn-view-date">日期檢視</button>
+
+            <!-- 新增這行：隊伍統計按鈕 -->
+            <button class="sys-btn" id="btn-view-stats">隊伍統計</button>
+
+        </div>
+
+        <!-- 篩選選單(日期/場地) 的容器 -->
+        <div id="filter-container" style="display: none;"></div>
+
+        <!-- 準備用來截圖的表格區塊 -->
+        <div id="captureArea">
+            <!-- 新增：移至右上角的下載按鈕 (加上 data-html2canvas-ignore 讓截圖時自動隱藏) -->
+            <button class="sys-btn primary-action" id="btn-download" data-html2canvas-ignore="true"
+                style="display: none; position: absolute; top: 15px; right: 15px; padding: 6px 12px; font-size: 0.9rem; z-index: 10;">
+                下載</button>
+
+            <!-- 原本的固定的聯賽主標題 -->
+            <h1 style="text-align: center; margin-top: 10px; margin-bottom: 5px; color: #2c3e50; font-size: 1.4rem;">
+                115年三重慢壘秋季聯賽賽程表</h1>
+
+            <!-- 原本的動態次標題 -->
+            <h2 id="captureTitle"
+                style="text-align: center; margin-top: 0; margin-bottom: 15px; color: #7f8c8d; font-size: 1.1rem;"></h2>
+
+            <table id="scheduleTable">
+                <thead>
+                    <!-- 表頭會由 JavaScript 動態生成，先清空 -->
+                    <tr id="scheduleHead"></tr>
+                </thead>
+                <tbody id="scheduleBody">
+                    <!-- 表格內容將由 JS 插入這裡 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 原本的賽程資料顯示區 -->
+        <div id="schedule-container">
+            <!-- 畫面將由 app.js 動態渲染 -->
+        </div>
+        <!-- ================= 新增：免責聲明 Footer ================= -->
+        <div class="site-footer">
+            ⚠️ 網頁資料由 AI 協助判讀，可能有誤，正確賽程表請至 <a
+                href="https://www.google.com/search?q=%E4%B8%89%E9%87%8D%E6%85%A2%E5%A3%98%E6%9C%83" target="_blank"
+                rel="noopener noreferrer">三重慢壘會</a> 臉書頁面確認。
+        </div>
+        <!-- ======================================================== -->
+    </div>
+
+    <script>const DATA_URL = 'sanchong_schedule.json';</script>
+    <script src="softball_app.js"></script>
+</body>
+
+</html>

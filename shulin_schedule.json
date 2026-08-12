@@ -1,0 +1,1505 @@
+[
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "聲德",
+        "home_team": "擎睿生醫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "野象A",
+        "home_team": "聲德",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "擎睿生醫",
+        "home_team": "野象A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "比西里岸",
+        "home_team": "野象B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "笑 TAWA",
+        "home_team": "比西里岸",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "野象B",
+        "home_team": "笑 TAWA",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "靖軒興業",
+        "home_team": "蛇王",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "太甫",
+        "home_team": "靖軒興業",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-09",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "蛇王",
+        "home_team": "太甫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "里安診所",
+        "home_team": "笑 TAWA",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "MCU",
+        "home_team": "里安診所",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "笑 TAWA",
+        "home_team": "MCU",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "裕翔A",
+        "home_team": "狂野",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "牛角",
+        "home_team": "裕翔A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "狂野",
+        "home_team": "牛角",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "溪仔邊",
+        "home_team": "蛇王",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "蛇王",
+        "home_team": "裕翔B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-08-23",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "裕翔B",
+        "home_team": "溪仔邊",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "鹿角男神",
+        "home_team": "蛇王",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "超越",
+        "home_team": "鹿角男神",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "蛇王",
+        "home_team": "超越",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "擊敗人",
+        "home_team": "MCU",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "AG",
+        "home_team": "擊敗人",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "MCU",
+        "home_team": "AG",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "擊敗人",
+        "home_team": "頂埔永福岩",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "Holiday",
+        "home_team": "擊敗人",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-06",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "頂埔永福岩",
+        "home_team": "Holiday",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "靖軒興業",
+        "home_team": "凱盛傢俱",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "裕翔B",
+        "home_team": "靖軒興業",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "凱盛傢俱",
+        "home_team": "裕翔B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "笑 TAWA",
+        "home_team": "裕翔C",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "裕翔C",
+        "home_team": "頂埔永福岩",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "頂埔永福岩",
+        "home_team": "笑 TAWA",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "沅展-飛揚小虎",
+        "home_team": "聲德",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "班超",
+        "home_team": "沅展-飛揚小虎",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-13",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "聲德",
+        "home_team": "班超",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "鹿角男神",
+        "home_team": "溪仔邊",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "太甫",
+        "home_team": "鹿角男神",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "溪仔邊",
+        "home_team": "太甫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "聲德",
+        "home_team": "狂野",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "銓家消防",
+        "home_team": "聲德",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "狂野",
+        "home_team": "銓家消防",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "比西里岸",
+        "home_team": "北大歷史",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "AG",
+        "home_team": "比西里岸",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-09-20",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "北大歷史",
+        "home_team": "AG",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "凱盛傢俱",
+        "home_team": "威峰營造",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "威峰營造",
+        "home_team": "蛇王",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "蛇王",
+        "home_team": "凱盛傢俱",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "笑 TAWA",
+        "home_team": "Holiday",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "AG",
+        "home_team": "笑 TAWA",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "Holiday",
+        "home_team": "AG",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "靖軒興業",
+        "home_team": "可樂",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "超越",
+        "home_team": "靖軒興業",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-04",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "可樂",
+        "home_team": "超越",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "鹿角男神",
+        "home_team": "威峰營造",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "靖軒興業",
+        "home_team": "鹿角男神",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "威峰營造",
+        "home_team": "靖軒興業",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "新北地政LS",
+        "home_team": "聲德",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "裕翔A",
+        "home_team": "新北地政LS",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "聲德",
+        "home_team": "裕翔A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "比西里岸",
+        "home_team": "裕翔C",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "裕翔C",
+        "home_team": "擊敗人",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-10-18",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "擊敗人",
+        "home_team": "比西里岸",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "威峰營造",
+        "home_team": "溪仔邊",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "溪仔邊",
+        "home_team": "可樂",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "可樂",
+        "home_team": "威峰營造",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "里安診所",
+        "home_team": "野象B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "野象B",
+        "home_team": "擊敗人",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "擊敗人",
+        "home_team": "里安診所",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "沅展-飛揚小虎",
+        "home_team": "擎睿生醫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "民雄",
+        "home_team": "沅展-飛揚小虎",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-01",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "擎睿生醫",
+        "home_team": "民雄",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "可樂",
+        "home_team": "蛇王",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "諾菲爾",
+        "home_team": "可樂",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "蛇王",
+        "home_team": "諾菲爾",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "笑 TAWA",
+        "home_team": "北大歷史",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "北大歷史",
+        "home_team": "擊敗人",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "擊敗人",
+        "home_team": "笑 TAWA",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "民雄",
+        "home_team": "狂野",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "班超",
+        "home_team": "民雄",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-08",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "狂野",
+        "home_team": "班超",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "凱盛傢俱",
+        "home_team": "溪仔邊",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "諾菲爾",
+        "home_team": "凱盛傢俱",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "溪仔邊",
+        "home_team": "諾菲爾",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "頂埔永福岩",
+        "home_team": "AG",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "里安診所",
+        "home_team": "頂埔永福岩",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "AG",
+        "home_team": "里安診所",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "擎睿生醫",
+        "home_team": "班超",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "班超",
+        "home_team": "新北地政LS",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-15",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "新北地政LS",
+        "home_team": "擎睿生醫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "威峰營造",
+        "home_team": "超越",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "諾菲爾",
+        "home_team": "威峰營造",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "超越",
+        "home_team": "諾菲爾",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "野象A",
+        "home_team": "銓家消防",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "銓家消防",
+        "home_team": "沅展-飛揚小虎",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "沅展-飛揚小虎",
+        "home_team": "野象A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "比西里岸",
+        "home_team": "頂埔永福岩",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "MCU",
+        "home_team": "比西里岸",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-22",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "頂埔永福岩",
+        "home_team": "MCU",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "凱盛傢俱",
+        "home_team": "超越",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "太甫",
+        "home_team": "凱盛傢俱",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "超越",
+        "home_team": "太甫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "新北地政LS",
+        "home_team": "牛角",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "牛角",
+        "home_team": "野象A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "野象A",
+        "home_team": "新北地政LS",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "AG",
+        "home_team": "裕翔C",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "裕翔C",
+        "home_team": "野象B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-11-29",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "野象B",
+        "home_team": "AG",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "野象B",
+        "home_team": "北大歷史",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "頂埔永福岩",
+        "home_team": "野象B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "北大歷史",
+        "home_team": "頂埔永福岩",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "銓家消防",
+        "home_team": "擎睿生醫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "裕翔A",
+        "home_team": "銓家消防",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "擎睿生醫",
+        "home_team": "裕翔A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "太甫",
+        "home_team": "裕翔B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "裕翔B",
+        "home_team": "可樂",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-06",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "可樂",
+        "home_team": "太甫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "鹿角男神",
+        "home_team": "諾菲爾",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "裕翔B",
+        "home_team": "鹿角男神",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "諾菲爾",
+        "home_team": "裕翔B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "里安診所",
+        "home_team": "北大歷史",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "裕翔C",
+        "home_team": "里安診所",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "北大歷史",
+        "home_team": "裕翔C",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "新北地政LS",
+        "home_team": "民雄",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "銓家消防",
+        "home_team": "新北地政LS",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-13",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "民雄",
+        "home_team": "銓家消防",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "Holiday",
+        "home_team": "里安診所",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "里安診所",
+        "home_team": "比西里岸",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "比西里岸",
+        "home_team": "Holiday",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "班超",
+        "home_team": "牛角",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "牛角",
+        "home_team": "銓家消防",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "銓家消防",
+        "home_team": "班超",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "沅展-飛揚小虎",
+        "home_team": "狂野",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "新北地政LS",
+        "home_team": "沅展-飛揚小虎",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2026-12-20",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "狂野",
+        "home_team": "新北地政LS",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "聲德",
+        "home_team": "民雄",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "牛角",
+        "home_team": "聲德",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "民雄",
+        "home_team": "牛角",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "野象A",
+        "home_team": "民雄",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "民雄",
+        "home_team": "裕翔A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "裕翔A",
+        "home_team": "野象A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "Holiday",
+        "home_team": "野象B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "15:00",
+        "away_team": "野象B",
+        "home_team": "MCU",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-10",
+        "location": "樹林C",
+        "time": "16:00",
+        "away_team": "MCU",
+        "home_team": "Holiday",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "擎睿生醫",
+        "home_team": "狂野",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "狂野",
+        "home_team": "野象A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "牛角",
+        "home_team": "擎睿生醫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "野象A",
+        "home_team": "班超",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "沅展-飛揚小虎",
+        "home_team": "牛角",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "班超",
+        "home_team": "裕翔A",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-17",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "裕翔A",
+        "home_team": "沅展-飛揚小虎",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "鹿角男神",
+        "home_team": "可樂",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "凱盛傢俱",
+        "home_team": "鹿角男神",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "可樂",
+        "home_team": "凱盛傢俱",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "北大歷史",
+        "home_team": "Holiday",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "MCU",
+        "home_team": "北大歷史",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "Holiday",
+        "home_team": "裕翔C",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-24",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "裕翔C",
+        "home_team": "MCU",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": "威峰營造",
+        "home_team": "裕翔B",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "09:00",
+        "away_team": "裕翔B",
+        "home_team": "超越",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "10:00",
+        "away_team": "太甫",
+        "home_team": "威峰營造",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "11:00",
+        "away_team": "超越",
+        "home_team": "溪仔邊",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "12:00",
+        "away_team": "諾菲爾",
+        "home_team": "太甫",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "13:00",
+        "away_team": "溪仔邊",
+        "home_team": "靖軒興業",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-01-31",
+        "location": "樹林C",
+        "time": "14:00",
+        "away_team": "靖軒興業",
+        "home_team": "諾菲爾",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-02-14",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": null,
+        "home_team": null,
+        "status": "rain_backup",
+        "note": "雨備日"
+    },
+    {
+        "date": "2027-02-21",
+        "location": "樹林C",
+        "time": "08:00",
+        "away_team": null,
+        "home_team": null,
+        "status": "rain_backup",
+        "note": "雨備日"
+    }
+]
