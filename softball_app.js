@@ -19,10 +19,13 @@ function saveState(action, param) {
 // ===================================================
 
 // 初始化系統
+// 初始化系統
 async function initSystem() {
     try {
-        const response = await fetch('schedule.json');
-        if (!response.ok) throw new Error('無法讀取 JSON');
+        // 如果 HTML 裡面沒有定義 DATA_URL，預設去抓 schedule.json 以防萬一
+        const targetJSON = typeof DATA_URL !== 'undefined' ? DATA_URL : 'sanchong_schedule.json';
+        const response = await fetch(targetJSON);
+        if (!response.ok) throw new Error(`無法讀取 ${targetJSON}`);
         
         officialData = await response.json();
         
@@ -69,13 +72,10 @@ async function initSystem() {
         });
         // ==========================================================
 
-        // ================= 新增：綁定首頁與回上一頁事件 =================
+        // ================= 修改：綁定首頁與回上一頁事件 =================
         document.getElementById('btn-home').addEventListener('click', () => {
-            document.getElementById('search-input').value = '';
-            viewHistory = []; // 清空歷史
-            document.querySelectorAll('.sys-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-view-date').classList.add('active');
-            renderByDate(); // 回到最原始的按日期檢視
+            // 不再是回到預設的日期檢視，而是直接跳轉回大廳首頁
+            window.location.href = 'softball_index.html'; 
         });
 
         document.getElementById('btn-back').addEventListener('click', () => {
@@ -171,7 +171,7 @@ async function initSystem() {
         
     } catch (error) {
         document.getElementById('schedule-container').innerHTML = 
-            `<div style="color:red; text-align:center; padding:20px;">資料載入失敗，請確認 schedule.json 是否存在。</div>`;
+            `<div style="color:red; text-align:center; padding:20px; font-weight:bold;">資料載入失敗，請確認 ${typeof DATA_URL !== 'undefined' ? DATA_URL : 'schedule.json'} 是否存在。<br>錯誤訊息：${error.message}</div>`;
     }
 }
 
