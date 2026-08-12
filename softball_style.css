@@ -268,3 +268,11 @@ td[contenteditable="true"]:hover {
     color: #2980b9;
     text-decoration: underline; /* 滑鼠移過去時出現底線 */
 }
+/* ========================================= */
+/* 修正截圖時隊伍名稱出現藍色與底線的問題 */
+/* ========================================= */
+#scheduleTable .clickable-tag {
+    color: var(--primary-color) !important; /* 強制改回深灰色 */
+    text-decoration: none !important;       /* 強制移除底線 */
+    font-weight: normal !important;         /* 取消粗體，與其他文字一致 */
+}
