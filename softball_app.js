@@ -313,10 +313,10 @@ function renderSearchResult(keyword) {
     document.querySelectorAll('.sys-btn, .filter-btn').forEach(btn => btn.classList.remove('active'));
     if(filterContainer) filterContainer.style.display = 'none';
 
-    // 過濾出與關鍵字相符的賽事
+    // 💡 修改為「完全一致 (===)」精準對位，避免抓到名字相似的分支隊伍
     const results = officialData.filter(match => 
-        (match.home_team && match.home_team.includes(keyword)) || 
-        (match.away_team && match.away_team.includes(keyword))
+        (match.home_team && match.home_team === keyword) || 
+        (match.away_team && match.away_team === keyword)
     );
 
     // 如果找不到資料
@@ -368,9 +368,10 @@ function renderSearchResult(keyword) {
             // 判斷對手名稱
             let opponentStr = "";
             if (match.status === 'rain_backup') {
-                 opponentStr = match.note || "雨備日"; // 拿掉原本的 span 標籤，純文字比較好手動編輯
+                 opponentStr = match.note || "雨備日"; 
             } else {
-                 let isHome = (match.home_team && match.home_team.includes(keyword));
+                 // 💡 同樣修改為「完全一致 (===)」判斷主客隊
+                 let isHome = (match.home_team && match.home_team === keyword);
                  opponentStr = isHome ? match.away_team : match.home_team;
                  if(!opponentStr) opponentStr = "未知"; 
             }
