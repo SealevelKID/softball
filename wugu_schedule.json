@@ -1,0 +1,3305 @@
+[
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "08:00",
+    "away_team": "H6德興堆高機",
+    "home_team": "H3QKmotel",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "08:00",
+    "away_team": "G7翔鷹",
+    "home_team": "G3台新新光",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "08:00",
+    "away_team": "S1雷進順機車行",
+    "home_team": "S2Big Foot",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "09:00",
+    "away_team": "H3QKmotel",
+    "home_team": "H9MCU",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "09:00",
+    "away_team": "G3台新新光",
+    "home_team": "G5昶碩",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "09:00",
+    "away_team": "S3卡溜也好",
+    "home_team": "S1雷進順機車行",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "10:00",
+    "away_team": "H9MCU",
+    "home_team": "H6德興堆高機",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "10:00",
+    "away_team": "G5昶碩",
+    "home_team": "G7翔鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "10:00",
+    "away_team": "S2Big Foot",
+    "home_team": "S3卡溜也好",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "11:00",
+    "away_team": "H2南僑投控",
+    "home_team": "H5生特",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "11:00",
+    "away_team": "G1馬利歐",
+    "home_team": "G8MONKEYS",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "11:00",
+    "away_team": "S4三民會館",
+    "home_team": "S5聯辰藍鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "12:00",
+    "away_team": "H8飆風",
+    "home_team": "H2南僑投控",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "12:00",
+    "away_team": "G8MONKEYS",
+    "home_team": "G6正德一隆",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "12:00",
+    "away_team": "S6鉅登",
+    "home_team": "S4三民會館",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "13:00",
+    "away_team": "H5生特",
+    "home_team": "H8飆風",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "13:00",
+    "away_team": "G6正德一隆",
+    "home_team": "G1馬利歐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "13:00",
+    "away_team": "S5聯辰藍鷹",
+    "home_team": "S6鉅登",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "14:00",
+    "away_team": "C8Tigers",
+    "home_team": "C9銓家消防",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "14:00",
+    "away_team": "E1爆癡",
+    "home_team": "E2JSF",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "14:00",
+    "away_team": "S9好日子",
+    "home_team": "S7蘆洲慢壘",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "15:00",
+    "away_team": "C7生生不息",
+    "home_team": "C8Tigers",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "15:00",
+    "away_team": "E3TP",
+    "home_team": "E1爆癡",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "15:00",
+    "away_team": "S7蘆洲慢壘",
+    "home_team": "S8Wahaha",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股A",
+    "time": "16:00",
+    "away_team": "C9銓家消防",
+    "home_team": "C7生生不息",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股B",
+    "time": "16:00",
+    "away_team": "E2JSF",
+    "home_team": "E3TP",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "location": "五股C",
+    "time": "16:00",
+    "away_team": "S8Wahaha",
+    "home_team": "S9好日子",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "08:00",
+    "location": "五股A",
+    "home_team": "G4築群工程",
+    "away_team": "G5昶碩",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "08:00",
+    "location": "五股B",
+    "home_team": "K6燕聲52ers",
+    "away_team": "K3金安",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "08:00",
+    "location": "五股C",
+    "home_team": "S6鉅登",
+    "away_team": "S3卡溜也好",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "09:00",
+    "location": "五股A",
+    "home_team": "G6正德一隆",
+    "away_team": "G4築群工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "09:00",
+    "location": "五股B",
+    "home_team": "K3金安",
+    "away_team": "K9MCUBA",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "09:00",
+    "location": "五股C",
+    "home_team": "S3卡溜也好",
+    "away_team": "S9良助工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "10:00",
+    "location": "五股A",
+    "home_team": "G5昶碩",
+    "away_team": "G6正德一隆",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "10:00",
+    "location": "五股B",
+    "home_team": "K9MCUBA",
+    "away_team": "K6燕聲52ers",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "10:00",
+    "location": "五股C",
+    "home_team": "S9良助工程",
+    "away_team": "S6鉅登",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:00",
+    "location": "五股A",
+    "home_team": "J9淡水鄉民",
+    "away_team": "J7東弋",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:00",
+    "location": "五股B",
+    "home_team": "J4新板獅子會",
+    "away_team": "J5HIT",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:00",
+    "location": "五股C",
+    "home_team": "S5聯辰藍鷹",
+    "away_team": "S8Wahaha",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "12:00",
+    "location": "五股A",
+    "home_team": "J7東弋",
+    "away_team": "J8永岳",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "12:00",
+    "location": "五股B",
+    "home_team": "J6CRAZ",
+    "away_team": "J4新板獅子會",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "12:00",
+    "location": "五股C",
+    "home_team": "S2Big Foot",
+    "away_team": "S5聯辰藍鷹",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "13:00",
+    "location": "五股A",
+    "home_team": "J8永岳",
+    "away_team": "J9淡水鄉民",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "13:00",
+    "location": "五股B",
+    "home_team": "J5HIT",
+    "away_team": "J6CRAZ",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "13:00",
+    "location": "五股C",
+    "home_team": "S8Wahaha",
+    "away_team": "S2Big Foot",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "14:00",
+    "location": "五股A",
+    "home_team": "H9MCU",
+    "away_team": "H7彙豐食品",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "14:00",
+    "location": "五股B",
+    "home_team": "L1和泰產險",
+    "away_team": "L8武士酒",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "14:00",
+    "location": "五股C",
+    "home_team": "S7蘆洲慢壘",
+    "away_team": "S4三民會館",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "15:00",
+    "location": "五股A",
+    "home_team": "H7彙豐食品",
+    "away_team": "H8飆風",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "15:00",
+    "location": "五股B",
+    "home_team": "L8武士酒",
+    "away_team": "L6把酒人",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "15:00",
+    "location": "五股C",
+    "home_team": "S1雷進順機車行",
+    "away_team": "S7蘆洲慢壘",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "16:00",
+    "location": "五股A",
+    "home_team": "H8飆風",
+    "away_team": "H9MCU",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "16:00",
+    "location": "五股B",
+    "home_team": "L6把酒人",
+    "away_team": "L1和泰產險",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-09",
+    "time": "16:00",
+    "location": "五股C",
+    "home_team": "S4三民會館",
+    "away_team": "S1雷進順機車行",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "08:00",
+    "location": "五股A",
+    "home_team": "G3台新新光",
+    "away_team": "G8MONKEYS",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "08:00",
+    "location": "五股B",
+    "home_team": "J2五股同濟會",
+    "away_team": "J8永岳",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "08:00",
+    "location": "五股C",
+    "home_team": "R6康德科技",
+    "away_team": "R3林金結-凱盟",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "09:00",
+    "location": "五股A",
+    "home_team": "G8MONKEYS",
+    "away_team": "G4築群工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "09:00",
+    "location": "五股B",
+    "home_team": "J5HIT",
+    "away_team": "J2五股同濟會",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "09:00",
+    "location": "五股C",
+    "home_team": "R3林金結-凱盟",
+    "away_team": "R9銘佳",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "10:00",
+    "location": "五股A",
+    "home_team": "G4築群工程",
+    "away_team": "G3台新新光",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "10:00",
+    "location": "五股B",
+    "home_team": "J8永岳",
+    "away_team": "J5HIT",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "10:00",
+    "location": "五股C",
+    "home_team": "R9銘佳",
+    "away_team": "R6康德科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "11:00",
+    "location": "五股A",
+    "home_team": "G9蘆洲慢壘",
+    "away_team": "G5昶碩",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "11:00",
+    "location": "五股B",
+    "home_team": "J7東弋",
+    "away_team": "J4新板獅子會",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "11:00",
+    "location": "五股C",
+    "home_team": "R5東陽汽車",
+    "away_team": "R8網技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "12:00",
+    "location": "五股A",
+    "home_team": "G5昶碩",
+    "away_team": "G1馬利歐",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "12:00",
+    "location": "五股B",
+    "home_team": "J1LARDISAI",
+    "away_team": "J7東弋",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "12:00",
+    "location": "五股C",
+    "home_team": "R2三五聯盟",
+    "away_team": "R5東陽汽車",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "13:00",
+    "location": "五股A",
+    "home_team": "G1馬利歐",
+    "away_team": "G9蘆洲慢壘",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "13:00",
+    "location": "五股B",
+    "home_team": "J4新板獅子會",
+    "away_team": "J1LARDISAI",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "13:00",
+    "location": "五股C",
+    "home_team": "R8網技",
+    "away_team": "R2三五聯盟",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "14:00",
+    "location": "五股A",
+    "home_team": "L5夯DEEP",
+    "away_team": "L8武士酒",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "14:00",
+    "location": "五股B",
+    "home_team": "L6把酒人",
+    "away_team": "L3藍谷",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "14:00",
+    "location": "五股C",
+    "home_team": "R7太平",
+    "away_team": "R4新北熱帶魚",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "15:00",
+    "location": "五股A",
+    "home_team": "L2Playsport",
+    "away_team": "L5夯DEEP",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "15:00",
+    "location": "五股B",
+    "home_team": "L3藍谷",
+    "away_team": "L9池和堂",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "15:00",
+    "location": "五股C",
+    "home_team": "R1益萊",
+    "away_team": "R7太平",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "16:00",
+    "location": "五股A",
+    "home_team": "L8武士酒",
+    "away_team": "L2Playsport",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "16:00",
+    "location": "五股B",
+    "home_team": "L9池和堂",
+    "away_team": "L6把酒人",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "time": "16:00",
+    "location": "五股C",
+    "home_team": "R4新北熱帶魚",
+    "away_team": "R1益萊",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "08:00",
+    "away_team": "A6廣郡(新航體育)",
+    "home_team": "A3Despacito",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "08:00",
+    "away_team": "E7ASTON",
+    "home_team": "E2JSF",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "08:00",
+    "away_team": "H9MCU",
+    "home_team": "H4羊騷殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "09:00",
+    "away_team": "A3Despacito",
+    "home_team": "A9G58",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "09:00",
+    "away_team": "E6活力",
+    "home_team": "E7ASTON",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "09:00",
+    "away_team": "H2南僑投控",
+    "home_team": "H9MCU",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "10:00",
+    "away_team": "A9G58",
+    "home_team": "A6廣郡(新航體育)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "10:00",
+    "away_team": "E2JSF",
+    "home_team": "E6活力",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "10:00",
+    "away_team": "H4羊騷殿",
+    "home_team": "H2南僑投控",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "11:00",
+    "away_team": "C2迪桃",
+    "home_team": "C6Falcons",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "11:00",
+    "away_team": "D4銀狐",
+    "home_team": "D3振發",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "11:00",
+    "away_team": "I8士荃實業",
+    "home_team": "I6網曜",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "12:00",
+    "away_team": "C7生生不息",
+    "home_team": "C2迪桃",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "12:00",
+    "away_team": "D8吉鴻",
+    "home_team": "D4銀狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "12:00",
+    "away_team": "I1Haier",
+    "home_team": "I8士荃實業",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "13:00",
+    "away_team": "C6Falcons",
+    "home_team": "C7生生不息",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "13:00",
+    "away_team": "D3振發",
+    "home_team": "D8吉鴻",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "13:00",
+    "away_team": "I6網曜",
+    "home_team": "I1Haier",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "14:00",
+    "away_team": "C4魔人普烏",
+    "home_team": "C3豐泰餐椅",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "14:00",
+    "away_team": "I9Wolves",
+    "home_team": "I4Swfit Dragon",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "14:00",
+    "away_team": "H6德興堆高機",
+    "home_team": "H1文化國貿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "15:00",
+    "away_team": "C8Tigers",
+    "home_team": "C4魔人普烏",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "15:00",
+    "away_team": "I2山寨",
+    "home_team": "I9Wolves",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "15:00",
+    "away_team": "H8飆風",
+    "home_team": "H6德興堆高機",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股A",
+    "time": "16:00",
+    "away_team": "C3豐泰餐椅",
+    "home_team": "C8Tigers",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股B",
+    "time": "16:00",
+    "away_team": "I4Swfit Dragon",
+    "home_team": "I2山寨",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-23",
+    "location": "五股C",
+    "time": "16:00",
+    "away_team": "H1文化國貿",
+    "home_team": "H8飆風",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "08:00",
+    "location": "五股A",
+    "away_team": "D4銀狐",
+    "home_team": "D5聯辰藍鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "08:00",
+    "location": "五股B",
+    "away_team": "G5昶碩",
+    "home_team": "G8MONKEYS",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "08:00",
+    "location": "五股C",
+    "away_team": "R4新北熱帶魚",
+    "home_team": "R3林金結-凱盟",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "09:00",
+    "location": "五股A",
+    "away_team": "D6穩成環保",
+    "home_team": "D4銀狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "09:00",
+    "location": "五股B",
+    "away_team": "G2新亞業鋪",
+    "home_team": "G5昶碩",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "09:00",
+    "location": "五股C",
+    "away_team": "R8網技",
+    "home_team": "R4新北熱帶魚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "10:00",
+    "location": "五股A",
+    "away_team": "D5聯辰藍鷹",
+    "home_team": "D6穩成環保",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "10:00",
+    "location": "五股B",
+    "away_team": "G8MONKEYS",
+    "home_team": "G2新亞業鋪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "10:00",
+    "location": "五股C",
+    "away_team": "R3林金結-凱盟",
+    "home_team": "R8網技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "11:00",
+    "location": "五股A",
+    "away_team": "E9台灣聚特",
+    "home_team": "E4海盜",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "11:00",
+    "location": "五股B",
+    "away_team": "G6正德一隆",
+    "home_team": "G3台新新光",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "11:00",
+    "location": "五股C",
+    "away_team": "R2三五聯盟",
+    "home_team": "R6康德科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "12:00",
+    "location": "五股A",
+    "away_team": "E2JSF",
+    "home_team": "E9台灣聚特",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "12:00",
+    "location": "五股B",
+    "away_team": "G3台新新光",
+    "home_team": "G9蘆洲慢壘",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "12:00",
+    "location": "五股C",
+    "away_team": "R7太平",
+    "home_team": "R2三五聯盟",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "13:00",
+    "location": "五股A",
+    "away_team": "E4海盜",
+    "home_team": "E2JSF",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "13:00",
+    "location": "五股B",
+    "away_team": "G9蘆洲慢壘",
+    "home_team": "G6正德一隆",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "13:00",
+    "location": "五股C",
+    "away_team": "R6康德科技",
+    "home_team": "R7太平",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "14:00",
+    "location": "五股A",
+    "away_team": "B2長生堂",
+    "home_team": "B6統包先生",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "14:00",
+    "location": "五股B",
+    "away_team": "K2台客風",
+    "home_team": "K6燕聲52ers",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "14:00",
+    "location": "五股C",
+    "away_team": "R1益萊",
+    "home_team": "R9銘佳",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "15:00",
+    "location": "五股A",
+    "away_team": "B7雄聖石材",
+    "home_team": "B2長生堂",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "15:00",
+    "location": "五股B",
+    "away_team": "K7TIGERS雷虎",
+    "home_team": "K2台客風",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "15:00",
+    "location": "五股C",
+    "away_team": "R5東陽汽車",
+    "home_team": "R1益萊",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "16:00",
+    "location": "五股A",
+    "away_team": "B6統包先生",
+    "home_team": "B7雄聖石材",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "16:00",
+    "location": "五股B",
+    "away_team": "K6燕聲52ers",
+    "home_team": "K7TIGERS雷虎",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-30",
+    "time": "16:00",
+    "location": "五股C",
+    "away_team": "R9銘佳",
+    "home_team": "R5東陽汽車",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "08:00",
+    "away_team": "A1虎林",
+    "home_team": "A8東大輪胎",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "08:00",
+    "away_team": "D6穩成環保",
+    "home_team": "D3振發",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "08:00",
+    "away_team": "R7太平",
+    "home_team": "R3林金結-凱盟",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "09:00",
+    "away_team": "A8東大輪胎",
+    "home_team": "A6廣郡(新航體育)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "09:00",
+    "away_team": "D3振發",
+    "home_team": "D9友尚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "09:00",
+    "away_team": "R5東陽汽車",
+    "home_team": "R7太平",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "10:00",
+    "away_team": "A6廣郡(新航體育)",
+    "home_team": "A1虎林",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "10:00",
+    "away_team": "D9友尚",
+    "home_team": "D6穩成環保",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "10:00",
+    "away_team": "R3林金結-凱盟",
+    "home_team": "R5東陽汽車",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "11:00",
+    "away_team": "A7信友",
+    "home_team": "A3Despacito",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "11:00",
+    "away_team": "D7佳世達",
+    "home_team": "D4銀狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "11:00",
+    "away_team": "R9銘佳",
+    "home_team": "R4新北熱帶魚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "12:00",
+    "away_team": "A3Despacito",
+    "home_team": "A5泓利達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "12:00",
+    "away_team": "D1原樂音響",
+    "home_team": "D7佳世達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "12:00",
+    "away_team": "R2三五聯盟",
+    "home_team": "R9銘佳",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "13:00",
+    "away_team": "A5泓利達",
+    "home_team": "A7信友",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "13:00",
+    "away_team": "D4銀狐",
+    "home_team": "D1原樂音響",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "13:00",
+    "away_team": "R4新北熱帶魚",
+    "home_team": "R2三五聯盟",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "14:00",
+    "away_team": "A9G58",
+    "home_team": "A4玉龍壇",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "14:00",
+    "away_team": "D5聯辰藍鷹",
+    "home_team": "D8吉鴻",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "14:00",
+    "away_team": "R1益萊",
+    "home_team": "R8網技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "15:00",
+    "away_team": "A2高林運動",
+    "home_team": "A9G58",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "15:00",
+    "away_team": "D2馬德烈",
+    "home_team": "D5聯辰藍鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "15:00",
+    "away_team": "R8網技",
+    "home_team": "R6康德科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股A",
+    "time": "16:00",
+    "away_team": "A4玉龍壇",
+    "home_team": "A2高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股B",
+    "time": "16:00",
+    "away_team": "D8吉鴻",
+    "home_team": "D2馬德烈",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-06",
+    "location": "五股C",
+    "time": "16:00",
+    "away_team": "R6康德科技",
+    "home_team": "R1益萊",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "08:00",
+    "location": "五股A",
+    "away_team": "K1Hooters",
+    "home_team": "K9MCUBA",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "08:00",
+    "location": "五股B",
+    "away_team": "L1和泰產險",
+    "home_team": "L2Playsport",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "08:00",
+    "location": "五股C",
+    "away_team": "S4三民會館",
+    "home_team": "S3卡溜也好",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "09:00",
+    "location": "五股A",
+    "away_team": "K5四零四科技",
+    "home_team": "K1Hooters",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "09:00",
+    "location": "五股B",
+    "away_team": "L3藍谷",
+    "home_team": "L1和泰產險",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "09:00",
+    "location": "五股C",
+    "away_team": "S8Wahaha",
+    "home_team": "S4三民會館",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "10:00",
+    "location": "五股A",
+    "away_team": "K9MCUBA",
+    "home_team": "K5四零四科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "10:00",
+    "location": "五股B",
+    "away_team": "L2Playsport",
+    "home_team": "L3藍谷",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "10:00",
+    "location": "五股C",
+    "away_team": "S3卡溜也好",
+    "home_team": "S8Wahaha",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "11:00",
+    "location": "五股A",
+    "away_team": "D1原樂音響",
+    "home_team": "D9友尚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "11:00",
+    "location": "五股B",
+    "away_team": "K3金安",
+    "home_team": "K8威樂",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "11:00",
+    "location": "五股C",
+    "away_team": "S2Big Foot",
+    "home_team": "S6鉅登",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "12:00",
+    "location": "五股A",
+    "away_team": "D5聯辰藍鷹",
+    "home_team": "D1原樂音響",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "12:00",
+    "location": "五股B",
+    "away_team": "K8威樂",
+    "home_team": "K4威峰營造",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "12:00",
+    "location": "五股C",
+    "away_team": "S7蘆洲慢壘",
+    "home_team": "S2Big Foot",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "13:00",
+    "location": "五股A",
+    "away_team": "D9友尚",
+    "home_team": "D5聯辰藍鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "13:00",
+    "location": "五股B",
+    "away_team": "K4威峰營造",
+    "home_team": "K3金安",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "13:00",
+    "location": "五股C",
+    "away_team": "S6鉅登",
+    "home_team": "S7蘆洲慢壘",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "14:00",
+    "location": "五股A",
+    "away_team": "C1五股慢壘",
+    "home_team": "C9銓家消防",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "14:00",
+    "location": "五股B",
+    "away_team": "L4太陽",
+    "home_team": "L5夯DEEP",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "14:00",
+    "location": "五股C",
+    "away_team": "S1雷進順機車行",
+    "home_team": "S9好日子",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "15:00",
+    "location": "五股A",
+    "away_team": "C5Braves",
+    "home_team": "C1五股慢壘",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "15:00",
+    "location": "五股B",
+    "away_team": "L6把酒人",
+    "home_team": "L4太陽",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "15:00",
+    "location": "五股C",
+    "away_team": "S5聯辰藍鷹",
+    "home_team": "S1雷進順機車行",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "16:00",
+    "location": "五股A",
+    "away_team": "C9銓家消防",
+    "home_team": "C5Braves",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "16:00",
+    "location": "五股B",
+    "away_team": "L5夯DEEP",
+    "home_team": "L6把酒人",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-13",
+    "time": "16:00",
+    "location": "五股C",
+    "away_team": "S9好日子",
+    "home_team": "S5聯辰藍鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-27",
+    "time": "08:00",
+    "location": "五股A",
+    "home_team": "A4玉龍壇",
+    "away_team": "A5泓利達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-27",
+    "time": "09:00",
+    "location": "五股A",
+    "home_team": "A6廣郡(新航體育)",
+    "away_team": "A4玉龍壇",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-27",
+    "time": "10:00",
+    "location": "五股A",
+    "home_team": "A5泓利達",
+    "away_team": "A6廣郡(新航體育)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-09-27",
+    "time": "全天",
+    "location": "五股A",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-09-27",
+    "time": "全天",
+    "location": "五股B",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-09-27",
+    "time": "全天",
+    "location": "五股C",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-11",
+    "time": "全天",
+    "location": "五股A",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-11",
+    "time": "全天",
+    "location": "五股B",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-11",
+    "time": "全天",
+    "location": "五股C",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "08:00",
+    "home_team": "I7KARASUMI",
+    "away_team": "I4Swfit Dragon",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "08:00",
+    "home_team": "E6活力",
+    "away_team": "E3TP",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "08:00",
+    "home_team": "I2山寨",
+    "away_team": "I5ASKEY",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "09:00",
+    "home_team": "I4Swfit Dragon",
+    "away_team": "I1Haier",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "09:00",
+    "home_team": "E3TP",
+    "away_team": "E9台灣聚特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "09:00",
+    "home_team": "I5ASKEY",
+    "away_team": "I8士荃實業",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "10:00",
+    "home_team": "I1Haier",
+    "away_team": "I7KARASUMI",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "10:00",
+    "home_team": "E9台灣聚特",
+    "away_team": "E6活力",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "10:00",
+    "home_team": "I8士荃實業",
+    "away_team": "I2山寨",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "11:00",
+    "home_team": "B1翔義工程",
+    "away_team": "B2長生堂",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "11:00",
+    "home_team": "B9康德科技",
+    "away_team": "B7雄聖石材",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "11:00",
+    "home_team": "J8永岳",
+    "away_team": "J6CRAZ",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "12:00",
+    "home_team": "B3薇安科技",
+    "away_team": "B1翔義工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "12:00",
+    "home_team": "B7雄聖石材",
+    "away_team": "B8永欣鋁業",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "12:00",
+    "home_team": "J6CRAZ",
+    "away_team": "I11LARDISAI",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "13:00",
+    "home_team": "B2長生堂",
+    "away_team": "B3薇安科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "13:00",
+    "home_team": "B8永欣鋁業",
+    "away_team": "B9康德科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "13:00",
+    "home_team": "I11LARDISAI",
+    "away_team": "J8永岳",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "14:00",
+    "home_team": "A5泓利達",
+    "away_team": "A8東大輪胎",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "14:00",
+    "home_team": "H1文化國貿",
+    "away_team": "H9MCU",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "14:00",
+    "home_team": "J9淡水鄉民",
+    "away_team": "J4新板獅子會",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "15:00",
+    "home_team": "A2高林運動",
+    "away_team": "A5泓利達",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "15:00",
+    "home_team": "H5生特",
+    "away_team": "H1文化國貿",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "15:00",
+    "home_team": "J2五股同濟會",
+    "away_team": "J9淡水鄉民",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股A",
+    "time": "16:00",
+    "home_team": "A8東大輪胎",
+    "away_team": "A2高林運動",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股B",
+    "time": "16:00",
+    "home_team": "H9MCU",
+    "away_team": "H5生特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "location": "五股C",
+    "time": "16:00",
+    "home_team": "J4新板獅子會",
+    "away_team": "J2五股同濟會",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "08:00",
+    "home_team": "L1和泰產險",
+    "away_team": "L7振豐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "08:55",
+    "home_team": "L7振豐",
+    "away_team": "L4太陽",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "09:50",
+    "home_team": "L4太陽",
+    "away_team": "L1和泰產險",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "10:45",
+    "home_team": "A1虎林",
+    "away_team": "A2高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "11:40",
+    "home_team": "A3Despacito",
+    "away_team": "A1虎林",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "12:35",
+    "home_team": "A2高林運動",
+    "away_team": "A3Despacito",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "13:30",
+    "home_team": "F9高泰",
+    "away_team": "F7馬里斯",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "14:25",
+    "home_team": "F7馬里斯",
+    "away_team": "F8RICO",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股A",
+    "time": "15:20",
+    "home_team": "F8RICO",
+    "away_team": "F9高泰",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股B",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股C",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "08:00",
+    "home_team": "H7彙豐食品",
+    "away_team": "H3QKmotel",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "08:00",
+    "home_team": "K7TIGERS雷虎",
+    "away_team": "K3金安",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "08:00",
+    "home_team": "R組第三",
+    "away_team": "R組第二",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "08:55",
+    "home_team": "H3QKmotel",
+    "away_team": "H5生特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "08:55",
+    "home_team": "K3金安",
+    "away_team": "K5四零四科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "08:55",
+    "home_team": "R組第四",
+    "away_team": "R組第一",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "09:50",
+    "home_team": "H5生特",
+    "away_team": "H7彙豐食品",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "09:50",
+    "home_team": "K5四零四科技",
+    "away_team": "K7TIGERS雷虎",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "09:50",
+    "home_team": "R組冠軍戰",
+    "away_team": "R組冠軍戰",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "10:45",
+    "home_team": "B7雄聖石材",
+    "away_team": "B3薇安科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "10:45",
+    "home_team": "C6Falcons",
+    "away_team": "C3豐泰餐椅",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "10:45",
+    "home_team": "R組季軍戰",
+    "away_team": "R組季軍戰",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "11:40",
+    "home_team": "B3薇安科技",
+    "away_team": "B5搖滾鯉魚",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "11:40",
+    "home_team": "C3豐泰餐椅",
+    "away_team": "C9銓家消防",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "11:40",
+    "home_team": "S組第三",
+    "away_team": "S組第二",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "12:35",
+    "home_team": "B5搖滾鯉魚",
+    "away_team": "B7雄聖石材",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "12:35",
+    "home_team": "C9銓家消防",
+    "away_team": "C6Falcons",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "12:35",
+    "home_team": "S組第四",
+    "away_team": "S組第一",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "13:30",
+    "home_team": "B9康德科技",
+    "away_team": "B4東陽",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "13:30",
+    "home_team": "F7馬里斯",
+    "away_team": "F4鮮乳坊",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "13:30",
+    "home_team": "S組冠軍戰",
+    "away_team": "S組冠軍戰",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "14:25",
+    "home_team": "B2長生堂",
+    "away_team": "B9康德科技",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "14:25",
+    "home_team": "F1維德骨科",
+    "away_team": "F7馬里斯",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股C",
+    "time": "14:25",
+    "home_team": "S組季軍戰",
+    "away_team": "S組季軍戰",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股A",
+    "time": "15:20",
+    "home_team": "B4東陽",
+    "away_team": "B2長生堂",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-01",
+    "location": "五股B",
+    "time": "15:20",
+    "home_team": "F4鮮乳坊",
+    "away_team": "F1維德骨科",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "08:00",
+    "home_team": "C4魔人普烏",
+    "away_team": "C5Braves",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "08:00",
+    "home_team": "A4玉龍壇",
+    "away_team": "A3Despacito",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "08:00",
+    "home_team": "D1原樂音響",
+    "away_team": "D2馬德烈",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "08:55",
+    "home_team": "C6Falcons",
+    "away_team": "C4魔人普烏",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "08:55",
+    "home_team": "A3Despacito",
+    "away_team": "A8東大輪胎",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "08:55",
+    "home_team": "D3振發",
+    "away_team": "D1原樂音響",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "09:50",
+    "home_team": "C5Braves",
+    "away_team": "C6Falcons",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "09:50",
+    "home_team": "A8東大輪胎",
+    "away_team": "A4玉龍壇",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "09:50",
+    "home_team": "D2馬德烈",
+    "away_team": "D3振發",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "10:45",
+    "home_team": "J7東弋",
+    "away_team": "J3迅龍",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "10:45",
+    "home_team": "C1五股慢壘",
+    "away_team": "C2迪桃",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "10:45",
+    "home_team": "K1Hooters",
+    "away_team": "K2台客風",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "11:40",
+    "home_team": "J3迅龍",
+    "away_team": "J5HIT",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "11:40",
+    "home_team": "C2迪桃",
+    "away_team": "C3豐泰餐椅",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "11:40",
+    "home_team": "K3金安",
+    "away_team": "K1Hooters",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "12:35",
+    "home_team": "J5HIT",
+    "away_team": "J7東弋",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "12:35",
+    "home_team": "C3豐泰餐椅",
+    "away_team": "C1五股慢壘",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "12:35",
+    "home_team": "K2台客風",
+    "away_team": "K3金安",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "13:30",
+    "home_team": "J3迅龍",
+    "away_team": "J8永岳",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "13:30",
+    "home_team": "D9友尚",
+    "away_team": "D7佳世達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "13:30",
+    "home_team": "K4威峰營造",
+    "away_team": "K5四零四科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "14:25",
+    "home_team": "J4新板獅子會",
+    "away_team": "J3迅龍",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "14:25",
+    "home_team": "D7佳世達",
+    "away_team": "D8吉鴻",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "14:25",
+    "home_team": "K6燕聲52ers",
+    "away_team": "K4威峰營造",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股A",
+    "time": "15:20",
+    "home_team": "J8永岳",
+    "away_team": "J4新板獅子會",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股B",
+    "time": "15:20",
+    "home_team": "D8吉鴻",
+    "away_team": "D9友尚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "location": "五股C",
+    "time": "15:20",
+    "home_team": "K5四零四科技",
+    "away_team": "K6燕聲52ers",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "08:00",
+    "home_team": "H7彙豐食品",
+    "away_team": "H4羊騷殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "08:00",
+    "home_team": "B8永欣鋁業",
+    "away_team": "B4東陽",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "08:00",
+    "home_team": "L1和泰產險",
+    "away_team": "L9池和堂",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "08:55",
+    "home_team": "H1文化國貿",
+    "away_team": "H7彙豐食品",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "08:55",
+    "home_team": "B3薇安科技",
+    "away_team": "B8永欣鋁業",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "08:55",
+    "home_team": "L5夯DEEP",
+    "away_team": "L1和泰產險",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "09:50",
+    "home_team": "H4羊騷殿",
+    "away_team": "H1文化國貿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "09:50",
+    "home_team": "B4東陽",
+    "away_team": "B3薇安科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "09:50",
+    "home_team": "L9池和堂",
+    "away_team": "L5夯DEEP",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "10:45",
+    "home_team": "A2高林運動",
+    "away_team": "A6廣郡(新航體育)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "10:45",
+    "home_team": "E4海盜",
+    "away_team": "E5林金結",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "10:45",
+    "home_team": "G2新亞當鋪",
+    "away_team": "G3台新新光",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "11:40",
+    "home_team": "A7信友",
+    "away_team": "A2高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "11:40",
+    "home_team": "E6活力",
+    "away_team": "E4海盜",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "11:40",
+    "home_team": "G3台新新光",
+    "away_team": "G1馬利歐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "12:35",
+    "home_team": "A6廣郡(新航體育)",
+    "away_team": "A7信友",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "12:35",
+    "home_team": "E5林金結",
+    "away_team": "E6活力",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "12:35",
+    "home_team": "G1馬利歐",
+    "away_team": "G2新亞當鋪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "13:30",
+    "home_team": "A8東大輪胎",
+    "away_team": "A9G58",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "13:30",
+    "home_team": "B6統包先生",
+    "away_team": "B3薇安科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "13:30",
+    "home_team": "F4鮮乳坊",
+    "away_team": "F5倍力",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "14:25",
+    "home_team": "A7信友",
+    "away_team": "A8東大輪胎",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "14:25",
+    "home_team": "B3薇安科技",
+    "away_team": "B9康德科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "14:25",
+    "home_team": "F6BrotherZ",
+    "away_team": "F4鮮乳坊",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股A",
+    "time": "15:20",
+    "home_team": "A9G58",
+    "away_team": "A7信友",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股B",
+    "time": "15:20",
+    "home_team": "B9康德科技",
+    "away_team": "B6統包先生",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-13",
+    "location": "五股C",
+    "time": "15:20",
+    "home_team": "F5倍力",
+    "away_team": "F6BrotherZ",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-27",
+    "location": "五股A",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-12-27",
+    "location": "五股B",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-12-27",
+    "location": "五股C",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:00",
+    "location": "五股A",
+    "home_team": "南僑投控",
+    "away_team": "築群工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:00",
+    "location": "五股B",
+    "home_team": "彙豐食品",
+    "away_team": "正德一隆",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:00",
+    "location": "五股C",
+    "home_team": "TIGERS雷虎",
+    "away_team": "五股同濟會",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:55",
+    "location": "五股A",
+    "home_team": "H組冠亞",
+    "away_team": "H組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:55",
+    "location": "五股B",
+    "home_team": "H組季殿",
+    "away_team": "H組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "08:55",
+    "location": "五股C",
+    "home_team": "擊敗人",
+    "away_team": "LARDISAI",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "09:50",
+    "location": "五股A",
+    "home_team": "三田土",
+    "away_team": "台灣聚特",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "09:50",
+    "location": "五股B",
+    "home_team": "維德骨科",
+    "away_team": "海盜",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "09:50",
+    "location": "五股C",
+    "home_team": "K組冠亞",
+    "away_team": "K組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "10:45",
+    "location": "五股A",
+    "home_team": "F組冠亞",
+    "away_team": "F組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "10:45",
+    "location": "五股B",
+    "home_team": "F組季殿",
+    "away_team": "F組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "10:45",
+    "location": "五股C",
+    "home_team": "K組季殿",
+    "away_team": "K組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "11:40",
+    "location": "五股A",
+    "home_team": "台新新光",
+    "away_team": "逆瓦齊",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "11:40",
+    "location": "五股B",
+    "home_team": "翔鷹",
+    "away_team": "高泰",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "11:40",
+    "location": "五股C",
+    "home_team": "夯DEEP",
+    "away_team": "金安投資",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "12:35",
+    "location": "五股A",
+    "home_team": "G組冠亞",
+    "away_team": "G組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "12:35",
+    "location": "五股B",
+    "home_team": "G組季殿",
+    "away_team": "G組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "12:35",
+    "location": "五股C",
+    "home_team": "把酒人",
+    "away_team": "MCUBA",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "13:30",
+    "location": "五股A",
+    "home_team": "林金結",
+    "away_team": "佳世達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "13:30",
+    "location": "五股B",
+    "home_team": "威法法律",
+    "away_team": "活力",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "13:30",
+    "location": "五股C",
+    "home_team": "L組冠亞",
+    "away_team": "L組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "14:25",
+    "location": "五股A",
+    "home_team": "E組冠亞",
+    "away_team": "E組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "14:25",
+    "location": "五股B",
+    "home_team": "E組季殿",
+    "away_team": "E組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-17",
+    "time": "14:25",
+    "location": "五股C",
+    "home_team": "L組季殿",
+    "away_team": "L組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:00",
+    "location": "五股A",
+    "home_team": "E組第四",
+    "away_team": "E組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:00",
+    "location": "五股B",
+    "home_team": "E組第三",
+    "away_team": "E組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:00",
+    "location": "五股C",
+    "home_team": "K組第三",
+    "away_team": "K組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:55",
+    "location": "五股A",
+    "home_team": "冠亞",
+    "away_team": "冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:55",
+    "location": "五股B",
+    "home_team": "季殿",
+    "away_team": "季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "08:55",
+    "location": "五股C",
+    "home_team": "K組第四",
+    "away_team": "K組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "09:50",
+    "location": "五股A",
+    "home_team": "F組第四",
+    "away_team": "F組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "09:50",
+    "location": "五股B",
+    "home_team": "F組第三",
+    "away_team": "F組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "09:50",
+    "location": "五股C",
+    "home_team": "K組冠亞",
+    "away_team": "K組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "10:45",
+    "location": "五股A",
+    "home_team": "冠亞",
+    "away_team": "冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "10:45",
+    "location": "五股B",
+    "home_team": "季殿",
+    "away_team": "季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "10:45",
+    "location": "五股C",
+    "home_team": "K組季殿",
+    "away_team": "K組季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "11:40",
+    "location": "五股A",
+    "home_team": "G組第四",
+    "away_team": "G組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "11:40",
+    "location": "五股B",
+    "home_team": "G組第三",
+    "away_team": "G組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "11:40",
+    "location": "五股C",
+    "home_team": "L組第三",
+    "away_team": "L組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "12:35",
+    "location": "五股A",
+    "home_team": "冠亞",
+    "away_team": "冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "12:35",
+    "location": "五股B",
+    "home_team": "季殿",
+    "away_team": "季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "12:35",
+    "location": "五股C",
+    "home_team": "L組第四",
+    "away_team": "L組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "13:30",
+    "location": "五股A",
+    "home_team": "H組第四",
+    "away_team": "H組第一",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "13:30",
+    "location": "五股B",
+    "home_team": "H組第三",
+    "away_team": "H組第二",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "13:30",
+    "location": "五股C",
+    "home_team": "L組冠亞",
+    "away_team": "L組冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "14:25",
+    "location": "五股A",
+    "home_team": "冠亞",
+    "away_team": "冠亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "14:25",
+    "location": "五股B",
+    "home_team": "季殿",
+    "away_team": "季殿",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "time": "14:25",
+    "location": "五股C",
+    "home_team": "L組季殿",
+    "away_team": "L組季殿",
+    "status": "normal",
+    "note": null
+  }
+]
