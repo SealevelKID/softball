@@ -35,9 +35,12 @@ body {
     padding: 15px;
     border-radius: 8px;
     display: none;
-    max-width: 450px;
-    margin: 0 auto;
-    position: relative; /* ⬅️ 新增這行：讓按鈕可以準確黏在右上角 */
+    width: 100%; /* 【修改】取消 max-width:450px 限制，改為 100% 撐滿對齊按鈕 */
+    box-sizing: border-box; /* 確保 padding 不會撐破版面 */
+    position: relative; 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+    padding-bottom: 10px; 
 }
 
 table {
@@ -194,16 +197,28 @@ td[contenteditable="true"]:hover {
     flex-wrap: wrap;
 }
 
+/* 篩選選單(日期/場地) 的容器與按鈕樣式 */
+#filter-container {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .filter-btn {
-    padding: 8px 15px;
+    padding: 8px 2px; /* 【修改】統一縮小左右內距，把空間留給文字 */
     border: 1px solid var(--accent-color);
     border-radius: 8px;
     background-color: white;
     color: var(--accent-color);
     cursor: pointer;
-    font-size: 0.95rem;
+    /* 【修改】利用 clamp 函數讓字體自動縮放：最小 0.7rem，視窗寬度比例，最大 0.95rem */
+    font-size: clamp(0.7rem, 2.5vw, 0.95rem); 
     font-weight: bold;
     transition: all 0.2s ease;
+    white-space: nowrap; /* 【新增】強制文字不換行，與狀態標籤保持同一行 */
+    width: 100%; /* 【新增】確保填滿 Grid 的每一格 */
+    box-sizing: border-box; /* 【新增】避免邊框把寬度撐破 */
 }
 
 .filter-btn.active {
@@ -245,28 +260,42 @@ td[contenteditable="true"]:hover {
     font-weight: bold;
 }
 /* ========================================= */
-/* 新增：頁尾免責聲明 (Footer) 樣式 */
+/* 修改：頁尾免責聲明 (Footer) 樣式 - 阿伯友善版 */
 /* ========================================= */
 .site-footer {
     text-align: center;
     margin-top: 30px;
     padding-top: 15px;
-    border-top: 1px dashed #bdc3c7; /* 上方加一條虛線分隔 */
-    font-size: 0.85rem;
-    color: #7f8c8d; /* 使用較淡的灰色，不搶奪主畫面的視覺焦點 */
-    line-height: 1.5;
+    border-top: 1px dashed #bdc3c7;
+    /* 使用 clamp() 實現流動縮放：最小 1rem，最大 1.15rem，隨螢幕寬度自動平滑放大縮小 */
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    color: #34495e; /* 加深顏色，提高對比度 */
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 .site-footer a {
-    color: #3498db; /* 連結使用與系統按鈕相同的藍色 */
+    color: #3498db;
     text-decoration: none;
     font-weight: bold;
+    /* 連結再稍微放大一點點，方便點擊 */
+    font-size: clamp(1.05rem, 4.2vw, 1.2rem); 
     transition: color 0.3s;
 }
 
 .site-footer a:hover {
     color: #2980b9;
-    text-decoration: underline; /* 滑鼠移過去時出現底線 */
+    text-decoration: underline;
+}
+
+/* ========================================= */
+/* 新增：隊伍統計表格的「單格」 Hover 效果 */
+/* ========================================= */
+.stat-team-cell {
+    transition: background-color 0.2s ease;
+}
+.stat-team-cell:hover {
+    background-color: #e8f4fd !important; /* 滑鼠指到時變成淡藍/灰色底 */
 }
 /* ========================================= */
 /* 修正截圖時隊伍名稱出現藍色與底線的問題 */
@@ -275,4 +304,33 @@ td[contenteditable="true"]:hover {
     color: var(--primary-color) !important; /* 強制改回深灰色 */
     text-decoration: none !important;       /* 強制移除底線 */
     font-weight: normal !important;         /* 取消粗體，與其他文字一致 */
+}
+
+/* 強制表格有最低寬度，確保五股的三個場地不會擠成一團 */
+#scheduleTable {
+    width: 100%;
+    min-width: 650px; /* 如果覺得還是太擠，可以把數字加大到 700 或 800 */
+    table-layout: fixed; /* 讓欄位寬度盡量平均分配 */
+}
+
+/* 確保「時間」欄位固定不要太寬，把空間留給隊伍名稱 */
+#scheduleTable th:first-child,
+#scheduleTable td:first-child {
+    width: 60px;
+    white-space: nowrap;
+}
+
+/* 讓過長的隊名可以適度換行，不至於無限制撐寬 */
+#scheduleTable td {
+    word-wrap: break-word;
+    word-break: break-all; /* 【新增】遇到超長英文字母或相連字串時強制斷行 */
+    padding: 8px 5px;
+}
+
+/* 【新增】手機版螢幕 (< 480px) 時，自動縮小表格內文字與間距以防擁擠 */
+@media (max-width: 480px) {
+    #scheduleTable th, #scheduleTable td {
+        font-size: 0.85rem;
+        padding: 6px 2px;
+    }
 }
