@@ -1,2548 +1,1882 @@
 [
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "08:00",
-    "location": "三重A",
-    "home_team": "虎林",
-    "away_team": "泓利達",
+    "location": "A場地",
+    "home_team": "銘佳工程",
+    "away_team": "吉飛達",
     "status": "normal",
-    "note": null
+    "note": "11/22"
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "08:00",
-    "location": "三重B",
-    "home_team": "HCB",
-    "away_team": "永達鋼鋁",
+    "location": "B場地",
+    "home_team": "國都壘球社",
+    "away_team": "擊敗人",
     "status": "normal",
-    "note": null
+    "note": "11/29"
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "09:00",
-    "location": "三重A",
-    "home_team": "CRAZ",
-    "away_team": "虎林",
+    "location": "A場地",
+    "home_team": "吉飛達",
+    "away_team": "布瑞特",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "09:00",
-    "location": "三重B",
-    "home_team": "永達鋼鋁",
-    "away_team": "稻鄉",
+    "location": "B場地",
+    "home_team": "擊敗人",
+    "away_team": "獵狐",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "10:00",
-    "location": "三重A",
-    "home_team": "泓利達",
-    "away_team": "CRAZ",
+    "location": "A場地",
+    "home_team": "布瑞特",
+    "away_team": "銘佳工程",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "10:00",
-    "location": "三重B",
-    "home_team": "稻鄉",
-    "away_team": "HCB",
+    "location": "B場地",
+    "home_team": "獵狐",
+    "away_team": "國都壘球社",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "11:00",
-    "location": "三重A",
-    "home_team": "統包先生",
-    "away_team": "康德科技",
+    "location": "A場地",
+    "home_team": "中華電信 白",
+    "away_team": "靠嘴巴打球",
     "status": "normal",
-    "note": null
+    "note": "11/29"
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "11:00",
-    "location": "三重B",
-    "home_team": "台客風",
-    "away_team": "泓陞自動化",
+    "location": "B場地",
+    "home_team": "夯DEEP",
+    "away_team": "精洲室內裝修B",
     "status": "normal",
-    "note": null
+    "note": "11/15"
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "12:00",
-    "location": "三重A",
-    "home_team": "康德科技",
-    "away_team": "和朝",
+    "location": "A場地",
+    "home_team": "靠嘴巴打球",
+    "away_team": "人民公僕 B",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "12:00",
-    "location": "三重B",
-    "home_team": "泓陞自動化",
-    "away_team": "冠緯",
+    "location": "B場地",
+    "home_team": "精洲室內裝修B",
+    "away_team": "北科大EMBA",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "13:00",
-    "location": "三重A",
-    "home_team": "和朝",
-    "away_team": "統包先生",
+    "location": "A場地",
+    "home_team": "人民公僕 B",
+    "away_team": "中華電信 白",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-23",
+    "date": "2026-07-19",
     "time": "13:00",
-    "location": "三重B",
-    "home_team": "冠緯",
-    "away_team": "台客風",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-23",
-    "time": "14:00",
-    "location": "三重A",
-    "home_team": "吉飛達汽車修護",
-    "away_team": "康德科技長壽",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-23",
-    "time": "15:00",
-    "location": "三重A",
-    "home_team": "康德科技長壽",
-    "away_team": "和光工業",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-23",
-    "time": "16:00",
-    "location": "三重A",
-    "home_team": "和光工業",
-    "away_team": "吉飛達汽車修護",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "玖格工程",
+    "location": "B場地",
+    "home_team": "北科大EMBA",
     "away_team": "夯DEEP",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-08-30",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "KARASUMI",
-    "away_team": "網龍",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "09:00",
-    "location": "三重A",
-    "home_team": "夯DEEP",
-    "away_team": "生特",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "09:00",
-    "location": "三重B",
-    "home_team": "網龍",
-    "away_team": "馬德烈",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "10:00",
-    "location": "三重A",
-    "home_team": "生特",
-    "away_team": "玖格工程",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "10:00",
-    "location": "三重B",
-    "home_team": "馬德烈",
-    "away_team": "KARASUMI",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "11:00",
-    "location": "三重A",
-    "home_team": "維德骨科",
-    "away_team": "CRAZ",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "11:00",
-    "location": "三重B",
-    "home_team": "羊騷殿",
-    "away_team": "吉鴻冷凍",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "12:00",
-    "location": "三重A",
-    "home_team": "高林運動",
-    "away_team": "維德骨科",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "12:00",
-    "location": "三重B",
-    "home_team": "英業達",
-    "away_team": "羊騷殿",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "13:00",
-    "location": "三重A",
-    "home_team": "CRAZ",
-    "away_team": "高林運動",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "13:00",
-    "location": "三重B",
-    "home_team": "吉鴻冷凍",
-    "away_team": "英業達",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
+    "date": "2026-07-19",
     "time": "14:00",
-    "location": "三重A",
-    "home_team": "和光工業",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "14:00",
-    "location": "三重B",
-    "home_team": "魔人普烏",
-    "away_team": "成功",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "15:00",
-    "location": "三重A",
-    "home_team": "康德科技長春",
-    "away_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "15:00",
-    "location": "三重B",
-    "home_team": "成功",
-    "away_team": "康德科技",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "16:00",
-    "location": "三重A",
-    "home_team": "林金結-凱盟",
-    "away_team": "和光工業",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-08-30",
-    "time": "16:00",
-    "location": "三重B",
-    "home_team": "康德科技",
-    "away_team": "魔人普烏",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "08:00",
-    "location": "三重A",
-    "away_team": "樂活獅",
-    "home_team": "吉飛達汽車修護",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "08:00",
-    "location": "三重B",
-    "away_team": "昶碩",
-    "home_team": "鵬偉空調",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "09:00",
-    "location": "三重A",
-    "away_team": "陳珀勳診所",
-    "home_team": "樂活獅",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "09:00",
-    "location": "三重B",
-    "away_team": "拉早場",
-    "home_team": "昶碩",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "10:00",
-    "location": "三重A",
-    "away_team": "吉飛達汽車修護",
-    "home_team": "陳珀勳診所",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "10:00",
-    "location": "三重B",
-    "away_team": "鵬偉空調",
-    "home_team": "拉早場",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "11:00",
-    "location": "三重A",
-    "away_team": "鮮乳坊",
-    "home_team": "黑旋風",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "11:00",
-    "location": "三重B",
-    "away_team": "MONKEYS",
-    "home_team": "馬德烈",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "12:00",
-    "location": "三重A",
-    "away_team": "生特",
-    "home_team": "鮮乳坊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "12:00",
-    "location": "三重B",
-    "away_team": "冠緯",
-    "home_team": "MONKEYS",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "13:00",
-    "location": "三重A",
-    "away_team": "黑旋風",
-    "home_team": "生特",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "13:00",
-    "location": "三重B",
-    "away_team": "馬德烈",
-    "home_team": "冠緯",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "14:00",
-    "location": "三重A",
-    "away_team": "維德骨科",
-    "home_team": "泓利達",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "14:00",
-    "location": "三重B",
-    "away_team": "艾格利森",
-    "home_team": "稻鄉",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "15:00",
-    "location": "三重A",
-    "away_team": "搖滾鯉魚",
-    "home_team": "維德骨科",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "15:00",
-    "location": "三重B",
-    "away_team": "爛透了",
-    "home_team": "艾格利森",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "16:00",
-    "location": "三重A",
-    "away_team": "泓利達",
-    "home_team": "搖滾鯉魚",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-13",
-    "time": "16:00",
-    "location": "三重B",
-    "away_team": "稻鄉",
-    "home_team": "爛透了",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "康德科技長春",
-    "away_team": "樂活獅",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "生特",
-    "away_team": "緯創",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "09:00",
-    "location": "三重A",
-    "home_team": "樂活獅",
-    "away_team": "益萊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "09:00",
-    "location": "三重B",
-    "home_team": "Funin",
-    "away_team": "生特",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "10:00",
-    "location": "三重A",
-    "home_team": "益萊",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "10:00",
-    "location": "三重B",
-    "home_team": "緯創",
-    "away_team": "Funin",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "11:00",
-    "location": "三重A",
-    "home_team": "康德科技長青",
-    "away_team": "陳珀勳診所",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "11:00",
-    "location": "三重B",
-    "home_team": "Falcons",
-    "away_team": "康德科技",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "12:00",
-    "location": "三重A",
-    "home_team": "林金結-凱盟",
-    "away_team": "康德科技長青",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "12:00",
-    "location": "三重B",
-    "home_team": "威法法律",
-    "away_team": "Falcons",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "13:00",
-    "location": "三重A",
-    "home_team": "陳珀勳診所",
-    "away_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "13:00",
-    "location": "三重B",
-    "home_team": "康德科技",
-    "away_team": "威法法律",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "14:00",
-    "location": "三重A",
-    "home_team": "成功",
-    "away_team": "信友",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "14:00",
-    "location": "三重B",
-    "home_team": "Haier",
-    "away_team": "民雄企業",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "15:00",
-    "location": "三重A",
-    "home_team": "信友",
-    "away_team": "統包先生",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "15:00",
-    "location": "三重B",
-    "home_team": "民雄企業",
-    "away_team": "馬利歐",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "16:00",
-    "location": "三重A",
-    "home_team": "統包先生",
-    "away_team": "成功",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-09-20",
-    "time": "16:00",
-    "location": "三重B",
-    "home_team": "馬利歐",
-    "away_team": "Haier",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-04",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "康德科技長青",
-    "away_team": "康德科技長壽",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "Haier",
-    "away_team": "昶碩",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "09:00",
-    "location": "三重A",
-    "home_team": "康德科技長壽",
-    "away_team": "益萊",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "09:00",
-    "location": "三重B",
-    "home_team": "昶碩",
-    "away_team": "吉鴻冷凍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "10:00",
-    "location": "三重A",
-    "home_team": "益萊",
-    "away_team": "康德科技長青",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "10:00",
-    "location": "三重B",
-    "home_team": "吉鴻冷凍",
-    "away_team": "Haier",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "11:00",
-    "location": "三重A",
-    "home_team": "鮮乳坊",
-    "away_team": "打鐵兄弟(國聖)",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "11:00",
-    "location": "三重B",
-    "home_team": "爛透了",
-    "away_team": "肯林恩",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "12:00",
-    "location": "三重A",
-    "home_team": "打鐵兄弟(國聖)",
-    "away_team": "Funin",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "12:00",
-    "location": "三重B",
-    "home_team": "肯林恩",
-    "away_team": "HCB",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "13:00",
-    "location": "三重A",
-    "home_team": "Funin",
-    "away_team": "鮮乳坊",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "13:00",
-    "location": "三重B",
-    "home_team": "HCB",
-    "away_team": "爛透了",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "14:00",
-    "location": "三重A",
-    "home_team": "搖滾鯉魚",
-    "away_team": "微風整形",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "14:00",
-    "location": "三重B",
-    "home_team": "鵬偉空調",
-    "away_team": "羊騷殿",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "15:00",
-    "location": "三重A",
-    "home_team": "高林運動",
-    "away_team": "搖滾鯉魚",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "15:00",
-    "location": "三重B",
-    "home_team": "羊騷殿",
-    "away_team": "馬利歐",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "16:00",
-    "location": "三重A",
-    "home_team": "微風整形",
-    "away_team": "高林運動",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-04",
-    "time": "16:00",
-    "location": "三重B",
-    "home_team": "馬利歐",
-    "away_team": "鵬偉空調",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-10-18",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "聯辰藍鷹",
-    "away_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "北象一家人",
-    "away_team": "永達鋼鋁",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "09:00",
-    "location": "三重A",
-    "home_team": "林金結-凱盟",
-    "away_team": "益萊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "09:00",
-    "location": "三重B",
-    "home_team": "永達鋼鋁",
-    "away_team": "爛透了",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "10:00",
-    "location": "三重A",
-    "home_team": "益萊",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "10:00",
-    "location": "三重B",
-    "home_team": "爛透了",
-    "away_team": "北象一家人",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "11:00",
-    "location": "三重A",
-    "home_team": "康德科技長青",
-    "away_team": "雷進順機車行",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "11:00",
-    "location": "三重B",
-    "home_team": "北極星",
-    "away_team": "肯林恩",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "12:00",
-    "location": "三重A",
-    "home_team": "雷進順機車行",
-    "away_team": "祥嘉汽車材料",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "12:00",
-    "location": "三重B",
-    "home_team": "肯林恩",
-    "away_team": "稻鄉",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "13:00",
-    "location": "三重A",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "康德科技長青",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "13:00",
-    "location": "三重B",
-    "home_team": "稻鄉",
-    "away_team": "北極星",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "14:00",
-    "location": "三重A",
-    "home_team": "羊騷殿",
-    "away_team": "昶碩",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "14:00",
-    "location": "三重B",
-    "home_team": "網龍",
-    "away_team": "MONKEYS",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "15:00",
-    "location": "三重A",
-    "home_team": "昶碩",
-    "away_team": "民雄企業",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "15:00",
-    "location": "三重B",
-    "home_team": "MONKEYS",
-    "away_team": "台客風",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "16:00",
-    "location": "三重A",
-    "home_team": "民雄企業",
-    "away_team": "羊騷殿",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-10-18",
-    "time": "16:00",
-    "location": "三重B",
-    "home_team": "台客風",
-    "away_team": "網龍",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-01",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "和光工業",
-    "away_team": "樂活獅",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "民雄企業",
-    "away_team": "鵬偉空調",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "樂活獅",
-    "away_team": "康德科技長青",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "鵬偉空調",
-    "away_team": "吉鴻冷凍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "康德科技長青",
-    "away_team": "和光工業",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "09:50",
-    "location": "三重B",
-    "home_team": "吉鴻冷凍",
-    "away_team": "民雄企業",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "CRAZ",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "羊騷殿",
-    "away_team": "拉早場",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "聯辰藍鷹",
-    "away_team": "微風整形",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "拉早場",
-    "away_team": "Haier",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "12:35",
-    "location": "三重A",
-    "home_team": "微風整形",
-    "away_team": "CRAZ",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "12:35",
-    "location": "三重B",
-    "home_team": "Haier",
-    "away_team": "羊騷殿",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "13:30",
-    "location": "三重A",
-    "home_team": "KARASUMI",
-    "away_team": "五股同濟會",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "13:30",
-    "location": "三重B",
-    "home_team": "Funin",
-    "away_team": "黑旋風",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "14:25",
-    "location": "三重A",
-    "home_team": "五股同濟會",
-    "away_team": "台客風",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "14:25",
-    "location": "三重B",
-    "home_team": "黑旋風",
-    "away_team": "玖格工程",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "台客風",
-    "away_team": "KARASUMI",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-01",
-    "time": "15:20",
-    "location": "三重B",
-    "home_team": "玖格工程",
-    "away_team": "Funin",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "08:00",
-    "away_team": "康德科技長壽",
-    "home_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "08:00",
-    "away_team": "雷進順機車行",
-    "home_team": "樂活獅",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "08:55",
-    "away_team": "康德科技長壽",
-    "home_team": "雷進順機車行",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "08:55",
-    "away_team": "林金結-凱盟",
-    "home_team": "樂活獅",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "09:50",
-    "away_team": "樂活獅",
-    "home_team": "康德科技長壽",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "09:50",
-    "away_team": "雷進順機車行",
-    "home_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "10:45",
-    "away_team": "威法法律",
-    "home_team": "成功",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "10:45",
-    "away_team": "德興堆高機",
-    "home_team": "五股同濟會",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "11:40",
+    "location": "A場地",
+    "home_team": "爆癡",
     "away_team": "APC科技",
-    "home_team": "威法法律",
     "status": "normal",
-    "note": null
+    "note": "11/15"
   },
   {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "11:40",
-    "away_team": "MONKEYS",
-    "home_team": "德興堆高機",
+    "date": "2026-07-19",
+    "time": "14:00",
+    "location": "B場地",
+    "home_team": "綠攝影像",
+    "away_team": "黑狗",
     "status": "normal",
-    "note": null
+    "note": "11/22"
   },
   {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "12:35",
-    "away_team": "成功",
+    "date": "2026-07-19",
+    "time": "15:00",
+    "location": "A場地",
     "home_team": "APC科技",
+    "away_team": "軾銓公寓",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "12:35",
-    "away_team": "五股同濟會",
-    "home_team": "MONKEYS",
+    "date": "2026-07-19",
+    "time": "15:00",
+    "location": "B場地",
+    "home_team": "黑狗",
+    "away_team": "太陽",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "13:30",
-    "away_team": "虎林",
-    "home_team": "聯辰藍鷹",
+    "date": "2026-07-19",
+    "time": "16:00",
+    "location": "A場地",
+    "home_team": "軾銓公寓",
+    "away_team": "爆癡",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "13:30",
-    "away_team": "打鐵兄弟(國聖)",
-    "home_team": "緯創",
+    "date": "2026-07-19",
+    "time": "16:00",
+    "location": "B場地",
+    "home_team": "太陽",
+    "away_team": "綠攝影像",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "14:25",
-    "away_team": "搖滾鯉魚",
-    "home_team": "虎林",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "14:25",
-    "away_team": "玖格工程",
-    "home_team": "打鐵兄弟(國聖)",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重A",
-    "time": "15:20",
-    "away_team": "聯辰藍鷹",
-    "home_team": "搖滾鯉魚",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-08",
-    "location": "三重B",
-    "time": "15:20",
-    "away_team": "緯創",
-    "home_team": "玖格工程",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
+    "date": "2026-07-26",
     "time": "08:00",
-    "location": "三重A",
-    "home_team": "昶碩",
-    "away_team": "英業達",
+    "location": "A場地",
+    "home_team": "三田土",
+    "away_team": "兆曜光能",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
+    "date": "2026-07-26",
     "time": "08:00",
-    "location": "三重B",
-    "home_team": "台客風",
-    "away_team": "德興堆高機",
+    "location": "B場地",
+    "home_team": "裕翔",
+    "away_team": "CCU Bartender",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "英業達",
-    "away_team": "馬利歐",
+    "date": "2026-07-26",
+    "time": "09:00",
+    "location": "A場地",
+    "home_team": "兆曜光能",
+    "away_team": "APC科技",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "德興堆高機",
-    "away_team": "馬德烈",
+    "date": "2026-07-26",
+    "time": "09:00",
+    "location": "B場地",
+    "home_team": "CCU Bartender",
+    "away_team": "FE",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "馬利歐",
-    "away_team": "昶碩",
+    "date": "2026-07-26",
+    "time": "10:00",
+    "location": "A場地",
+    "home_team": "APC科技",
+    "away_team": "三田土",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "09:50",
-    "location": "三重B",
-    "home_team": "馬德烈",
-    "away_team": "台客風",
+    "date": "2026-07-26",
+    "time": "10:00",
+    "location": "B場地",
+    "home_team": "FE",
+    "away_team": "裕翔",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "緯創",
-    "away_team": "SD迅龍",
+    "date": "2026-07-26",
+    "time": "11:00",
+    "location": "A場地",
+    "home_team": "頂曜國際",
+    "away_team": "千紅",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "魔人普烏",
-    "away_team": "信友",
+    "date": "2026-07-26",
+    "time": "11:00",
+    "location": "B場地",
+    "home_team": "綠攝影像",
+    "away_team": "中華電信 白",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-15",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "SD迅龍",
-    "away_team": "黑旋風",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "信友",
-    "away_team": "Falcons",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "12:35",
-    "location": "三重A",
-    "home_team": "黑旋風",
-    "away_team": "緯創",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "12:35",
-    "location": "三重B",
-    "home_team": "Falcons",
-    "away_team": "魔人普烏",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "13:30",
-    "location": "三重A",
-    "home_team": "雷進順機車行",
-    "away_team": "陳珀勳診所",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "13:30",
-    "location": "三重B",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "林金結-凱盟",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "14:25",
-    "location": "三重A",
-    "home_team": "陳珀勳診所",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "14:25",
-    "location": "三重B",
-    "home_team": "吉飛達汽車修護",
-    "away_team": "祥嘉汽車材料",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "康德科技長春",
-    "away_team": "雷進順機車行",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-15",
-    "time": "15:20",
-    "location": "三重B",
-    "home_team": "林金結-凱盟",
-    "away_team": "吉飛達汽車修護",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "英業達",
-    "away_team": "民雄企業",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "緯創",
-    "away_team": "鮮乳坊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "民雄企業",
-    "away_team": "拉早場",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "夯DEEP",
-    "away_team": "緯創",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "拉早場",
-    "away_team": "英業達",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "09:50",
-    "location": "三重B",
-    "home_team": "鮮乳坊",
-    "away_team": "夯DEEP",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "北象一家人",
-    "away_team": "肯林恩",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "北極星",
-    "away_team": "萬板熊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2026-11-29",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "肯林恩",
+    "date": "2026-07-26",
+    "time": "12:00",
+    "location": "A場地",
+    "home_team": "千紅",
     "away_team": "艾格利森",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "萬板熊",
-    "away_team": "爛透了",
+    "date": "2026-07-26",
+    "time": "12:00",
+    "location": "B場地",
+    "home_team": "中華電信 白",
+    "away_team": "塔悠武士",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "12:35",
-    "location": "三重A",
+    "date": "2026-07-26",
+    "time": "13:00",
+    "location": "A場地",
     "home_team": "艾格利森",
-    "away_team": "北象一家人",
+    "away_team": "頂曜國際",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "12:35",
-    "location": "三重B",
-    "home_team": "爛透了",
-    "away_team": "北極星",
+    "date": "2026-07-26",
+    "time": "13:00",
+    "location": "B場地",
+    "home_team": "塔悠武士",
+    "away_team": "綠攝影像",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "13:30",
-    "location": "三重A",
-    "home_team": "聯辰藍鷹",
-    "away_team": "樂活獅",
+    "date": "2026-07-26",
+    "time": "14:00",
+    "location": "A場地",
+    "home_team": "鉅登茗茶",
+    "away_team": "人民公僕 A",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "14:25",
-    "location": "三重A",
-    "home_team": "樂活獅",
-    "away_team": "祥嘉汽車材料",
+    "date": "2026-07-26",
+    "time": "14:00",
+    "location": "B場地",
+    "home_team": "P MAN",
+    "away_team": "鹿角男神",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "聯辰藍鷹",
+    "date": "2026-07-26",
+    "time": "15:00",
+    "location": "A場地",
+    "home_team": "人民公僕 A",
+    "away_team": "精洲室內裝修A",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2026-11-29",
+    "date": "2026-07-26",
+    "time": "15:00",
+    "location": "B場地",
+    "home_team": "鹿角男神",
+    "away_team": "老鄉人",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-07-26",
+    "time": "16:00",
+    "location": "A場地",
+    "home_team": "精洲室內裝修A",
+    "away_team": "鉅登茗茶",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-07-26",
+    "time": "16:00",
+    "location": "B場地",
+    "home_team": "老鄉人",
+    "away_team": "P MAN",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "獵狐",
+    "away_team": "鹿角男神",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "FE",
+    "away_team": "夯DEEP",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "09:00",
+    "location": "A場地",
+    "home_team": "鹿角男神",
+    "away_team": "珠城工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "09:00",
+    "location": "B場地",
+    "home_team": "夯DEEP",
+    "away_team": "力誠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "10:00",
+    "location": "A場地",
+    "home_team": "珠城工程",
+    "away_team": "獵狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "10:00",
+    "location": "B場地",
+    "home_team": "力誠",
+    "away_team": "FE",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "11:00",
+    "location": "A場地",
+    "home_team": "綠攝影像",
+    "away_team": "玩運彩",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "11:00",
+    "location": "B場地",
+    "home_team": "國都壘球社",
+    "away_team": "North鯊魚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "12:00",
+    "location": "A場地",
+    "home_team": "玩運彩",
+    "away_team": "靠嘴巴打球",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "12:00",
+    "location": "B場地",
+    "home_team": "North鯊魚",
+    "away_team": "老鄉人",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "13:00",
+    "location": "A場地",
+    "home_team": "靠嘴巴打球",
+    "away_team": "綠攝影像",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "13:00",
+    "location": "B場地",
+    "home_team": "老鄉人",
+    "away_team": "國都壘球社",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "14:00",
+    "location": "A場地",
+    "home_team": "蛇王 德洛伊浪",
+    "away_team": "銘佳工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "14:00",
+    "location": "B場地",
+    "home_team": "鼎航貿易",
+    "away_team": "千紅",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "15:00",
+    "location": "A場地",
+    "home_team": "銘佳工程",
+    "away_team": "北方之鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "15:00",
+    "location": "B場地",
+    "home_team": "千紅",
+    "away_team": "諾菲爾",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "16:00",
+    "location": "A場地",
+    "home_team": "北方之鷹",
+    "away_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-02",
+    "time": "16:00",
+    "location": "B場地",
+    "home_team": "諾菲爾",
+    "away_team": "鼎航貿易",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "艾格利森",
+    "away_team": "新北地政",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "雷進順機車行",
+    "away_team": "吉飛達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "09:00",
+    "location": "A場地",
+    "home_team": "新北地政",
+    "away_team": "鼎航貿易",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "09:00",
+    "location": "B場地",
+    "home_team": "吉飛達",
+    "away_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "10:00",
+    "location": "A場地",
+    "home_team": "鼎航貿易",
+    "away_team": "艾格利森",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "10:00",
+    "location": "B場地",
+    "home_team": "蛇王 德洛伊浪",
+    "away_team": "雷進順機車行",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:00",
+    "location": "A場地",
+    "home_team": "North鯊魚",
+    "away_team": "P MAN",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:00",
+    "location": "B場地",
+    "home_team": "裕翔",
+    "away_team": "世昌鋼模(翔鷹)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "12:00",
+    "location": "A場地",
+    "home_team": "P MAN",
+    "away_team": "獵狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "12:00",
+    "location": "B場地",
+    "home_team": "世昌鋼模(翔鷹)",
+    "away_team": "精洲室內裝修B",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "13:00",
+    "location": "A場地",
+    "home_team": "獵狐",
+    "away_team": "North鯊魚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "13:00",
+    "location": "B場地",
+    "home_team": "精洲室內裝修B",
+    "away_team": "裕翔",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "14:00",
+    "location": "A場地",
+    "home_team": "海盜",
+    "away_team": "千紅",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "15:00",
+    "location": "A場地",
+    "home_team": "千紅",
+    "away_team": "班超工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
+    "time": "16:00",
+    "location": "A場地",
+    "home_team": "班超工程",
+    "away_team": "海盜",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-08-09",
     "time": "全天",
-    "location": "三重B",
+    "location": "B場地",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
     "note": "雨備日"
   },
   {
-    "date": "2026-12-13",
-    "location": "三重A",
+    "date": "2026-08-16",
+    "location": "A場地",
     "time": "08:00",
-    "home_team": "泓利達",
-    "away_team": "微風整形",
+    "home_team": "兆曜光能",
+    "away_team": "高強",
     "status": "normal",
     "note": ""
   },
   {
-    "date": "2026-12-13",
-    "location": "三重B",
+    "date": "2026-08-16",
+    "location": "B場地",
     "time": "08:00",
-    "home_team": "永達鋼鋁",
+    "home_team": "歌岸似聲",
+    "away_team": "咚咚強",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "09:00",
+    "home_team": "高強",
+    "away_team": "今源空調",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "09:00",
+    "home_team": "咚咚強",
+    "away_team": "鉅登茗茶",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "10:00",
+    "home_team": "今源空調",
+    "away_team": "兆曜光能",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "10:00",
+    "home_team": "鉅登茗茶",
+    "away_team": "歌岸似聲",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "11:00",
+    "home_team": "諾菲爾",
+    "away_team": "新北地政",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "11:00",
+    "home_team": "人民公僕 B",
+    "away_team": "綠攝影像",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "12:00",
+    "home_team": "新北地政",
+    "away_team": "海盜",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "12:00",
+    "home_team": "綠攝影像",
+    "away_team": "奴瓦里岸",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "13:00",
+    "home_team": "海盜",
+    "away_team": "諾菲爾",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "13:00",
+    "home_team": "奴瓦里岸",
+    "away_team": "人民公僕 B",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "14:00",
+    "home_team": "布瑞特",
+    "away_team": "吉飛達",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "14:00",
+    "home_team": "珠城工程",
+    "away_team": "國都壘球社",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "15:00",
+    "home_team": "吉飛達",
+    "away_team": "銘佳工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "15:00",
+    "home_team": "國都壘球社",
+    "away_team": "P MAN",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "A場地",
+    "time": "16:00",
+    "home_team": "銘佳工程",
+    "away_team": "布瑞特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-16",
+    "location": "B場地",
+    "time": "16:00",
+    "home_team": "P MAN",
+    "away_team": "珠城工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "08:00",
+    "home_team": "咚咚強",
+    "away_team": "沙爸農場",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "08:00",
+    "home_team": "海盜",
+    "away_team": "頂曜國際",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "09:00",
+    "home_team": "沙爸農場",
+    "away_team": "人民公僕 A",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "09:00",
+    "home_team": "頂曜國際",
+    "away_team": "鼎航貿易",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "10:00",
+    "home_team": "人民公僕 A",
+    "away_team": "咚咚強",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "10:00",
+    "home_team": "鼎航貿易",
+    "away_team": "海盜",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "11:00",
+    "home_team": "諾菲爾",
+    "away_team": "班超工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "11:00",
+    "home_team": "爆癡",
+    "away_team": "高林運動",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "12:00",
+    "home_team": "班超工程",
     "away_team": "艾格利森",
     "status": "normal",
     "note": ""
   },
   {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "08:55",
-    "home_team": "海樂森",
-    "away_team": "泓利達",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "08:55",
-    "home_team": "艾格利森",
-    "away_team": "北極星",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "09:50",
-    "home_team": "微風整形",
-    "away_team": "海樂森",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "09:50",
-    "home_team": "北極星",
-    "away_team": "永達鋼鋁",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "10:45",
-    "home_team": "生特",
-    "away_team": "打鐵兄弟(國聖)",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "10:45",
-    "home_team": "APC科技",
-    "away_team": "統包先生",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "11:40",
-    "home_team": "打鐵兄弟(國聖)",
-    "away_team": "SD迅龍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "11:40",
-    "home_team": "統包先生",
-    "away_team": "Falcons",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "12:35",
-    "home_team": "SD迅龍",
-    "away_team": "生特",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "12:35",
-    "home_team": "Falcons",
-    "away_team": "APC科技",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "13:30",
-    "home_team": "康德科技長壽",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "13:30",
-    "home_team": "網龍",
-    "away_team": "冠緯",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "14:25",
-    "home_team": "康德科技長春",
-    "away_team": "祥嘉汽車材料",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "14:25",
-    "home_team": "冠緯",
-    "away_team": "五股同濟會",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重A",
-    "time": "15:20",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "康德科技長壽",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-13",
-    "location": "三重B",
-    "time": "15:20",
-    "home_team": "五股同濟會",
-    "away_team": "網龍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "08:00",
-    "location": "三重A",
-    "away_team": "信友",
-    "home_team": "和朝",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "08:00",
-    "location": "三重B",
-    "away_team": "北象一家人",
-    "home_team": "萬板熊",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "08:55",
-    "location": "三重A",
-    "away_team": "和朝",
-    "home_team": "威法法律",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "08:55",
-    "location": "三重B",
-    "away_team": "稻鄉",
-    "home_team": "北象一家人",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "09:50",
-    "location": "三重A",
-    "away_team": "威法法律",
-    "home_team": "信友",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "09:50",
-    "location": "三重B",
-    "away_team": "萬板熊",
-    "home_team": "稻鄉",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "10:45",
-    "location": "三重A",
-    "away_team": "微風整形",
-    "home_team": "虎林",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "10:45",
-    "location": "三重B",
-    "away_team": "聯辰藍鷹",
-    "home_team": "泓利達",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "11:40",
-    "location": "三重A",
-    "away_team": "虎林",
-    "home_team": "維德骨科",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "11:40",
-    "location": "三重B",
-    "away_team": "高林運動",
-    "home_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "12:35",
-    "location": "三重A",
-    "away_team": "維德骨科",
-    "home_team": "微風整形",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "12:35",
-    "location": "三重B",
-    "away_team": "泓利達",
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "12:00",
     "home_team": "高林運動",
+    "away_team": "高強",
     "status": "normal",
     "note": ""
   },
   {
-    "date": "2026-12-20",
-    "time": "13:30",
-    "location": "三重A",
-    "away_team": "雷進順機車行",
-    "home_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "13:30",
-    "location": "三重B",
-    "away_team": "Funin",
-    "home_team": "SD迅龍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "14:25",
-    "location": "三重A",
-    "away_team": "聯辰藍鷹",
-    "home_team": "和光工業",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "14:25",
-    "location": "三重B",
-    "away_team": "夯DEEP",
-    "home_team": "Funin",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "15:20",
-    "location": "三重A",
-    "away_team": "和光工業",
-    "home_team": "雷進順機車行",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-20",
-    "time": "15:20",
-    "location": "三重B",
-    "away_team": "SD迅龍",
-    "home_team": "夯DEEP",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "英業達",
-    "away_team": "鵬偉空調",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "吉鴻冷凍",
-    "away_team": "拉早場",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "Haier",
-    "away_team": "英業達",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "拉早場",
-    "away_team": "馬利歐",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "鵬偉空調",
-    "away_team": "Haier",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "09:50",
-    "location": "三重B",
-    "home_team": "馬利歐",
-    "away_team": "吉鴻冷凍",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "海樂森",
-    "away_team": "維德骨科",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "威法法律",
-    "away_team": "統包先生",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "維德骨科",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "統包先生",
-    "away_team": "魔人普烏",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "12:35",
-    "location": "三重A",
-    "home_team": "聯辰藍鷹",
-    "away_team": "海樂森",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "12:35",
-    "location": "三重B",
-    "home_team": "魔人普烏",
-    "away_team": "威法法律",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "13:30",
-    "location": "三重A",
-    "home_team": "陳珀勳診所",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "13:30",
-    "location": "三重B",
-    "home_team": "永達鋼鋁",
-    "away_team": "肯林恩",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "14:25",
-    "location": "三重A",
-    "home_team": "康德科技長壽",
-    "away_team": "陳珀勳診所",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "14:25",
-    "location": "三重B",
-    "home_team": "肯林恩",
-    "away_team": "萬板熊",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "聯辰藍鷹",
-    "away_team": "康德科技長壽",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2026-12-27",
-    "time": "15:20",
-    "location": "三重B",
-    "home_team": "萬板熊",
-    "away_team": "永達鋼鋁",
-    "status": "normal",
-    "note": ""
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "08:00",
-    "away_team": "五股同濟會",
-    "home_team": "泓陞自動化",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "08:00",
-    "away_team": "鮮乳坊",
-    "home_team": "SD迅龍",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "08:55",
-    "away_team": "馬德烈",
-    "home_team": "五股同濟會",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "08:55",
-    "away_team": "玖格工程",
-    "home_team": "鮮乳坊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "09:50",
-    "away_team": "泓陞自動化",
-    "home_team": "馬德烈",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "09:50",
-    "away_team": "SD迅龍",
-    "home_team": "玖格工程",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "10:45",
-    "away_team": "高林運動",
-    "home_team": "海樂森",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "10:45",
-    "away_team": "打鐵兄弟(國聖)",
-    "home_team": "黑旋風",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "11:40",
-    "away_team": "海樂森",
-    "home_team": "虎林",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "11:40",
-    "away_team": "夯DEEP",
-    "home_team": "打鐵兄弟(國聖)",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "12:35",
-    "away_team": "虎林",
-    "home_team": "高林運動",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "12:35",
-    "away_team": "黑旋風",
-    "home_team": "夯DEEP",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "13:30",
-    "away_team": "吉飛達汽車修護",
-    "home_team": "雷進順機車行",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "13:30",
-    "away_team": "德興堆高機",
-    "home_team": "冠緯",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "14:25",
-    "away_team": "雷進順機車行",
-    "home_team": "益萊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "14:25",
-    "away_team": "KARASUMI",
-    "home_team": "德興堆高機",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重A",
-    "time": "15:20",
-    "away_team": "益萊",
-    "home_team": "吉飛達汽車修護",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-10",
-    "location": "三重B",
-    "time": "15:20",
-    "away_team": "冠緯",
-    "home_team": "KARASUMI",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "信友",
-    "away_team": "康德科技",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "網龍",
-    "away_team": "德興堆高機",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "康德科技",
-    "away_team": "APC科技",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "德興堆高機",
-    "away_team": "泓陞自動化",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "APC科技",
-    "away_team": "信友",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "09:50",
-    "location": "三重B",
-    "home_team": "泓陞自動化",
-    "away_team": "網龍",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "Falcons",
-    "away_team": "和朝",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "HCB",
-    "away_team": "北象一家人",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "和朝",
-    "away_team": "成功",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "北象一家人",
-    "away_team": "北極星",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "12:35",
-    "location": "三重A",
-    "home_team": "成功",
-    "away_team": "Falcons",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "12:35",
-    "location": "三重B",
-    "home_team": "北極星",
-    "away_team": "HCB",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "13:30",
-    "location": "三重A",
-    "home_team": "吉飛達汽車修護",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "13:30",
-    "location": "三重B",
-    "home_team": "康德科技長青",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "14:25",
-    "location": "三重A",
-    "home_team": "康德科技長青",
-    "away_team": "吉飛達汽車修護",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "14:25",
-    "location": "三重B",
-    "home_team": "聯辰藍鷹",
-    "away_team": "康德科技長春",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "吉飛達汽車修護",
-    "away_team": "聯辰藍鷹",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-17",
-    "time": "15:20",
-    "location": "三重B",
-    "home_team": "康德科技長春",
-    "away_team": "康德科技長青",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "08:00",
-    "location": "三重A",
-    "home_team": "KARASUMI",
-    "away_team": "泓陞自動化",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "08:00",
-    "location": "三重B",
-    "home_team": "HCB",
-    "away_team": "萬板熊",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "08:55",
-    "location": "三重A",
-    "home_team": "泓陞自動化",
-    "away_team": "MONKEYS",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "08:55",
-    "location": "三重B",
-    "home_team": "萬板熊",
-    "away_team": "艾格利森",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "09:50",
-    "location": "三重A",
-    "home_team": "MONKEYS",
-    "away_team": "KARASUMI",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "09:50",
-    "location": "三重B",
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "13:00",
     "home_team": "艾格利森",
-    "away_team": "HCB",
+    "away_team": "諾菲爾",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "13:00",
+    "home_team": "高強",
+    "away_team": "爆癡",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "14:00",
+    "home_team": "蛇王 德洛伊浪",
+    "away_team": "布瑞特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "14:00",
+    "home_team": "靖軒興業",
+    "away_team": "力誠",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "15:00",
+    "home_team": "布瑞特",
+    "away_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "15:00",
+    "home_team": "力誠",
+    "away_team": "世昌鋼模(翔鷹)",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "B場地",
+    "time": "16:00",
+    "home_team": "世昌鋼模(翔鷹)",
+    "away_team": "靖軒興業",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-23",
+    "location": "A場地",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "........"
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "08:00",
+    "home_team": "世昌鋼模(翔鷹)",
+    "away_team": "北科大EMBA",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "08:00",
+    "home_team": "軾銓公寓",
+    "away_team": "今源空調",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "09:00",
+    "home_team": "北科大EMBA",
+    "away_team": "FE",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "09:00",
+    "home_team": "兆曜光能",
+    "away_team": "軾銓公寓",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "10:00",
+    "home_team": "FE",
+    "away_team": "世昌鋼模(翔鷹)",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "10:00",
+    "home_team": "今源空調",
+    "away_team": "爆癡",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "11:00",
+    "home_team": "沙爸農場",
+    "away_team": "鉅登茗茶",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "11:00",
+    "home_team": "爆癡",
+    "away_team": "兆曜光能",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "12:00",
+    "home_team": "鉅登茗茶",
+    "away_team": "里安診所",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "12:00",
+    "home_team": "太陽",
+    "away_team": "人民公僕 B",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "13:00",
+    "home_team": "里安診所",
+    "away_team": "沙爸農場",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "13:00",
+    "home_team": "人民公僕 B",
+    "away_team": "塔悠武士",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "14:00",
+    "home_team": "中華電信 藍",
+    "away_team": "歌岸似聲",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "14:00",
+    "home_team": "塔悠武士",
+    "away_team": "太陽",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "15:00",
+    "home_team": "歌岸似聲",
+    "away_team": "人民公僕 A",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "15:00",
+    "home_team": "北方之鷹",
+    "away_team": "吉飛達",
+    "status": "normal",
+    "note": "11/15"
+  },
+  {
+    "date": "2026-08-30",
+    "location": "A場地",
+    "time": "16:00",
+    "home_team": "人民公僕 A",
+    "away_team": "中華電信 藍",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-08-30",
+    "location": "B場地",
+    "time": "16:00",
+    "home_team": "吉飛達",
+    "away_team": "北方之鷹",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "08:00",
+    "home_team": "北方之鷹",
+    "away_team": "布瑞特",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "08:00",
+    "home_team": "玩運彩",
+    "away_team": "人民公僕 B",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "09:00",
+    "home_team": "布瑞特",
+    "away_team": "雷進順機車行",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "09:00",
+    "home_team": "人民公僕 B",
+    "away_team": "黑狗",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "10:00",
+    "home_team": "雷進順機車行",
+    "away_team": "北方之鷹",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "10:00",
+    "home_team": "黑狗",
+    "away_team": "玩運彩",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "11:00",
+    "home_team": "野象",
+    "away_team": "人民公僕 A",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "11:00",
+    "home_team": "靖軒興業",
+    "away_team": "裕翔",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "12:00",
+    "home_team": "人民公僕 A",
+    "away_team": "里安診所",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "12:00",
+    "home_team": "裕翔",
+    "away_team": "夯DEEP",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "13:00",
+    "home_team": "里安診所",
+    "away_team": "野象",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "13:00",
+    "home_team": "夯DEEP",
+    "away_team": "靖軒興業",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "14:00",
+    "home_team": "武士酒",
+    "away_team": "P MAN",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "14:00",
+    "home_team": "班超工程",
+    "away_team": "頂曜國際",
+    "status": "normal",
+    "note": "10/18"
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "15:00",
+    "home_team": "P MAN",
+    "away_team": "擊敗人",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "15:00",
+    "home_team": "頂曜國際",
+    "away_team": "新北地政",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "A場地",
+    "time": "16:00",
+    "home_team": "擊敗人",
+    "away_team": "武士酒",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-04",
+    "location": "B場地",
+    "time": "16:00",
+    "home_team": "新北地政",
+    "away_team": "班超工程",
+    "status": "normal",
+    "note": ""
+  },
+  {
+    "date": "2026-10-18",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "精洲室內裝修A",
+    "away_team": "歌岸似聲",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
-    "time": "10:45",
-    "location": "三重A",
-    "home_team": "搖滾鯉魚",
-    "away_team": "海樂森",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "10:45",
-    "location": "三重B",
-    "home_team": "魔人普烏",
-    "away_team": "和朝",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "11:40",
-    "location": "三重A",
-    "home_team": "海樂森",
-    "away_team": "CRAZ",
-    "status": "normal",
-    "note": null
-  },
-  {
-    "date": "2027-01-24",
-    "time": "11:40",
-    "location": "三重B",
-    "home_team": "和朝",
+    "date": "2026-10-18",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "高強",
     "away_team": "APC科技",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
-    "time": "12:35",
-    "location": "三重A",
-    "home_team": "CRAZ",
-    "away_team": "搖滾鯉魚",
+    "date": "2026-10-18",
+    "time": "08:55",
+    "location": "A場地",
+    "home_team": "歌岸似聲",
+    "away_team": "里安診所",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
-    "time": "12:35",
-    "location": "三重B",
+    "date": "2026-10-18",
+    "time": "08:55",
+    "location": "B場地",
     "home_team": "APC科技",
-    "away_team": "魔人普烏",
+    "away_team": "三田土",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
+    "date": "2026-10-18",
+    "time": "09:50",
+    "location": "A場地",
+    "home_team": "里安診所",
+    "away_team": "精洲室內裝修A",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "09:50",
+    "location": "B場地",
+    "home_team": "高林運動",
+    "away_team": "高強",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "10:45",
+    "location": "A場地",
+    "home_team": "靠嘴巴打球",
+    "away_team": "太陽",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "10:45",
+    "location": "B場地",
+    "home_team": "三田土",
+    "away_team": "高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "11:40",
+    "location": "A場地",
+    "home_team": "太陽",
+    "away_team": "奴瓦里岸",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "11:40",
+    "location": "B場地",
+    "home_team": "吉飛達",
+    "away_team": "雷進順機車行",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "12:35",
+    "location": "A場地",
+    "home_team": "奴瓦里岸",
+    "away_team": "靠嘴巴打球",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
+    "time": "12:35",
+    "location": "B場地",
+    "home_team": "雷進順機車行",
+    "away_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-10-18",
     "time": "13:30",
-    "location": "三重A",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "益萊",
+    "location": "A場地",
+    "home_team": "CCU Bartender",
+    "away_team": "世昌鋼模(翔鷹)",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
+    "date": "2026-10-18",
     "time": "13:30",
-    "location": "三重B",
-    "home_team": "和光工業",
-    "away_team": "陳珀勳診所",
+    "location": "B場地",
+    "home_team": "蛇王 德洛伊浪",
+    "away_team": "吉飛達",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
+    "date": "2026-10-18",
     "time": "14:25",
-    "location": "三重A",
-    "home_team": "和光工業",
-    "away_team": "祥嘉汽車材料",
+    "location": "A場地",
+    "home_team": "世昌鋼模(翔鷹)",
+    "away_team": "夯DEEP",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
+    "date": "2026-10-18",
+    "time": "15:20",
+    "location": "A場地",
+    "home_team": "夯DEEP",
+    "away_team": "CCU Bartender",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "軾銓公寓",
+    "away_team": "高強",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "力誠",
+    "away_team": "裕翔",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "08:55",
+    "location": "A場地",
+    "home_team": "高強",
+    "away_team": "三田土",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "08:55",
+    "location": "B場地",
+    "home_team": "裕翔",
+    "away_team": "北科大EMBA",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "09:50",
+    "location": "A場地",
+    "home_team": "三田土",
+    "away_team": "軾銓公寓",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "09:50",
+    "location": "B場地",
+    "home_team": "北科大EMBA",
+    "away_team": "力誠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "10:45",
+    "location": "A場地",
+    "home_team": "鹿角男神",
+    "away_team": "武士酒",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "10:45",
+    "location": "B場地",
+    "home_team": "精洲室內裝修B",
+    "away_team": "FE",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "11:40",
+    "location": "A場地",
+    "home_team": "武士酒",
+    "away_team": "國都壘球社",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "11:40",
+    "location": "B場地",
+    "home_team": "FE",
+    "away_team": "靖軒興業",
+    "status": "normal",
+    "note": "6/7"
+  },
+  {
+    "date": "2026-11-01",
+    "time": "12:35",
+    "location": "A場地",
+    "home_team": "國都壘球社",
+    "away_team": "鹿角男神",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "12:35",
+    "location": "B場地",
+    "home_team": "靖軒興業",
+    "away_team": "精洲室內裝修B",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "13:30",
+    "location": "A場地",
+    "home_team": "玩運彩",
+    "away_team": "奴瓦里岸",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "13:30",
+    "location": "B場地",
+    "home_team": "野象",
+    "away_team": "鉅登茗茶",
+    "status": "normal",
+    "note": "8/23"
+  },
+  {
+    "date": "2026-11-01",
     "time": "14:25",
-    "location": "三重B",
-    "home_team": "陳珀勳診所",
-    "away_team": "益萊",
+    "location": "A場地",
+    "home_team": "奴瓦里岸",
+    "away_team": "塔悠武士",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
-    "time": "15:20",
-    "location": "三重A",
-    "home_team": "祥嘉汽車材料",
-    "away_team": "陳珀勳診所",
+    "date": "2026-11-01",
+    "time": "14:25",
+    "location": "B場地",
+    "home_team": "鉅登茗茶",
+    "away_team": "中華電信 藍",
     "status": "normal",
     "note": null
   },
   {
-    "date": "2027-01-24",
+    "date": "2026-11-01",
     "time": "15:20",
-    "location": "三重B",
-    "home_team": "益萊",
-    "away_team": "和光工業",
+    "location": "A場地",
+    "home_team": "塔悠武士",
+    "away_team": "玩運彩",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-01",
+    "time": "15:20",
+    "location": "B場地",
+    "home_team": "中華電信 藍",
+    "away_team": "野象",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "高林運動",
+    "away_team": "兆曜光能",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "北科大EMBA",
+    "away_team": "靖軒興業",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "08:55",
+    "location": "A場地",
+    "home_team": "兆曜光能",
+    "away_team": "軾銓公寓",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "08:55",
+    "location": "B場地",
+    "home_team": "靖軒興業",
+    "away_team": "CCU Bartender",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "09:50",
+    "location": "A場地",
+    "home_team": "軾銓公寓",
+    "away_team": "高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "09:50",
+    "location": "B場地",
+    "home_team": "CCU Bartender",
+    "away_team": "北科大EMBA",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "10:45",
+    "location": "A場地",
+    "home_team": "Sharks",
+    "away_team": "千紅",
+    "status": "normal",
+    "note": "8/2"
+  },
+  {
+    "date": "2026-11-08",
+    "time": "10:45",
+    "location": "B場地",
+    "home_team": "中華電信 藍",
+    "away_team": "精洲室內裝修A",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "11:40",
+    "location": "A場地",
+    "home_team": "千紅",
+    "away_team": "新北地政",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "11:40",
+    "location": "B場地",
+    "home_team": "精洲室內裝修A",
+    "away_team": "沙爸農場",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "12:35",
+    "location": "A場地",
+    "home_team": "新北地政",
+    "away_team": "Sharks",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "12:35",
+    "location": "B場地",
+    "home_team": "沙爸農場",
+    "away_team": "中華電信 藍",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "13:30",
+    "location": "A場地",
+    "home_team": "銘佳工程",
+    "away_team": "北方之鷹",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "13:30",
+    "location": "B場地",
+    "home_team": "珠城工程",
+    "away_team": "North鯊魚",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "14:25",
+    "location": "A場地",
+    "home_team": "北方之鷹",
+    "away_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "14:25",
+    "location": "B場地",
+    "home_team": "North鯊魚",
+    "away_team": "武士酒",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "15:20",
+    "location": "A場地",
+    "home_team": "蛇王 德洛伊浪",
+    "away_team": "銘佳工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-08",
+    "time": "15:20",
+    "location": "B場地",
+    "home_team": "武士酒",
+    "away_team": "珠城工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "08:00",
+    "location": "A場地",
+    "home_team": "銘佳工程",
+    "away_team": "雷進順機車行",
+    "status": "normal",
+    "note": "8/30"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "08:00",
+    "location": "B場地",
+    "home_team": "夯DEEP",
+    "away_team": "精洲室內裝修B",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "08:55",
+    "location": "A場地",
+    "home_team": "雷進順機車行",
+    "away_team": "銘佳工程",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "08:55",
+    "location": "B場地",
+    "home_team": "精洲室內裝修B",
+    "away_team": "北科大EMBA",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "09:50",
+    "location": "A場地",
+    "home_team": "奴瓦里岸",
+    "away_team": "黑狗",
+    "status": "normal",
+    "note": "6/7"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "09:50",
+    "location": "B場地",
+    "home_team": "北科大EMBA",
+    "away_team": "夯DEEP",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "10:45",
+    "location": "A場地",
+    "home_team": "黑狗",
+    "away_team": "中華電信 白",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "10:45",
+    "location": "B場地",
+    "home_team": "爆癡",
+    "away_team": "軾銓公寓",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "11:40",
+    "location": "A場地",
+    "home_team": "中華電信 白",
+    "away_team": "奴瓦里岸",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "11:40",
+    "location": "B場地",
+    "home_team": "軾銓公寓",
+    "away_team": "APC科技",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "12:35",
+    "location": "B場地",
+    "home_team": "APC科技",
+    "away_team": "爆癡",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "13:30",
+    "location": "A場地",
+    "home_team": null,
+    "away_team": null,
+    "status": "normal",
+    "note": "B組季後賽"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "13:30",
+    "location": "B場地",
+    "home_team": null,
+    "away_team": null,
+    "status": "normal",
+    "note": "B組季後賽"
+  },
+  {
+    "date": "2026-11-15",
+    "time": "14:25",
+    "location": "A場地",
+    "home_team": "冠",
+    "away_team": "亞",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-15",
+    "time": "14:25",
+    "location": "B場地",
+    "home_team": "季",
+    "away_team": "殿",
     "status": "normal",
     "note": null
   }
