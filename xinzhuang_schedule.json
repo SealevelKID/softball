@@ -57,7 +57,7 @@
     "date": "2026-07-19",
     "time": "11:00",
     "location": "A場地",
-    "home_team": "中華電信白",
+    "home_team": "中華電信 白",
     "away_team": "靠嘴巴打球",
     "status": "normal",
     "note": "11/29"
@@ -94,7 +94,7 @@
     "time": "13:00",
     "location": "A場地",
     "home_team": "人民公僕 B",
-    "away_team": "中華電信白",
+    "away_team": "中華電信 白",
     "status": "normal",
     "note": null
   },
@@ -436,7 +436,7 @@
     "time": "14:00",
     "location": "A場地",
     "home_team": "蛇王 德洛伊浪",
-    "away_team": "銘佳工程行",
+    "away_team": "銘佳工程",
     "status": "normal",
     "note": null
   },
@@ -453,7 +453,7 @@
     "date": "2026-08-02",
     "time": "15:00",
     "location": "A場地",
-    "home_team": "銘佳工程行",
+    "home_team": "銘佳工程",
     "away_team": "北方之鷹",
     "status": "normal",
     "note": null
@@ -633,7 +633,7 @@
     "date": "2026-08-16",
     "location": "A場地",
     "time": "08:00",
-    "home_team": "兆耀光能",
+    "home_team": "兆曜光能",
     "away_team": "高強",
     "status": "normal",
     "note": ""
@@ -670,7 +670,7 @@
     "location": "A場地",
     "time": "10:00",
     "home_team": "今源空調",
-    "away_team": "兆耀光能",
+    "away_team": "兆曜光能",
     "status": "normal",
     "note": ""
   },
@@ -751,7 +751,7 @@
     "location": "B場地",
     "time": "14:00",
     "home_team": "珠城工程",
-    "away_team": "國都臺球社",
+    "away_team": "國都壘球社",
     "status": "normal",
     "note": ""
   },
@@ -768,7 +768,7 @@
     "date": "2026-08-16",
     "location": "B場地",
     "time": "15:00",
-    "home_team": "國都臺球社",
+    "home_team": "國都壘球社",
     "away_team": "P MAN",
     "status": "normal",
     "note": ""
@@ -984,7 +984,7 @@
     "date": "2026-08-30",
     "location": "B場地",
     "time": "09:00",
-    "home_team": "兆耀光能",
+    "home_team": "兆曜光能",
     "away_team": "軾銓公寓",
     "status": "normal",
     "note": ""
@@ -1021,7 +1021,7 @@
     "location": "B場地",
     "time": "11:00",
     "home_team": "爆癡",
-    "away_team": "兆耀光能",
+    "away_team": "兆曜光能",
     "status": "normal",
     "note": ""
   },
@@ -1498,7 +1498,7 @@
     "time": "11:40",
     "location": "A場地",
     "home_team": "武士酒",
-    "away_team": "國都臺球社",
+    "away_team": "國都壘球社",
     "status": "normal",
     "note": null
   },
@@ -1515,7 +1515,7 @@
     "date": "2026-11-01",
     "time": "12:35",
     "location": "A場地",
-    "home_team": "國都臺球社",
+    "home_team": "國都壘球社",
     "away_team": "鹿角男神",
     "status": "normal",
     "note": null
