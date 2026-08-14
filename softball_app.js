@@ -382,38 +382,46 @@ function formatTeamName(teamStr) {
     let cleanStr = teamStr.replace(/\r?\n/g, '').trim();
     const match = cleanStr.match(/^([A-Z]\d{1,2})(.*)/);
 
+    // 提取代號與隊名，如果沒有代號，就整個當作隊名處理 (例如：晉級標籤)
+    let code = "";
+    let name = cleanStr;
     if (match) {
-        const code = match[1];
-        const name = match[2];
+        code = match[1];
+        name = match[2];
+    }
 
-        // 【修改】精準計算長度：中文字算 1，英文/數字算 0.5
-        let calcLength = 0;
-        for (let i = 0; i < name.length; i++) {
-            // 如果是英文字母或數字，長度加 0.5；否則(如中文)加 1
-            if (/[a-zA-Z0-9]/.test(name[i])) {
-                calcLength += 0.5;
-            } else {
-                calcLength += 1;
-            }
-        }
-
-        let nameStyle = "display: block; white-space: nowrap; margin-top: 2px;";
-        // 使用新的 calcLength 來判斷是否需要縮小
-        if (calcLength > 6) {
-            nameStyle += " font-size: 0.75rem; letter-spacing: -0.5px;";
-        } else if (calcLength > 4) {
-            nameStyle += " font-size: 0.85rem;";
+    // 精準計算長度：中文字算 1，英文/數字/符號算 0.5
+    let calcLength = 0;
+    for (let i = 0; i < name.length; i++) {
+        // 加入對斜線與括號的判斷，確保「高階1/4(勝)」這類字串能被精準計算
+        if (/[a-zA-Z0-9\/\(\)]/.test(name[i])) { 
+            calcLength += 0.5;
         } else {
-            nameStyle += " font-size: 1rem;";
+            calcLength += 1;
         }
+    }
 
+    // 【關鍵修正】取消 nowrap，改為 normal 允許換行，並依字數動態縮小字體
+    let nameStyle = "display: block; white-space: normal; word-break: break-word; margin-top: 2px; line-height: 1.2;";
+    if (calcLength >= 6) {
+        nameStyle += " font-size: 0.75rem; letter-spacing: -0.5px;"; // 字太多，字體縮小
+    } else if (calcLength >= 4) {
+        nameStyle += " font-size: 0.85rem;";
+    } else {
+        nameStyle += " font-size: 1rem;";
+    }
+
+    if (code) {
         return `<div style="text-align: center; line-height: 1.1;">
                     <span style="display: block; font-size: 0.85rem; color: #7f8c8d; font-weight: normal;">${code}</span>
                     <span style="${nameStyle}">${name}</span>
                 </div>`;
+    } else {
+        // 即使沒有組別代號，一樣套用動態縮放與換行設定
+        return `<div style="text-align: center; ${nameStyle}">${name}</div>`;
     }
-    return `<div style="text-align: center; white-space: nowrap;">${cleanStr}</div>`;
 }
+
 // ================= 新增：共用表格按鈕設定 (含五股專屬滑動邏輯) =================
 function setupTableButtons() {
     const captureArea = document.getElementById('captureArea');
@@ -421,10 +429,15 @@ function setupTableButtons() {
     
     btnDownload.style.display = 'inline-block';
     btnDownload.style.position = 'absolute';
-    btnDownload.style.top = '15px';
+    btnDownload.style.top = '55px'; // 向下移避開主標題
     btnDownload.style.right = '15px'; 
     btnDownload.style.left = 'auto';
     btnDownload.style.zIndex = '10';
+    // 淡化下載按鈕
+    btnDownload.style.opacity = '0.8';
+    btnDownload.style.backgroundColor = '#f8f9fa';
+    btnDownload.style.color = '#7f8c8d';
+    btnDownload.style.border = '1px solid #bdc3c7';
     
     let btnEdit = document.getElementById('btn-toggle-edit');
     if (!btnEdit) {
@@ -440,10 +453,15 @@ function setupTableButtons() {
     btnEdit.textContent = '編輯';
     btnEdit.classList.remove('active');
     btnEdit.style.position = 'absolute';
-    btnEdit.style.top = '15px';
+    btnEdit.style.top = '55px'; // 向下移避開主標題
     btnEdit.style.left = '15px'; 
     btnEdit.style.right = 'auto';
     btnEdit.style.zIndex = '10';
+    // 淡化編輯按鈕
+    btnEdit.style.opacity = '0.8';
+    btnEdit.style.backgroundColor = '#f8f9fa';
+    btnEdit.style.color = '#7f8c8d';
+    btnEdit.style.border = '1px solid #bdc3c7';
 
     // 【修改】判斷是否為五股區
     const isWugu = document.title.includes('五股');
@@ -473,6 +491,9 @@ function drawDateTable(selectedDate) {
     const scheduleBody = document.getElementById('scheduleBody');
     const title = document.getElementById('captureTitle');
 
+    // 【關鍵修正】切換日期畫新表格時，強制清空原本可能殘留的延賽/完賽卡片
+    document.getElementById('schedule-container').innerHTML = '';
+
     // 每次重新畫表格時，預設重置為「非編輯模式」
     isEditMode = false;
 
@@ -493,14 +514,19 @@ function drawDateTable(selectedDate) {
         document.getElementById('scheduleTable').style.minWidth = '100%';
     }
 
-    // ================= 按鈕位置自動跟隨固定邏輯 =================
+// ================= 按鈕位置自動跟隨固定邏輯 =================
     const btnDownload = document.getElementById('btn-download');
     btnDownload.style.display = 'inline-block';
     btnDownload.style.position = 'absolute';
-    btnDownload.style.top = '15px';
+    btnDownload.style.top = '55px'; // 向下移避開主標題
     btnDownload.style.right = '15px'; // 基準點釘在右側
     btnDownload.style.left = 'auto';
     btnDownload.style.zIndex = '10';
+    // 確保下載按鈕保持淡化
+    btnDownload.style.opacity = '0.8';
+    btnDownload.style.backgroundColor = '#f8f9fa';
+    btnDownload.style.color = '#7f8c8d';
+    btnDownload.style.border = '1px solid #bdc3c7';
     
     let btnEdit = document.getElementById('btn-toggle-edit');
     if (!btnEdit) {
@@ -517,10 +543,15 @@ function drawDateTable(selectedDate) {
     btnEdit.textContent = '編輯';
     btnEdit.classList.remove('active');
     btnEdit.style.position = 'absolute';
-    btnEdit.style.top = '15px';
+    btnEdit.style.top = '55px'; // 向下移避開主標題
     btnEdit.style.left = '15px'; // 基準點釘在左側
     btnEdit.style.right = 'auto';
     btnEdit.style.zIndex = '10';
+    // 確保編輯按鈕保持淡化
+    btnEdit.style.opacity = '0.8';
+    btnEdit.style.backgroundColor = '#f8f9fa';
+    btnEdit.style.color = '#7f8c8d';
+    btnEdit.style.border = '1px solid #bdc3c7';
 
     // 💡 3. 只有「場地多導致有捲軸」時，才啟動滑動抵銷邏輯
     if (hasManyLocations) {
