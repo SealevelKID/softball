@@ -348,7 +348,7 @@ function showStatusPopup(date, status) {
                     🔍 前往 ${searchName}
                 </a>
                 <button id="btn-view-original" onclick="showOriginalTable('${date}')" class="sys-btn" style="padding: 10px 20px; font-size: 1rem;">
-                    📋 仍要查看原賽程
+                    📋 查看原賽程
                 </button>
             </div>
         </div>
@@ -376,13 +376,13 @@ function showOriginalTable(date) {
 }
 
 // ================= 處理隊伍名稱分行與自動縮小 (優化中英文權重) =================
-function formatTeamName(teamStr) {
+// 【修改】：加入第二個參數 isEnlarged，用來判斷是否為單隊搜尋放大版
+function formatTeamName(teamStr, isEnlarged = false) {
     if (!teamStr || teamStr === "未知") return teamStr;
 
     let cleanStr = teamStr.replace(/\r?\n/g, '').trim();
     const match = cleanStr.match(/^([A-Z]\d{1,2})(.*)/);
 
-    // 提取代號與隊名，如果沒有代號，就整個當作隊名處理 (例如：晉級標籤)
     let code = "";
     let name = cleanStr;
     if (match) {
@@ -390,10 +390,8 @@ function formatTeamName(teamStr) {
         name = match[2];
     }
 
-    // 精準計算長度：中文字算 1，英文/數字/符號算 0.5
     let calcLength = 0;
     for (let i = 0; i < name.length; i++) {
-        // 加入對斜線與括號的判斷，確保「高階1/4(勝)」這類字串能被精準計算
         if (/[a-zA-Z0-9\/\(\)]/.test(name[i])) { 
             calcLength += 0.5;
         } else {
@@ -401,23 +399,35 @@ function formatTeamName(teamStr) {
         }
     }
 
-    // 【關鍵修正】取消 nowrap，改為 normal 允許換行，並依字數動態縮小字體
     let nameStyle = "display: block; white-space: normal; word-break: break-word; margin-top: 2px; line-height: 1.2;";
-    if (calcLength >= 6) {
-        nameStyle += " font-size: 0.75rem; letter-spacing: -0.5px;"; // 字太多，字體縮小
-    } else if (calcLength >= 4) {
-        nameStyle += " font-size: 0.85rem;";
+    
+    // 【新增】：根據是否開啟放大模式，給予不同的字體大小
+    if (isEnlarged) {
+        if (calcLength >= 6) {
+            nameStyle += " font-size: 0.95rem; font-weight: bold; letter-spacing: -0.5px;"; // 放大並加粗
+        } else if (calcLength >= 4) {
+            nameStyle += " font-size: 1.1rem; font-weight: bold;"; // 放大並加粗
+        } else {
+            nameStyle += " font-size: 1.2rem; font-weight: bold;"; // 放大並加粗
+        }
     } else {
-        nameStyle += " font-size: 1rem;";
+        if (calcLength >= 6) {
+            nameStyle += " font-size: 0.75rem; letter-spacing: -0.5px;";
+        } else if (calcLength >= 4) {
+            nameStyle += " font-size: 0.85rem;";
+        } else {
+            nameStyle += " font-size: 1rem;";
+        }
     }
 
+    // 若有隊伍代號，放大模式下代號也稍微等比放大
     if (code) {
+        let codeSize = isEnlarged ? "0.95rem" : "0.85rem";
         return `<div style="text-align: center; line-height: 1.1;">
-                    <span style="display: block; font-size: 0.85rem; color: #7f8c8d; font-weight: normal;">${code}</span>
+                    <span style="display: block; font-size: ${codeSize}; color: #7f8c8d; font-weight: normal;">${code}</span>
                     <span style="${nameStyle}">${name}</span>
                 </div>`;
     } else {
-        // 即使沒有組別代號，一樣套用動態縮放與換行設定
         return `<div style="text-align: center; ${nameStyle}">${name}</div>`;
     }
 }
@@ -597,8 +607,16 @@ function drawDateTable(selectedDate) {
                     const homeHTML = formatTeamName(displayHome);
                     const awayHTML = formatTeamName(displayAway);
 
-                    rowHTML += `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'home_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${homeHTML}</td>`;
-                    rowHTML += `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'away_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${awayHTML}</td>`;
+                    // 準備好兩邊的欄位
+                    const tdHome = `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'home_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${homeHTML}</td>`;
+                    const tdAway = `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'away_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${awayHTML}</td>`;
+
+                    // 【自動判斷】如果網頁標題包含樹林或五股，就讓客隊(away)在左邊；否則主隊(home)在左邊
+                    if (document.title.includes('樹林') || document.title.includes('五股')) {
+                        rowHTML += tdAway + tdHome;
+                    } else {
+                        rowHTML += tdHome + tdAway;
+                    }
                 }
             } else {
                 rowHTML += `<td></td><td></td>`;
@@ -618,6 +636,11 @@ function createMatchCard(match, headerType) {
         ? `<span class="clickable-tag" onclick="alert('場地：${match.location}')">📍 ${match.location}</span>`
         : `<span class="clickable-tag" onclick="alert('日期：${match.date}')">📅 ${match.date}</span>`;
 
+    // 【自動判斷】根據地區決定誰在左邊、誰在右邊
+    const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
+    const leftTeam = isAwayFirst ? match.away_team : match.home_team;
+    const rightTeam = isAwayFirst ? match.home_team : match.away_team;
+
     if (match.status === 'rain_backup') {
         card.innerHTML = `
             <div class="card-header">
@@ -629,16 +652,16 @@ function createMatchCard(match, headerType) {
             </div>
         `;
     } else {
-        // ▼ 這裡的 onclick 已經改為觸發 triggerTeamSearch
+        // 套用動態決定的左右順序
         card.innerHTML = `
             <div class="card-header">
                 <span>⏰ ${match.time}</span>
                 ${topRightInfo}
             </div>
             <div class="card-body">
-                <span class="clickable-tag" onclick="triggerTeamSearch('${match.home_team}')">${match.home_team}</span> 
+                <span class="clickable-tag" onclick="triggerTeamSearch('${leftTeam}')">${leftTeam}</span> 
                 vs 
-                <span class="clickable-tag" onclick="triggerTeamSearch('${match.away_team}')">${match.away_team}</span>
+                <span class="clickable-tag" onclick="triggerTeamSearch('${rightTeam}')">${rightTeam}</span>
             </div>
         `;
     }
@@ -856,7 +879,9 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
                 opponentField = isHome ? 'away_team' : 'home_team';
 
                 tr.innerHTML += `<td class="editable-cell" contenteditable="false" title="點擊編輯按鈕後可修改">${match.time}</td>`;
-                tr.innerHTML += `<td class="editable-cell" contenteditable="false" style="outline:none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', '${opponentField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${formatTeamName(opponentStr)}</td>`;
+                // 【修改】：在 style 中加入 font-size: 1.15rem 與 font-weight: bold，讓單隊賽程的對手名稱更顯眼易讀
+                // 【修改】：移除無效的 style，改由 formatTeamName(opponentStr, true) 參數控制放大
+                tr.innerHTML += `<td class="editable-cell" contenteditable="false" style="outline:none; vertical-align: middle; padding: 6px 4px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', '${opponentField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${formatTeamName(opponentStr, true)}</td>`;
             }
 
             scheduleBody.appendChild(tr);
@@ -1280,9 +1305,18 @@ function renderAdvancementSetup() {
                 return selectHtml;
             };
 
-            html += buildSelect('home_team', match.home_team, currentHome, homeTBD);
-            html += `<div style="font-weight:bold; color:#e74c3c; font-size:1.1rem;">VS</div>`;
-            html += buildSelect('away_team', match.away_team, currentAway, awayTBD);
+            // 【自動判斷】根據地區組合下拉選單的順序
+            if (document.title.includes('樹林') || document.title.includes('五股')) {
+                // 樹林、五股：客隊(away)在左
+                html += buildSelect('away_team', match.away_team, currentAway, awayTBD);
+                html += `<div style="font-weight:bold; color:#e74c3c; font-size:1.1rem;">VS</div>`;
+                html += buildSelect('home_team', match.home_team, currentHome, homeTBD);
+            } else {
+                // 三重、新莊：主隊(home)在左
+                html += buildSelect('home_team', match.home_team, currentHome, homeTBD);
+                html += `<div style="font-weight:bold; color:#e74c3c; font-size:1.1rem;">VS</div>`;
+                html += buildSelect('away_team', match.away_team, currentAway, awayTBD);
+            }
 
             html += `</div></div>`;
         });
