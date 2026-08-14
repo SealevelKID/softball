@@ -111,7 +111,7 @@
     "date": "2026-07-19",
     "time": "14:00",
     "location": "A場地",
-    "home_team": "爆寢",
+    "home_team": "爆癡",
     "away_team": "APC科技",
     "status": "normal",
     "note": "11/15"
@@ -148,7 +148,7 @@
     "time": "16:00",
     "location": "A場地",
     "home_team": "軾銓公寓",
-    "away_team": "爆寢",
+    "away_team": "爆癡",
     "status": "normal",
     "note": null
   },
@@ -858,7 +858,7 @@
     "date": "2026-08-23",
     "location": "B場地",
     "time": "11:00",
-    "home_team": "爆寢",
+    "home_team": "爆癡",
     "away_team": "高林運動",
     "status": "normal",
     "note": ""
@@ -895,7 +895,7 @@
     "location": "B場地",
     "time": "13:00",
     "home_team": "高強",
-    "away_team": "爆寢",
+    "away_team": "爆癡",
     "status": "normal",
     "note": ""
   },
@@ -1003,7 +1003,7 @@
     "location": "B場地",
     "time": "10:00",
     "home_team": "今源空調",
-    "away_team": "爆寢",
+    "away_team": "爆癡",
     "status": "normal",
     "note": ""
   },
@@ -1020,7 +1020,7 @@
     "date": "2026-08-30",
     "location": "B場地",
     "time": "11:00",
-    "home_team": "爆寢",
+    "home_team": "爆癡",
     "away_team": "兆耀光能",
     "status": "normal",
     "note": ""
@@ -1812,7 +1812,7 @@
     "date": "2026-11-15",
     "time": "10:45",
     "location": "B場地",
-    "home_team": "爆寢",
+    "home_team": "爆癡",
     "away_team": "軾銓公寓",
     "status": "normal",
     "note": "7/19"
@@ -1840,7 +1840,7 @@
     "time": "12:35",
     "location": "B場地",
     "home_team": "APC科技",
-    "away_team": "爆寢",
+    "away_team": "爆癡",
     "status": "normal",
     "note": null
   },
