@@ -88,11 +88,13 @@ async function initSystem() {
         // 同時發送請求：取得 JSON 賽程資料與 GAS API 狀態
         const targetJSON = typeof DATA_URL !== 'undefined' ? DATA_URL : 'sanchong_schedule.json';
         
-        // 【修改這裡】使用 Promise.all 同時等候兩個資料回來，提升載入速度
+        // 👇 修改這裡：把 fetchLastUpdateDate() 也加進 Promise.all 中同時等候 👇
         const [jsonResponse] = await Promise.all([
             fetch(targetJSON),
-            fetchScheduleStatus() // 新增這行來呼叫 API
+            fetchScheduleStatus(),
+            fetchLastUpdateDate() // 新增這行：同步抓取 GitHub 更新日期
         ]);
+        // 👆 修改結束 👆
 
         if (!jsonResponse.ok) throw new Error(`無法讀取 ${targetJSON}`);
         officialData = await jsonResponse.json();
@@ -231,7 +233,38 @@ async function initSystem() {
             `<div style="color:red; text-align:center; padding:20px; font-weight:bold;">資料載入失敗，請確認 ${typeof DATA_URL !== 'undefined' ? DATA_URL : 'schedule.json'} 是否存在。<br>錯誤訊息：${error.message}</div>`;
     }
 }
-
+// ====== 【新增：讀取 GitHub 儲存庫最後更新日期】 ======
+async function fetchLastUpdateDate() {
+    try {
+        // 呼叫 GitHub API，取得 SealevelKID/softball 的最新一次 commit 紀錄
+        const response = await fetch('https://api.github.com/repos/SealevelKID/softball/commits?per_page=1');
+        const data = await response.json();
+        
+        if (data && data.length > 0) {
+            // 解析 Commit 時間
+            const commitDate = new Date(data[0].commit.committer.date);
+            
+            // 將時間格式化為 YYYY/MM/DD
+            const year = commitDate.getFullYear();
+            const month = String(commitDate.getMonth() + 1).padStart(2, '0');
+            const day = String(commitDate.getDate()).padStart(2, '0');
+            const dateStr = `${year}/${month}/${day}`;
+            
+            // 寫入畫面上的容器
+            const updateContainer = document.getElementById('update-date-container');
+            if (updateContainer) {
+                updateContainer.textContent = `最後更新：${dateStr}`;
+            }
+        }
+    } catch (error) {
+        console.error("❌ 無法取得 GitHub 更新時間", error);
+        const updateContainer = document.getElementById('update-date-container');
+        if (updateContainer) {
+            updateContainer.textContent = `最後更新：未知`;
+        }
+    }
+}
+// ==========================================================
 // 切換按鈕的 Active 樣式 (修復藍色卡住的問題)
 function setActiveButton(clickedBtn) {
     // 將原本的 capsule-btn 改成新的 sys-btn
@@ -581,17 +614,28 @@ function drawDateTable(selectedDate) {
         if (btnEdit) btnEdit.style.transform = 'none';
         if (btnDownload) btnDownload.style.transform = 'none';
     }
-    // ==============================================================
+// ==============================================================
 
-    let headHTML = `<th>時間</th>`;
-    locations.forEach(loc => { headHTML += `<th colspan="2">${loc}</th>`; });
+// 👇---------- 從這裡開始替換表頭與表身邏輯 ----------👇
+    
+    // 【修改】時間欄位的右邊也要加粗一條線，與場地切開 (改為 2px 與外框一致)
+    let headHTML = `<th style="border-right: 2px solid #2c3e50;">時間</th>`;
+    locations.forEach((loc, index) => { 
+        // 判斷是否為最後一個場地，若不是，右邊就加上粗黑線 (改為 2px)
+        const borderStyle = (index < locations.length - 1) ? 'border-right: 2px solid #2c3e50;' : '';
+        headHTML += `<th colspan="2" style="${borderStyle}">${loc}</th>`; 
+    });
     scheduleHead.innerHTML = headHTML;
 
     scheduleBody.innerHTML = '';
     times.forEach(time => {
-        let rowHTML = `<td>${time}</td>`;
+        // 【修改】時間欄位的右邊加粗 (改為 2px)
+        let rowHTML = `<td style="border-right: 2px solid #2c3e50;">${time}</td>`;
 
-        locations.forEach(loc => {
+        locations.forEach((loc, index) => {
+            // 同樣判斷是否為最後一個場地 (改為 2px)
+            const borderStyle = (index < locations.length - 1) ? 'border-right: 2px solid #2c3e50;' : '';
+
             const match = matches.find(m => m.time === time && m.location === loc);
             if (match) {
                 const matchId = `${match.date}_${match.time}_${match.location}`;
@@ -599,7 +643,7 @@ function drawDateTable(selectedDate) {
 
                 if (match.status === 'rain_backup') {
                     const displayNote = cachedMatch.note !== undefined ? cachedMatch.note : match.note;
-                    rowHTML += `<td colspan="2" class="editable-cell" contenteditable="false" style="color:#e67e22; outline: none; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${displayNote}</td>`;
+                    rowHTML += `<td colspan="2" class="editable-cell" contenteditable="false" style="color:#e67e22; outline: none; transition: background-color 0.2s; ${borderStyle}" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${displayNote}</td>`;
                 } else {
                     const displayHome = cachedMatch.home_team !== undefined ? cachedMatch.home_team : match.home_team;
                     const displayAway = cachedMatch.away_team !== undefined ? cachedMatch.away_team : match.away_team;
@@ -607,23 +651,29 @@ function drawDateTable(selectedDate) {
                     const homeHTML = formatTeamName(displayHome);
                     const awayHTML = formatTeamName(displayAway);
 
-                    // 準備好兩邊的欄位
-                    const tdHome = `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'home_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${homeHTML}</td>`;
-                    const tdAway = `<td class="editable-cell" contenteditable="false" style="outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'away_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${awayHTML}</td>`;
-
                     // 【自動判斷】如果網頁標題包含樹林或五股，就讓客隊(away)在左邊；否則主隊(home)在左邊
-                    if (document.title.includes('樹林') || document.title.includes('五股')) {
+                    const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
+                    
+                    // 根據誰在右邊，把加粗線條加在右邊那隊的 style 裡面
+                    const leftTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;";
+                    const rightTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s; " + borderStyle;
+
+                    const tdHome = `<td class="editable-cell" contenteditable="false" style="${isAwayFirst ? rightTeamStyle : leftTeamStyle}" onblur="saveEdit('${matchId}', 'home_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${homeHTML}</td>`;
+                    const tdAway = `<td class="editable-cell" contenteditable="false" style="${isAwayFirst ? leftTeamStyle : rightTeamStyle}" onblur="saveEdit('${matchId}', 'away_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${awayHTML}</td>`;
+
+                    if (isAwayFirst) {
                         rowHTML += tdAway + tdHome;
                     } else {
                         rowHTML += tdHome + tdAway;
                     }
                 }
             } else {
-                rowHTML += `<td></td><td></td>`;
+                rowHTML += `<td></td><td style="${borderStyle}"></td>`;
             }
         });
         scheduleBody.innerHTML += `<tr>${rowHTML}</tr>`;
     });
+    // 👆---------- 替換到這裡結束 ----------👆
 }
 
 // 共用元件：產生單一賽程卡片 DOM
