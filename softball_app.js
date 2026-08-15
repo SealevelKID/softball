@@ -21,7 +21,7 @@ async function fetchScheduleStatus() {
     try {
         const response = await fetch(GAS_API_URL);
         const result = await response.json();
-        
+
         if (result.success) {
             // 判斷當前網頁是哪一個地區
             let currentRegion = "未知";
@@ -87,7 +87,7 @@ async function initSystem() {
     try {
         // 同時發送請求：取得 JSON 賽程資料與 GAS API 狀態
         const targetJSON = typeof DATA_URL !== 'undefined' ? DATA_URL : 'sanchong_schedule.json';
-        
+
         // 👇 修改這裡：把 fetchLastUpdateDate() 也加進 Promise.all 中同時等候 👇
         const [jsonResponse] = await Promise.all([
             fetch(targetJSON),
@@ -108,12 +108,12 @@ async function initSystem() {
             else if (DATA_URL.includes('shulin')) currentRegion = '樹林';
             else if (DATA_URL.includes('wugu')) currentRegion = '五股';
         }
-        
+
         officialData.forEach(match => {
             if (match.location) {
                 match.location = match.location.replace('A場地', `${currentRegion}A`)
-                                               .replace('B場地', `${currentRegion}B`)
-                                               .replace('C場地', `${currentRegion}C`);
+                    .replace('B場地', `${currentRegion}B`)
+                    .replace('C場地', `${currentRegion}C`);
             }
         });
         // ========================================================
@@ -239,17 +239,17 @@ async function fetchLastUpdateDate() {
         // 呼叫 GitHub API，取得 SealevelKID/softball 的最新一次 commit 紀錄
         const response = await fetch('https://api.github.com/repos/SealevelKID/softball/commits?per_page=1');
         const data = await response.json();
-        
+
         if (data && data.length > 0) {
             // 解析 Commit 時間
             const commitDate = new Date(data[0].commit.committer.date);
-            
+
             // 將時間格式化為 YYYY/MM/DD
             const year = commitDate.getFullYear();
             const month = String(commitDate.getMonth() + 1).padStart(2, '0');
             const day = String(commitDate.getDate()).padStart(2, '0');
             const dateStr = `${year}/${month}/${day}`;
-            
+
             // 寫入畫面上的容器
             const updateContainer = document.getElementById('update-date-container');
             if (updateContainer) {
@@ -282,7 +282,7 @@ function renderByDate() {
     document.getElementById('schedule-container').innerHTML = '';
 
     const filterContainer = document.getElementById('filter-container');
-    
+
     // 👇---------- 從這裡開始替換 ----------👇
     // 【修改】將 flex 改為 CSS Grid 網格系統，強制切成 4 等份
     filterContainer.style.display = 'grid';
@@ -293,19 +293,19 @@ function renderByDate() {
     // 取得所有不重複的日期並排序
     const dates = [...new Set(officialData.map(match => match.date))].sort();
 
-// ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】 ======
+    // ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】 ======
     dates.forEach(date => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
-        
+
         // 【修改】移除所有原本用來計算寬度的 flex 與 minWidth 等行內樣式
         btn.style.textAlign = 'center';
-        
+
         const status = scheduleStatus[date];
-        
+
         if (status === '完賽') {
             btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(完)</span>`;
-            btn.style.backgroundColor = '#ecf0f1'; 
+            btn.style.backgroundColor = '#ecf0f1';
             btn.style.color = '#7f8c8d';
             btn.style.borderColor = '#bdc3c7';
             // 【修改】移除這裡強制設定的 fontSize 與 padding 
@@ -321,10 +321,10 @@ function renderByDate() {
         }
 
         btn.onclick = () => {
-    // 👆---------- 替換到這裡結束 ----------👆
+            // 👆---------- 替換到這裡結束 ----------👆
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             // 阻斷邏輯：如果是完賽或延賽，就彈出卡片，不畫表格
             if (status) {
                 showStatusPopup(date, status);
@@ -342,7 +342,7 @@ function showStatusPopup(date, status) {
     document.getElementById('captureArea').style.display = 'none';
     document.getElementById('btn-download').style.display = 'none';
     const container = document.getElementById('schedule-container');
-    
+
     // 【修改這裡】精準對應各區的 Google 搜尋網址與免責聲明的名稱
     let currentRegion = document.title;
     let searchLink = "#";
@@ -364,7 +364,7 @@ function showStatusPopup(date, status) {
 
     let icon = status === '完賽' ? '🏆' : '🌧️';
     let color = status === '完賽' ? '#27ae60' : '#e67e22';
-    let message = status === '完賽' 
+    let message = status === '完賽'
         ? `本賽事已順利完賽！<br>詳細成績與晉級結果請至官方公告查詢。`
         : `本賽事因故延期。<br>後續補賽時間請密切注意官方公告。`;
 
@@ -391,19 +391,19 @@ function showStatusPopup(date, status) {
 function showOriginalTable(date) {
     // 1. 呼叫原有功能畫出表格
     drawDateTable(date);
-    
+
     // 2. 利用 DOM 操作，將表格區塊 (captureArea) 動態移動到通知卡片 (schedule-container) 的「正下方」
     const captureArea = document.getElementById('captureArea');
     const scheduleContainer = document.getElementById('schedule-container');
     scheduleContainer.parentNode.insertBefore(captureArea, scheduleContainer.nextSibling);
-    
+
     // 【修改這裡】新增上方外邊距，將表格與上方的卡片推開，避免視覺沾黏
     captureArea.style.marginTop = '20px';
-    
+
     // 3. 隱藏這顆「仍要查看原賽程」按鈕，讓畫面保持乾淨
     const btn = document.getElementById('btn-view-original');
     if (btn) btn.style.display = 'none';
-    
+
     // 4. 畫面自動稍微往下滑，引導使用者看見下方出現的表格
     captureArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -425,7 +425,7 @@ function formatTeamName(teamStr, isEnlarged = false) {
 
     let calcLength = 0;
     for (let i = 0; i < name.length; i++) {
-        if (/[a-zA-Z0-9\/\(\)]/.test(name[i])) { 
+        if (/[a-zA-Z0-9\/\(\)]/.test(name[i])) {
             calcLength += 0.5;
         } else {
             calcLength += 1;
@@ -433,7 +433,7 @@ function formatTeamName(teamStr, isEnlarged = false) {
     }
 
     let nameStyle = "display: block; white-space: normal; word-break: break-word; margin-top: 2px; line-height: 1.2;";
-    
+
     // 【新增】：根據是否開啟放大模式，給予不同的字體大小
     if (isEnlarged) {
         if (calcLength >= 6) {
@@ -469,11 +469,11 @@ function formatTeamName(teamStr, isEnlarged = false) {
 function setupTableButtons() {
     const captureArea = document.getElementById('captureArea');
     const btnDownload = document.getElementById('btn-download');
-    
+
     btnDownload.style.display = 'inline-block';
     btnDownload.style.position = 'absolute';
     btnDownload.style.top = '55px'; // 向下移避開主標題
-    btnDownload.style.right = '15px'; 
+    btnDownload.style.right = '15px';
     btnDownload.style.left = 'auto';
     btnDownload.style.zIndex = '10';
     // 淡化下載按鈕
@@ -481,7 +481,7 @@ function setupTableButtons() {
     btnDownload.style.backgroundColor = '#f8f9fa';
     btnDownload.style.color = '#7f8c8d';
     btnDownload.style.border = '1px solid #bdc3c7';
-    
+
     let btnEdit = document.getElementById('btn-toggle-edit');
     if (!btnEdit) {
         btnEdit = document.createElement('button');
@@ -491,13 +491,13 @@ function setupTableButtons() {
         btnEdit.onclick = toggleEditMode;
         captureArea.appendChild(btnEdit);
     }
-    
+
     btnEdit.style.display = 'inline-block';
     btnEdit.textContent = '編輯';
     btnEdit.classList.remove('active');
     btnEdit.style.position = 'absolute';
     btnEdit.style.top = '55px'; // 向下移避開主標題
-    btnEdit.style.left = '15px'; 
+    btnEdit.style.left = '15px';
     btnEdit.style.right = 'auto';
     btnEdit.style.zIndex = '10';
     // 淡化編輯按鈕
@@ -508,7 +508,7 @@ function setupTableButtons() {
 
     // 【修改】判斷是否為五股區
     const isWugu = document.title.includes('五股');
-    
+
     if (isWugu && !captureArea._scrollSyncBound) {
         const syncButtons = () => {
             const sl = captureArea.scrollLeft;
@@ -518,7 +518,7 @@ function setupTableButtons() {
         captureArea.addEventListener('scroll', syncButtons);
         window.addEventListener('resize', syncButtons);
         new ResizeObserver(syncButtons).observe(captureArea);
-        captureArea._scrollSyncBound = true; 
+        captureArea._scrollSyncBound = true;
     } else if (!isWugu) {
         // 非五股區，強制清除可能的位移殘留，釘死在左上與右上
         if (btnEdit) btnEdit.style.transform = 'none';
@@ -557,7 +557,7 @@ function drawDateTable(selectedDate) {
         document.getElementById('scheduleTable').style.minWidth = '100%';
     }
 
-// ================= 按鈕位置自動跟隨固定邏輯 =================
+    // ================= 按鈕位置自動跟隨固定邏輯 =================
     const btnDownload = document.getElementById('btn-download');
     btnDownload.style.display = 'inline-block';
     btnDownload.style.position = 'absolute';
@@ -570,7 +570,7 @@ function drawDateTable(selectedDate) {
     btnDownload.style.backgroundColor = '#f8f9fa';
     btnDownload.style.color = '#7f8c8d';
     btnDownload.style.border = '1px solid #bdc3c7';
-    
+
     let btnEdit = document.getElementById('btn-toggle-edit');
     if (!btnEdit) {
         btnEdit = document.createElement('button');
@@ -580,7 +580,7 @@ function drawDateTable(selectedDate) {
         btnEdit.onclick = toggleEditMode;
         captureArea.appendChild(btnEdit);
     }
-    
+
     // 初始化編輯按鈕狀態
     btnEdit.style.display = 'inline-block';
     btnEdit.textContent = '編輯';
@@ -607,23 +607,23 @@ function drawDateTable(selectedDate) {
             captureArea.addEventListener('scroll', syncButtons);
             window.addEventListener('resize', syncButtons);
             new ResizeObserver(syncButtons).observe(captureArea);
-            captureArea._scrollSyncBound = true; 
+            captureArea._scrollSyncBound = true;
         }
     } else {
         // 沒有滑動需求時，強制清除可能殘留的位移，讓按鈕乖乖待在左右上角
         if (btnEdit) btnEdit.style.transform = 'none';
         if (btnDownload) btnDownload.style.transform = 'none';
     }
-// ==============================================================
+    // ==============================================================
 
-// 👇---------- 從這裡開始替換表頭與表身邏輯 ----------👇
-    
+    // 👇---------- 從這裡開始替換表頭與表身邏輯 ----------👇
+
     // 【修改】時間欄位的右邊也要加粗一條線，與場地切開 (改為 2px 與外框一致)
     let headHTML = `<th style="border-right: 2px solid #2c3e50;">時間</th>`;
-    locations.forEach((loc, index) => { 
+    locations.forEach((loc, index) => {
         // 判斷是否為最後一個場地，若不是，右邊就加上粗黑線 (改為 2px)
         const borderStyle = (index < locations.length - 1) ? 'border-right: 2px solid #2c3e50;' : '';
-        headHTML += `<th colspan="2" style="${borderStyle}">${loc}</th>`; 
+        headHTML += `<th colspan="2" style="${borderStyle}">${loc}</th>`;
     });
     scheduleHead.innerHTML = headHTML;
 
@@ -653,7 +653,7 @@ function drawDateTable(selectedDate) {
 
                     // 【自動判斷】如果網頁標題包含樹林或五股，就讓客隊(away)在左邊；否則主隊(home)在左邊
                     const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
-                    
+
                     // 根據誰在右邊，把加粗線條加在右邊那隊的 style 裡面
                     const leftTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;";
                     const rightTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s; " + borderStyle;
@@ -740,7 +740,7 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
     container.innerHTML = '';
     document.querySelectorAll('.sys-btn').forEach(btn => btn.classList.remove('active'));
 
-// ================= 新增：跨區切換按鈕 UI =================
+    // ================= 新增：跨區切換按鈕 UI =================
     filterContainer.style.display = 'block'; // 改為 block 方便多行排版
     filterContainer.innerHTML = `
         <div style="display: flex; gap: 10px; width: 100%; margin-bottom: 10px;">
@@ -782,8 +782,8 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
                             // 【新增】跨區載入時，同步將所有區域的 A場地/B場地 替換為統一格式
                             if (m.location) {
                                 m.location = m.location.replace('A場地', `${regionName}A`)
-                                                       .replace('B場地', `${regionName}B`)
-                                                       .replace('C場地', `${regionName}C`);
+                                    .replace('B場地', `${regionName}B`)
+                                    .replace('C場地', `${regionName}C`);
                             }
                         });
                         rawAllData.push(...data);
@@ -792,7 +792,7 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
                     console.error(`無法讀取 ${file}`, e);
                 }
             }
-            
+
             // 【新增】跨區資料也進行去重複處理
             const uniqueAllMatches = new Map();
             rawAllData.forEach(match => {
@@ -802,8 +802,8 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
                 }
             });
             allRegionsData = Array.from(uniqueAllMatches.values());
-            
-            container.innerHTML = ''; 
+
+            container.innerHTML = '';
         }
         sourceData = allRegionsData;
     }
@@ -859,14 +859,14 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
             mainTitle.textContent = '115年新北市慢壘秋季聯賽賽程表';
         } else {
             // 利用 document.title 完美還原原本各地區的標題
-            mainTitle.textContent = document.title; 
+            mainTitle.textContent = document.title;
         }
     }
     // =======================================================
 
     // 呼叫共用的按鈕設定邏輯
     setupTableButtons();
-    
+
     // 取得暫存資料
     const cachedEdits = getCache();
 
@@ -895,7 +895,7 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
         for (let k = 0; k < rowspanCount; k++) {
             const match = results[i + k];
             const tr = document.createElement('tr');
-            
+
             const matchId = `${match.date}_${match.time}_${match.location}`;
             const cachedMatch = cachedEdits[matchId] || {};
 
@@ -910,22 +910,22 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
 
             let opponentStr = "";
             let opponentField = "";
-            
+
             if (match.status === 'rain_backup') {
                 opponentStr = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || "雨備日");
-                
+
                 tr.innerHTML += `<td class="editable-cell" contenteditable="false" title="點擊編輯按鈕後可修改">${match.time}</td>`;
                 tr.innerHTML += `<td class="editable-cell" contenteditable="false" style="color:#e67e22; outline:none; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${opponentStr}</td>`;
             } else {
                 const displayHome = cachedMatch.home_team !== undefined ? cachedMatch.home_team : match.home_team;
                 const displayAway = cachedMatch.away_team !== undefined ? cachedMatch.away_team : match.away_team;
-                
+
                 let cleanHomeForOpponent = displayHome ? displayHome.replace(/^[A-Z]\d{1,2}/, '') : '';
                 let isHome = (displayHome === keyword || cleanHomeForOpponent === keyword);
-                
+
                 opponentStr = isHome ? displayAway : displayHome;
                 if (!opponentStr) opponentStr = "未知";
-                
+
                 opponentField = isHome ? 'away_team' : 'home_team';
 
                 tr.innerHTML += `<td class="editable-cell" contenteditable="false" title="點擊編輯按鈕後可修改">${match.time}</td>`;
@@ -965,7 +965,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
         // 1. 判斷下載類型 (有跨區字眼為跨區搜尋，有日期格式為單區日期，否則為單區搜尋)
         let downloadType = "單區搜尋";
         if (isAllRegionsMode) downloadType = "跨區搜尋";
-        else if (titleText.includes("賽程") && !titleText.includes("區")) downloadType = "單區日期"; 
+        else if (titleText.includes("賽程") && !titleText.includes("區")) downloadType = "單區日期";
 
         // 2. 整理傳送資料，並過濾掉多餘的字眼，讓報表更乾淨
         const payload = {
@@ -982,8 +982,8 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 'Content-Type': 'text/plain;charset=utf-8' // 避免 GAS 發生 CORS 阻擋
             }
         })
-        .then(res => console.log("✅ 下載紀錄已成功發送至後台"))
-        .catch(err => console.error("❌ 下載紀錄發送失敗", err));
+            .then(res => console.log("✅ 下載紀錄已成功發送至後台"))
+            .catch(err => console.error("❌ 下載紀錄發送失敗", err));
 
     } catch (error) {
         console.error("下載紀錄準備失敗", error);
@@ -1079,7 +1079,7 @@ function renderStats() {
 
     // 🏆 新增：加入「組、冠、亞、季、殿、第」等賽程代號關鍵字，避免被算成參賽隊伍
     const ignoreKeywords = [
-        "友誼", "挑戰", "新鮮", "清新", "長春", "高階", "進階", "准決",
+        "友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決",
         "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"
     ];
 
@@ -1091,7 +1091,7 @@ function renderStats() {
             teams.forEach(team => {
                 if (team && team !== "未知") {
                     // 檢查原始隊名是否包含任何排除關鍵字 (如：組、冠、季等)
-                    const shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword));
+                    const shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
 
                     if (!shouldIgnore) {
                         // 【新增】使用正規表達式去除開頭的組別代號 (大寫英文字母 + 1或2個數字)
@@ -1279,16 +1279,17 @@ function renderAdvancementSetup() {
 
     const container = document.getElementById('schedule-container');
 
-    // 定義排除關鍵字，用來精準判斷哪些是「待定賽程」 (注意：不能把真的隊名排除)
-    const ignoreKeywords = ["友誼", "挑戰", "新鮮", "清新", "長春", "高階", "進階", "准決", "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"];
+    // 1. 把 "長春" 從陣列中移除
+    const ignoreKeywords = ["友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決", "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"];
 
-    // 整理出所有「真實參賽隊伍」的名單，用來當作下拉選單的選項
+    // 2. 整理「真實參賽隊伍」名單時，加上正則表達式阻擋
     const realTeams = new Set();
     officialData.forEach(match => {
         if (match.status !== 'rain_backup') {
             [match.home_team, match.away_team].forEach(team => {
                 if (team && team !== "未知") {
-                    if (!ignoreKeywords.some(keyword => team.includes(keyword))) {
+                    // 不包含排除關鍵字，且「不是」長春+數字/小數點開頭
+                    if (!ignoreKeywords.some(keyword => team.includes(keyword)) && !/^長春[\d\.]/.test(team)) {
                         realTeams.add(team);
                     }
                 }
@@ -1297,12 +1298,14 @@ function renderAdvancementSetup() {
     });
     const sortedTeams = Array.from(realTeams).sort((a, b) => a.localeCompare(b, 'zh-TW'));
 
-    // 篩選出所有包含「待定關鍵字」的賽事
+    // 3. 篩選「待定賽事 (TBD)」時，加上正則表達式捕捉
     const tbdMatches = [];
     officialData.forEach(match => {
         if (match.status !== 'rain_backup') {
-            const homeTBD = ignoreKeywords.some(kw => (match.home_team || '').includes(kw));
-            const awayTBD = ignoreKeywords.some(kw => (match.away_team || '').includes(kw));
+            // 只要符合 ignoreKeywords 或是 長春代號 格式，就判定為待定
+            const homeTBD = ignoreKeywords.some(kw => (match.home_team || '').includes(kw)) || /^長春[\d\.]/.test(match.home_team || '');
+            const awayTBD = ignoreKeywords.some(kw => (match.away_team || '').includes(kw)) || /^長春[\d\.]/.test(match.away_team || '');
+
             if (homeTBD || awayTBD) {
                 tbdMatches.push({ match, homeTBD, awayTBD });
             }
