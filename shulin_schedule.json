@@ -1501,5 +1501,113 @@
         "home_team": null,
         "status": "rain_backup",
         "note": "雨備日"
+    },
+    {
+        "date": "2027-03-07",
+        "time": "08:00",
+        "location": "C場地",
+        "away_team": "A3",
+        "home_team": "A2",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "09:00",
+        "location": "C場地",
+        "away_team": "A4",
+        "home_team": "A1",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "10:00",
+        "location": "C場地",
+        "away_team": "A組冠軍賽",
+        "home_team": "A組冠軍賽",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "11:00",
+        "location": "C場地",
+        "away_team": "A組季軍賽",
+        "home_team": "A組季軍賽",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "12:00",
+        "location": "C場地",
+        "away_team": "B3",
+        "home_team": "B2",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "13:00",
+        "location": "C場地",
+        "away_team": "B4",
+        "home_team": "B1",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "14:00",
+        "location": "C場地",
+        "away_team": "B組冠軍賽",
+        "home_team": "B組冠軍賽",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-07",
+        "time": "15:00",
+        "location": "C場地",
+        "away_team": "B組季軍賽",
+        "home_team": "B組季軍賽",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-14",
+        "time": "08:00",
+        "location": "C場地",
+        "away_team": "C3",
+        "home_team": "C2",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-14",
+        "time": "09:00",
+        "location": "C場地",
+        "away_team": "C4",
+        "home_team": "C1",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-14",
+        "time": "10:00",
+        "location": "C場地",
+        "away_team": "C組冠軍賽",
+        "home_team": "C組冠軍賽",
+        "status": "normal",
+        "note": null
+    },
+    {
+        "date": "2027-03-14",
+        "time": "11:00",
+        "location": "C場地",
+        "away_team": "C組季軍賽",
+        "home_team": "C組季軍賽",
+        "status": "normal",
+        "note": null
     }
 ]
