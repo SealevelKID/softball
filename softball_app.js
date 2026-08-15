@@ -1077,11 +1077,14 @@ function renderStats() {
 
     const container = document.getElementById('schedule-container');
 
-    // 🏆 新增：加入「組、冠、亞、季、殿、第」等賽程代號關鍵字，避免被算成參賽隊伍
+// 🏆 新增：加入「組、冠、亞、季、殿、第」等賽程代號關鍵字，避免被算成參賽隊伍
     const ignoreKeywords = [
         "友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決",
         "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"
     ];
+    
+    // 💡 新增：強制放行的特例白名單 (即使包含排除字元也不會被過濾)
+    const specialAllow = ["冠緯", "康德科技長春", "羊騷殿"];
 
     // 1. 計算所有隊伍與場數 (新增合併邏輯)
     const teamStats = {};
@@ -1090,15 +1093,16 @@ function renderStats() {
             const teams = [match.home_team, match.away_team];
             teams.forEach(team => {
                 if (team && team !== "未知") {
-                    // 檢查原始隊名是否包含任何排除關鍵字 (如：組、冠、季等)
-                    const shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
+                    // 先清掉開頭的組別代號
+                    const cleanTeam = team.replace(/^[A-Z]\d{1,2}/, '').replace(/^\d+[\.．、\s]+/, '').trim();
+                    
+                    // 💡 判斷邏輯：如果是特例白名單，就強制不忽略
+                    let shouldIgnore = false;
+                    if (!specialAllow.includes(cleanTeam)) {
+                         shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
+                    }
 
                     if (!shouldIgnore) {
-                        // 【新增】使用正規表達式去除開頭的組別代號 (大寫英文字母 + 1或2個數字)
-                        // 例如：將 "K7TIGERS雷虎" 變成 "TIGERS雷虎", "I11LARDISAI" 變成 "LARDISAI"
-                        const cleanTeam = team.replace(/^[A-Z]\d{1,2}/, '');
-
-                        // 使用去除編號後的 cleanTeam 進行統計
                         if (!teamStats[cleanTeam]) teamStats[cleanTeam] = 0;
                         teamStats[cleanTeam]++;
                     }
@@ -1279,8 +1283,11 @@ function renderAdvancementSetup() {
 
     const container = document.getElementById('schedule-container');
 
-    // 1. 把 "長春" 從陣列中移除
+// 1. 把 "長春" 從陣列中移除
     const ignoreKeywords = ["友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決", "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"];
+    
+    // 💡 新增：強制放行的特例白名單
+    const specialAllow = ["冠緯", "康德科技長春", "羊騷殿"];
 
     // 2. 整理「真實參賽隊伍」名單時，加上正則表達式阻擋
     const realTeams = new Set();
@@ -1288,8 +1295,14 @@ function renderAdvancementSetup() {
         if (match.status !== 'rain_backup') {
             [match.home_team, match.away_team].forEach(team => {
                 if (team && team !== "未知") {
-                    // 不包含排除關鍵字，且「不是」長春+數字/小數點開頭
-                    if (!ignoreKeywords.some(keyword => team.includes(keyword)) && !/^長春[\d\.]/.test(team)) {
+                    const cleanTeam = team.replace(/^[A-Z]\d{1,2}/, '').replace(/^\d+[\.．、\s]+/, '').trim();
+                    
+                    let shouldIgnore = false;
+                    if (!specialAllow.includes(cleanTeam)) {
+                        shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
+                    }
+                    
+                    if (!shouldIgnore) {
                         realTeams.add(team);
                     }
                 }
