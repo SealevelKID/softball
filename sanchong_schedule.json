@@ -2545,5 +2545,293 @@
     "away_team": "和光工業",
     "status": "normal",
     "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "08:00",
+    "away_team": "虎林",
+    "home_team": "高林運動",
+    "status": "normal",
+    "note": "春季季後賽補賽"
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "08:00",
+    "away_team": "海樂森",
+    "home_team": "泓利達",
+    "status": "normal",
+    "note": "春季季後賽補賽"
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "08:55",
+    "away_team": "高階2/3(勝)",
+    "home_team": "高階1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "08:55",
+    "away_team": "高階2/3(敗)",
+    "home_team": "高階1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "09:50",
+    "away_team": "友誼.1",
+    "home_team": "友誼.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "09:50",
+    "away_team": "友誼.2",
+    "home_team": "友誼.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "10:45",
+    "away_team": "友誼2/3(勝)",
+    "home_team": "友誼1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "10:45",
+    "away_team": "友誼2/3(敗)",
+    "home_team": "友誼1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "11:40",
+    "away_team": "新鮮.1",
+    "home_team": "新鮮.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "11:40",
+    "away_team": "新鮮.2",
+    "home_team": "新鮮.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "12:35",
+    "away_team": "新鮮2/3(勝)",
+    "home_team": "新鮮1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "12:35",
+    "away_team": "新鮮2/3(敗)",
+    "home_team": "新鮮1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "13:30",
+    "away_team": "長春1",
+    "home_team": "長春4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "13:30",
+    "away_team": "長春2",
+    "home_team": "長春3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重A",
+    "time": "14:25",
+    "away_team": "長春.2/3(勝)",
+    "home_team": "長春.1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-01-31",
+    "location": "三重B",
+    "time": "14:25",
+    "away_team": "長春.2/3(敗)",
+    "home_team": "長春.1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "08:00",
+    "location": "三重A",
+    "away_team": "高階.1",
+    "home_team": "高階.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "08:00",
+    "location": "三重B",
+    "away_team": "高階.2",
+    "home_team": "高階.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "08:55",
+    "location": "三重A",
+    "away_team": "高階2/3(勝)",
+    "home_team": "高階1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "08:55",
+    "location": "三重B",
+    "away_team": "高階2/3(敗)",
+    "home_team": "高階1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "09:50",
+    "location": "三重A",
+    "away_team": "進階.1",
+    "home_team": "進階.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "09:50",
+    "location": "三重B",
+    "away_team": "進階.2",
+    "home_team": "進階.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "10:45",
+    "location": "三重A",
+    "away_team": "進階2/3(勝)",
+    "home_team": "進階1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "10:45",
+    "location": "三重B",
+    "away_team": "進階2/3(敗)",
+    "home_team": "進階1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "11:40",
+    "location": "三重A",
+    "away_team": "挑戰.1",
+    "home_team": "挑戰.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "11:40",
+    "location": "三重B",
+    "away_team": "挑戰.2",
+    "home_team": "挑戰.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "12:35",
+    "location": "三重A",
+    "away_team": "挑戰2/3(勝)",
+    "home_team": "挑戰1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "12:35",
+    "location": "三重B",
+    "away_team": "挑戰2/3(敗)",
+    "home_team": "挑戰1/4(敗)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "13:30",
+    "location": "三重A",
+    "away_team": "清新.1",
+    "home_team": "清新.4",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "13:30",
+    "location": "三重B",
+    "away_team": "清新.2",
+    "home_team": "清新.3",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "14:25",
+    "location": "三重A",
+    "away_team": "清新2/3(勝)",
+    "home_team": "清新1/4(勝)",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2027-02-14",
+    "time": "14:25",
+    "location": "三重B",
+    "away_team": "清新2/3(敗)",
+    "home_team": "清新1/4(敗)",
+    "status": "normal",
+    "note": null
   }
 ]
