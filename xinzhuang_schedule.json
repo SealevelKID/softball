@@ -1879,5 +1879,455 @@
     "away_team": "殿",
     "status": "normal",
     "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "08:00",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "A組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "08:00",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "A組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "08:55",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "08:55",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "09:50",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "C組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "09:50",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "C組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "10:45",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "10:45",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "11:40",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "D組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "11:40",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "D組季後賽"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "12:35",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "12:35",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "13:30",
+    "location": "A場地",
+    "away_team": "黑狗",
+    "home_team": "綠攝影像",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "13:30",
+    "location": "B場地",
+    "away_team": "吉飛達",
+    "home_team": "銘佳工程",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-22",
+    "time": "14:25",
+    "location": "A場地",
+    "away_team": "太陽",
+    "home_team": "黑狗",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "14:25",
+    "location": "B場地",
+    "away_team": "布瑞特",
+    "home_team": "吉飛達",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "15:20",
+    "location": "A場地",
+    "away_team": "綠攝影像",
+    "home_team": "太陽",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-22",
+    "time": "15:20",
+    "location": "B場地",
+    "away_team": "銘佳工程",
+    "home_team": "布瑞特",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "08:00",
+    "location": "A場地",
+    "away_team": "北方之鷹",
+    "home_team": "吉飛達",
+    "status": "normal",
+    "note": "春季季後賽"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "08:00",
+    "location": "B場地",
+    "away_team": "銘佳工程",
+    "home_team": "蛇王 德洛伊浪",
+    "status": "normal",
+    "note": "春季季後賽"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "08:55",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "08:55",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "09:50",
+    "location": "A場地",
+    "away_team": "軾銓公寓",
+    "home_team": "兆曜光能",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "09:50",
+    "location": "B場地",
+    "away_team": "爆癡",
+    "home_team": "高林運動",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "10:45",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "10:45",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "11:40",
+    "location": "A場地",
+    "away_team": "靠嘴巴打球",
+    "home_team": "中華電信 白",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "11:40",
+    "location": "B場地",
+    "away_team": "擊敗人",
+    "home_team": "國都壘球社",
+    "status": "normal",
+    "note": "7/19"
+  },
+  {
+    "date": "2026-11-29",
+    "time": "12:35",
+    "location": "A場地",
+    "away_team": "人民公僕 B",
+    "home_team": "靠嘴巴打球",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "12:35",
+    "location": "B場地",
+    "away_team": "獵狐",
+    "home_team": "擊敗人",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "13:30",
+    "location": "A場地",
+    "away_team": "中華電信 白",
+    "home_team": "人民公僕 B",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-11-29",
+    "time": "13:30",
+    "location": "B場地",
+    "away_team": "國都壘球社",
+    "home_team": "獵狐",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "08:00",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "軟球 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "08:00",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "軟球 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "08:55",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "08:55",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "09:50",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "E 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "09:50",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "E 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "10:45",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "10:45",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "11:40",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "F 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "11:40",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "F 組季後賽"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "12:35",
+    "location": "A場地",
+    "away_team": "亞",
+    "home_team": "冠",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "12:35",
+    "location": "B場地",
+    "away_team": "殿",
+    "home_team": "季",
+    "status": "normal",
+    "note": null
+  },
+  {
+    "date": "2026-12-06",
+    "time": "14:25",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
+  },
+  {
+    "date": "2026-12-06",
+    "time": "14:25",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "08:00",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "08:00",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "12:35",
+    "location": "A場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
+  },
+  {
+    "date": "2026-12-13",
+    "time": "12:35",
+    "location": "B場地",
+    "away_team": null,
+    "home_team": null,
+    "status": "normal",
+    "note": "116春季聯賽(暫定)"
   }
 ]
