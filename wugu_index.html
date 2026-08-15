@@ -60,15 +60,25 @@
             <h2 id="captureTitle"
                 style="text-align: center; margin-top: 0; margin-bottom: 15px; color: #7f8c8d; font-size: 1.1rem;"></h2>
 
-            <table id="scheduleTable">
-                <thead>
-                    <!-- 表頭會由 JavaScript 動態生成，先清空 -->
-                    <tr id="scheduleHead"></tr>
-                </thead>
-                <tbody id="scheduleBody">
-                    <!-- 表格內容將由 JS 插入這裡 -->
-                </tbody>
-            </table>
+            <!-- 👇 從這裡開始替換：新增一個 inline-block 的容器把表格和日期包在一起 👇 -->
+            <div style="display: inline-block; min-width: 100%;">
+                <table id="scheduleTable">
+                    <thead>
+                        <!-- 表頭會由 JavaScript 動態生成，先清空 -->
+                        <tr id="scheduleHead"></tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <!-- 表格內容將由 JS 插入這裡 -->
+                    </tbody>
+                </table>
+                
+                <!-- 日期區塊包在這個容器裡面，就會跟著表格一起撐開並置右 -->
+                <div id="update-date-container" style="text-align: right; margin-top: 8px; color: #bdc3c7; font-size: 0.85rem; padding-right: 5px;">
+                    更新日期：讀取中...
+                </div>
+            </div>
+            <!-- 👆 替換到這裡結束 👆 -->
+            
         </div>
 
         <!-- 原本的賽程資料顯示區 -->
