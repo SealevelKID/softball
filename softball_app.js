@@ -253,14 +253,14 @@ async function fetchLastUpdateDate() {
             // 寫入畫面上的容器
             const updateContainer = document.getElementById('update-date-container');
             if (updateContainer) {
-                updateContainer.textContent = `最後更新：${dateStr}`;
+                updateContainer.textContent = `更新日期：${dateStr}`;
             }
         }
     } catch (error) {
         console.error("❌ 無法取得 GitHub 更新時間", error);
         const updateContainer = document.getElementById('update-date-container');
         if (updateContainer) {
-            updateContainer.textContent = `最後更新：未知`;
+            updateContainer.textContent = `更新日期：未知`;
         }
     }
 }
@@ -293,40 +293,54 @@ function renderByDate() {
     // 取得所有不重複的日期並排序
     const dates = [...new Set(officialData.map(match => match.date))].sort();
 
-    // ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】 ======
+// ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】 ======
     dates.forEach(date => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
-
-        // 【修改】移除所有原本用來計算寬度的 flex 與 minWidth 等行內樣式
+        
+        // 保持使用 flex 讓按鈕自動撐滿並絕對等寬
+        btn.style.flex = '1 1 0%';
+        btn.style.minWidth = '115px'; 
+        btn.style.boxSizing = 'border-box';
         btn.style.textAlign = 'center';
-
+        
         const status = scheduleStatus[date];
-
+        
         if (status === '完賽') {
             btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(完)</span>`;
-            btn.style.backgroundColor = '#ecf0f1';
+            btn.style.backgroundColor = '#ecf0f1'; 
             btn.style.color = '#7f8c8d';
             btn.style.borderColor = '#bdc3c7';
-            // 【修改】移除這裡強制設定的 fontSize 與 padding 
+            btn.style.fontSize = '0.85rem';
+            btn.style.padding = '8px 2px';
         } else if (status === '延賽') {
             btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(延)</span>`;
             btn.style.backgroundColor = '#fde8e8';
             btn.style.color = '#e74c3c';
             btn.style.borderColor = '#e74c3c';
-            // 【修改】移除這裡強制設定的 fontSize 與 padding 
+            btn.style.fontSize = '0.85rem';
+            btn.style.padding = '8px 2px';
+        } else if (status === '雨備') {
+            // 【新增】雨備狀態，顯示 (備) 並套用配合試算表的淺綠色系
+            btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(備)</span>`;
+            btn.style.backgroundColor = '#e8f8f5'; // 淺綠底色
+            btn.style.color = '#1abc9c'; // 綠色文字
+            btn.style.borderColor = '#1abc9c'; // 綠色邊框
+            btn.style.fontSize = '0.85rem';
+            btn.style.padding = '8px 2px';
         } else {
             btn.textContent = date;
-            // 【修改】移除這裡強制設定的 fontSize 與 padding 
+            btn.style.fontSize = '0.95rem';
+            btn.style.padding = '8px 15px';
         }
 
         btn.onclick = () => {
-            // 👆---------- 替換到這裡結束 ----------👆
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // 阻斷邏輯：如果是完賽或延賽，就彈出卡片，不畫表格
-            if (status) {
+            
+            // 【修改這裡】嚴格指定只有「完賽」或「延賽」才彈出通知卡片
+            // 如果是「雨備」或是無狀態的正常日，就直接畫出賽程表格
+            if (status === '完賽' || status === '延賽') {
                 showStatusPopup(date, status);
             } else {
                 drawDateTable(date);
@@ -411,7 +425,7 @@ function showOriginalTable(date) {
 // ================= 處理隊伍名稱分行與自動縮小 (優化中英文權重) =================
 // 【修改】：加入第二個參數 isEnlarged，用來判斷是否為單隊搜尋放大版
 function formatTeamName(teamStr, isEnlarged = false) {
-    if (!teamStr || teamStr === "未知") return teamStr;
+    if (!teamStr || teamStr === "未知") return teamStr || "";
 
     let cleanStr = teamStr.replace(/\r?\n/g, '').trim();
     const match = cleanStr.match(/^([A-Z]\d{1,2})(.*)/);
@@ -546,7 +560,30 @@ function drawDateTable(selectedDate) {
     // 💡 1. 先將資料過濾提上來，算出這天總共有「幾個場地」
     const matches = officialData.filter(m => m.date === selectedDate);
     const locations = [...new Set(matches.map(m => m.location))].sort();
-    const times = [...new Set(matches.map(m => m.time))].sort();
+
+    // 過濾出正常比賽的時間
+    const normalMatches = matches.filter(m => m.status !== 'rain_backup');
+    let times = [...new Set(normalMatches.map(m => m.time))].sort();
+
+    // 【新增邏輯】為了讓「雨備日」能夠往下跨滿整個下午，我們需要確保時間軸(times)包含完整的下午時段
+    const hasRainBackup = matches.some(m => m.status === 'rain_backup');
+    if (hasRainBackup) {
+        if (times.length > 0) {
+            // 自動判斷當天的時間間隔（包含 55, 50, 45 分的通常是 55 分鐘制）
+            const is55Min = times.some(t => t.endsWith(':55') || t.endsWith(':50') || t.endsWith(':45'));
+            const fullTimes = is55Min
+                ? ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20"]
+                : ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+            // 聯集合併並重新排序，確保時間軸補滿到下午
+            times = [...new Set([...times, ...fullTimes])].sort();
+        } else {
+            // 如果整天一場正常比賽都沒有，預設展開整點時間表來撐開大格子
+            times = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+        }
+    } else if (times.length === 0) {
+        times = ["全天"];
+    }
+
     const cachedEdits = getCache();
 
     // 💡 2. 動態判斷寬度：3個場地以上才撐開，否則100%貼合螢幕(消除滑桿)
@@ -628,33 +665,37 @@ function drawDateTable(selectedDate) {
     scheduleHead.innerHTML = headHTML;
 
     scheduleBody.innerHTML = '';
-    times.forEach(time => {
-        // 【修改】時間欄位的右邊加粗 (改為 2px)
+
+    // 【新增】紀錄某個場地是否已經畫過「向下跨列」的雨備日，若畫過則後續時段自動跳過
+    const rainBackupRendered = {};
+
+    times.forEach((time, timeIndex) => {
         let rowHTML = `<td style="border-right: 2px solid #2c3e50;">${time}</td>`;
 
         locations.forEach((loc, index) => {
-            // 同樣判斷是否為最後一個場地 (改為 2px)
             const borderStyle = (index < locations.length - 1) ? 'border-right: 2px solid #2c3e50;' : '';
 
-            const match = matches.find(m => m.time === time && m.location === loc);
+            // 如果該場地已經被上面的雨備日跨列覆蓋了，這一格直接跳過不畫
+            if (rainBackupRendered[loc]) return;
+
+            // 尋找這個時段是否有「非雨備」的正常比賽
+            const match = matches.find(m => m.time === time && m.location === loc && m.status !== 'rain_backup');
+
             if (match) {
                 const matchId = `${match.date}_${match.time}_${match.location}`;
                 const cachedMatch = cachedEdits[matchId] || {};
 
-                if (match.status === 'rain_backup') {
-                    const displayNote = cachedMatch.note !== undefined ? cachedMatch.note : match.note;
-                    rowHTML += `<td colspan="2" class="editable-cell" contenteditable="false" style="color:#e67e22; outline: none; transition: background-color 0.2s; ${borderStyle}" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${displayNote}</td>`;
+                if (!match.home_team && !match.away_team) {
+                    const displayNote = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || '');
+                    rowHTML += `<td colspan="2" class="editable-cell" contenteditable="false" style="outline: none; transition: background-color 0.2s; ${borderStyle}" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${displayNote}</td>`;
                 } else {
-                    const displayHome = cachedMatch.home_team !== undefined ? cachedMatch.home_team : match.home_team;
-                    const displayAway = cachedMatch.away_team !== undefined ? cachedMatch.away_team : match.away_team;
+                    const displayHome = cachedMatch.home_team !== undefined ? cachedMatch.home_team : (match.home_team || '');
+                    const displayAway = cachedMatch.away_team !== undefined ? cachedMatch.away_team : (match.away_team || '');
 
                     const homeHTML = formatTeamName(displayHome);
                     const awayHTML = formatTeamName(displayAway);
 
-                    // 【自動判斷】如果網頁標題包含樹林或五股，就讓客隊(away)在左邊；否則主隊(home)在左邊
                     const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
-
-                    // 根據誰在右邊，把加粗線條加在右邊那隊的 style 裡面
                     const leftTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;";
                     const rightTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s; " + borderStyle;
 
@@ -668,7 +709,30 @@ function drawDateTable(selectedDate) {
                     }
                 }
             } else {
-                rowHTML += `<td></td><td style="${borderStyle}"></td>`;
+                // 這個時段沒有正常賽程。檢查該場地今天是否有「雨備日」註記
+                const rainMatch = matches.find(m => m.location === loc && m.status === 'rain_backup');
+                if (rainMatch) {
+                    // 計算要往下跨越多大：從當前時段一路跨到最後一列
+                    let rowspanCount = 0;
+                    for (let i = timeIndex; i < times.length; i++) {
+                        const futureMatch = matches.find(m => m.time === times[i] && m.location === loc && m.status !== 'rain_backup');
+                        if (futureMatch) break;
+                        rowspanCount++;
+                    }
+
+                    const matchId = `${rainMatch.date}_${rainMatch.time}_${rainMatch.location}`;
+                    const cachedMatch = cachedEdits[matchId] || {};
+                    const displayNote = cachedMatch.note !== undefined ? cachedMatch.note : (rainMatch.note || '雨備日');
+
+                    // 輸出跨列的「雨備日」儲存格 (保留紅色大字體，無背景色)
+                    rowHTML += `<td colspan="2" rowspan="${rowspanCount}" class="editable-cell" contenteditable="false" style="color: #c0392b; font-size: 1.5rem; font-weight: bold; letter-spacing: 5px; vertical-align: middle; text-align: center; outline: none; transition: background-color 0.2s; ${borderStyle}" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${displayNote}</td>`;
+
+                    // 標記該場地已經產生雨備
+                    rainBackupRendered[loc] = true;
+                } else {
+                    // 只是單純沒比賽的空堂
+                    rowHTML += `<td></td><td style="${borderStyle}"></td>`;
+                }
             }
         });
         scheduleBody.innerHTML += `<tr>${rowHTML}</tr>`;
@@ -812,8 +876,9 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
     let results = sourceData.filter(match => {
         const cleanHome = match.home_team ? match.home_team.replace(/^[A-Z]\d{1,2}/, '') : '';
         const cleanAway = match.away_team ? match.away_team.replace(/^[A-Z]\d{1,2}/, '') : '';
+        const noteMatch = match.note ? match.note.includes(keyword) : false;
         return (match.home_team === keyword) || (cleanHome === keyword) ||
-            (match.away_team === keyword) || (cleanAway === keyword);
+            (match.away_team === keyword) || (cleanAway === keyword) || noteMatch;
     });
 
     // ================= 新增：全區資料排序邏輯 =================
@@ -911,11 +976,13 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
             let opponentStr = "";
             let opponentField = "";
 
-            if (match.status === 'rain_backup') {
-                opponentStr = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || "雨備日");
+            // 修改：搜尋結果中若遇到雨備或無主客隊的註記賽程，正常顯示於對手欄位
+            if (match.status === 'rain_backup' || (!match.home_team && !match.away_team)) {
+                opponentStr = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || "");
+                const textStyle = (match.status === 'rain_backup') ? "color: #c0392b; font-weight: bold; letter-spacing: 2px;" : "";
 
                 tr.innerHTML += `<td class="editable-cell" contenteditable="false" title="點擊編輯按鈕後可修改">${match.time}</td>`;
-                tr.innerHTML += `<td class="editable-cell" contenteditable="false" style="color:#e67e22; outline:none; transition: background-color 0.2s;" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${opponentStr}</td>`;
+                tr.innerHTML += `<td class="editable-cell" contenteditable="false" style="outline:none; transition: background-color 0.2s; ${textStyle}" onblur="saveEdit('${matchId}', 'note', this.innerText)" title="點擊編輯按鈕後可修改">${opponentStr}</td>`;
             } else {
                 const displayHome = cachedMatch.home_team !== undefined ? cachedMatch.home_team : match.home_team;
                 const displayAway = cachedMatch.away_team !== undefined ? cachedMatch.away_team : match.away_team;
@@ -1077,12 +1144,12 @@ function renderStats() {
 
     const container = document.getElementById('schedule-container');
 
-// 🏆 新增：加入「組、冠、亞、季、殿、第」等賽程代號關鍵字，避免被算成參賽隊伍
+    // 🏆 新增：加入「組、冠、亞、季、殿、第」等賽程代號關鍵字，避免被算成參賽隊伍
     const ignoreKeywords = [
         "友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決",
         "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"
     ];
-    
+
     // 💡 新增：強制放行的特例白名單 (即使包含排除字元也不會被過濾)
     const specialAllow = ["冠緯", "康德科技長春", "羊騷殿"];
 
@@ -1095,14 +1162,15 @@ function renderStats() {
                 if (team && team !== "未知") {
                     // 先清掉開頭的組別代號
                     const cleanTeam = team.replace(/^[A-Z]\d{1,2}/, '').replace(/^\d+[\.．、\s]+/, '').trim();
-                    
+
                     // 💡 判斷邏輯：如果是特例白名單，就強制不忽略
                     let shouldIgnore = false;
                     if (!specialAllow.includes(cleanTeam)) {
-                         shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
+                        shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
                     }
 
-                    if (!shouldIgnore) {
+                    // 加入 cleanTeam !== "" 的判斷，防止 A1, B3 等純代號變成空字串後被算成隊伍
+                    if (!shouldIgnore && cleanTeam !== "") {
                         if (!teamStats[cleanTeam]) teamStats[cleanTeam] = 0;
                         teamStats[cleanTeam]++;
                     }
@@ -1283,9 +1351,9 @@ function renderAdvancementSetup() {
 
     const container = document.getElementById('schedule-container');
 
-// 1. 把 "長春" 從陣列中移除
+    // 1. 把 "長春" 從陣列中移除
     const ignoreKeywords = ["友誼", "挑戰", "新鮮", "清新", "高階", "進階", "准決", "組", "冠", "亞", "季", "殿", "第", "勝隊", "敗隊"];
-    
+
     // 💡 新增：強制放行的特例白名單
     const specialAllow = ["冠緯", "康德科技長春", "羊騷殿"];
 
@@ -1296,13 +1364,14 @@ function renderAdvancementSetup() {
             [match.home_team, match.away_team].forEach(team => {
                 if (team && team !== "未知") {
                     const cleanTeam = team.replace(/^[A-Z]\d{1,2}/, '').replace(/^\d+[\.．、\s]+/, '').trim();
-                    
+
                     let shouldIgnore = false;
                     if (!specialAllow.includes(cleanTeam)) {
                         shouldIgnore = ignoreKeywords.some(keyword => team.includes(keyword)) || /^長春[\d\.]/.test(team);
                     }
-                    
-                    if (!shouldIgnore) {
+
+                    // 加入 cleanTeam !== "" 的判斷，避免將純代號加入真實晉級隊伍的選項中
+                    if (!shouldIgnore && cleanTeam !== "") {
                         realTeams.add(team);
                     }
                 }
