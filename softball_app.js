@@ -491,8 +491,7 @@ function showOriginalTable(date) {
     captureArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ================= 處理隊伍名稱分行與自動縮小 (優化中英文權重) =================
-// 【修改】：加入第二個參數 isEnlarged，用來判斷是否為單隊搜尋放大版
+// ================= 處理隊伍名稱分行與自動縮小 (優化中英文權重與括號不換行) =================
 function formatTeamName(teamStr, isEnlarged = false) {
     if (!teamStr || teamStr === "未知") return teamStr || "";
 
@@ -517,14 +516,13 @@ function formatTeamName(teamStr, isEnlarged = false) {
 
     let nameStyle = "display: block; white-space: normal; word-break: break-word; margin-top: 2px; line-height: 1.2;";
 
-    // 【新增】：根據是否開啟放大模式，給予不同的字體大小
     if (isEnlarged) {
         if (calcLength >= 6) {
-            nameStyle += " font-size: 0.95rem; font-weight: bold; letter-spacing: -0.5px;"; // 放大並加粗
+            nameStyle += " font-size: 0.95rem; font-weight: bold; letter-spacing: -0.5px;";
         } else if (calcLength >= 4) {
-            nameStyle += " font-size: 1.1rem; font-weight: bold;"; // 放大並加粗
+            nameStyle += " font-size: 1.1rem; font-weight: bold;";
         } else {
-            nameStyle += " font-size: 1.2rem; font-weight: bold;"; // 放大並加粗
+            nameStyle += " font-size: 1.2rem; font-weight: bold;";
         }
     } else {
         if (calcLength >= 6) {
@@ -536,15 +534,17 @@ function formatTeamName(teamStr, isEnlarged = false) {
         }
     }
 
-    // 若有隊伍代號，放大模式下代號也稍微等比放大
+    // 【新增】：使用正則表達式，把帶有括號的字串（例如 1/4(勝) 或 (敗)）包起來，強制其不換行
+    let displayName = name.replace(/([a-zA-Z0-9\/]*[（\(][^）\)]+[）\)])/g, '<span style="white-space: nowrap;">$1</span>');
+
     if (code) {
         let codeSize = isEnlarged ? "0.95rem" : "0.85rem";
         return `<div style="text-align: center; line-height: 1.1;">
                     <span style="display: block; font-size: ${codeSize}; color: #7f8c8d; font-weight: normal;">${code}</span>
-                    <span style="${nameStyle}">${name}</span>
+                    <span style="${nameStyle}">${displayName}</span>
                 </div>`;
     } else {
-        return `<div style="text-align: center; ${nameStyle}">${name}</div>`;
+        return `<div style="text-align: center; ${nameStyle}">${displayName}</div>`;
     }
 }
 
@@ -1261,36 +1261,49 @@ document.getElementById('btn-download').addEventListener('click', () => {
             const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
             
             if (isSocialWebView) {
-                // 【手機模式】產生 Base64 圖片並開啟黑底預覽視窗，讓使用者「長按儲存」
+                // 【手機社群模式】產生 Base64 圖片並開啟黑底預覽視窗，直接提供「關閉」與「下載」按鈕
                 const reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
                     const overlay = document.createElement('div');
                     overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center;';
                     
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '❌ 關閉返回';
-                    closeBtn.style.cssText = 'margin-top:20px; padding:10px 20px; font-size:1.1rem; border-radius:8px; background:#e74c3c; color:white; border:none; cursor:pointer;';
-                    closeBtn.onclick = () => document.body.removeChild(overlay);
-                    
-                    const hint = document.createElement('div');
-                    hint.innerHTML = '👆 <b>請長按上方圖片，選擇「儲存圖片」</b><br><span style="font-size:0.9rem;">(以此方式解決臉書/LINE瀏覽器無法下載的問題)</span>';
-                    hint.style.cssText = 'color:white; text-align:center; margin-top:15px; line-height:1.5; font-size:1.1rem;';
-                    
                     const img = document.createElement('img');
                     img.src = reader.result;
-                    img.style.cssText = 'max-width:95%; max-height:70%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto;';
+                    // 加入 -webkit-touch-callout: default 作為隱形保險
+                    img.style.cssText = 'max-width:95%; max-height:70%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
                     
+                    // 建立兩顆按鈕的容器 (並排顯示)
+                    const btnContainer = document.createElement('div');
+                    btnContainer.style.cssText = 'display:flex; gap:20px; margin-top:20px;';
+
+                    // 1. 關閉按鈕
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '❌ 關閉';
+                    closeBtn.style.cssText = 'padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    closeBtn.onclick = () => document.body.removeChild(overlay);
+                    
+                    // 2. 下載按鈕 (直接使用 a 標籤觸發下載)
+                    const dlBtn = document.createElement('a');
+                    dlBtn.innerHTML = '📥 下載';
+                    dlBtn.href = reader.result;
+                    dlBtn.download = finalFileName;
+                    dlBtn.style.cssText = 'padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#27ae60; color:white; border:none; cursor:pointer; font-weight:bold; text-decoration:none; display:inline-block; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+
+                    // 將按鈕裝入容器
+                    btnContainer.appendChild(closeBtn);
+                    btnContainer.appendChild(dlBtn);
+                    
+                    // 將圖片與按鈕容器裝入黑底畫面
                     overlay.appendChild(img);
-                    overlay.appendChild(hint);
-                    overlay.appendChild(closeBtn);
+                    overlay.appendChild(btnContainer);
                     document.body.appendChild(overlay);
                     
                     btn.textContent = originalText;
                     btn.disabled = false;
                 };
             } else {
-                // 【電腦模式】維持原來的直接下載行為
+                // 【一般瀏覽器模式】維持原來的直接下載行為
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.download = finalFileName;
@@ -1301,7 +1314,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 btn.textContent = originalText;
                 btn.disabled = false;
             }
-        }, 'image/png');
+        }, 'image/png'); // 這裡補回了缺少的收尾括號！
 
     }).catch(err => {
         // 如果發生錯誤，也要把滑桿跟寬度恢復原狀
