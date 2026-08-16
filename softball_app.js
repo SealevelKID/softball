@@ -635,16 +635,18 @@ function drawDateTable(selectedDate) {
     // 如果不是第一天，顯示左箭頭
     if (currentIndex > 0) {
         const prevDate = allDates[currentIndex - 1];
-        leftArrow = `<span style="cursor: pointer; padding: 0 20px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${prevDate}')">〈</span>`;
+        // 【修改】縮小 padding 與 margin 讓箭頭靠中間，並加入 data-html2canvas-ignore="true" 讓截圖時自動消失
+        leftArrow = `<span data-html2canvas-ignore="true" style="cursor: pointer; padding: 0 5px; margin: 0 8px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${prevDate}')">〈</span>`;
     }
     // 如果不是最後一天，顯示右箭頭
     if (currentIndex < allDates.length - 1) {
         const nextDate = allDates[currentIndex + 1];
-        rightArrow = `<span style="cursor: pointer; padding: 0 20px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${nextDate}')">〉</span>`;
+        // 【修改】同上
+        rightArrow = `<span data-html2canvas-ignore="true" style="cursor: pointer; padding: 0 5px; margin: 0 8px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${nextDate}')">〉</span>`;
     }
     
     // 將箭頭與標題組合 (改用 innerHTML 渲染)
-    title.innerHTML = `${leftArrow} ${selectedDate} 賽程 ${rightArrow}`;
+    title.innerHTML = `${leftArrow} <span style="display:inline-block;">${selectedDate} 賽程</span> ${rightArrow}`;
     // ==========================================================
 
     // 💡 1. 先將資料過濾提上來，算出這天總共有「幾個場地」
@@ -1180,7 +1182,9 @@ document.getElementById('btn-download').addEventListener('click', () => {
     }
 
     // ====== 【關鍵字：階段三 - 攔截下載按鈕事件】 ======
-    const titleText = document.getElementById('captureTitle').textContent.replace(/\s+/g, '');
+    let titleText = document.getElementById('captureTitle').textContent.replace(/\s+/g, '');
+    // 【修改】將檔名中的箭頭符號刪除，避免手機系統報錯
+    titleText = titleText.replace(/〈/g, '').replace(/〉/g, '');
     const finalFileName = `${regionName}${titleText}.png`;
 
     // ----------------------------------------------------
@@ -1255,15 +1259,51 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 btn.disabled = false;
                 return;
             }
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.download = finalFileName;
-            link.href = url;
-            link.click();
-            URL.revokeObjectURL(url);
-
-            btn.textContent = originalText;
-            btn.disabled = false;
+            
+            // 判斷是否為手機裝置或 FB/LINE 等內建瀏覽器 (WebView)
+            const isMobileOrWebView = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|FBAN|FBAV|Line/i.test(navigator.userAgent);
+            
+            if (isMobileOrWebView) {
+                // 【手機模式】產生 Base64 圖片並開啟黑底預覽視窗，讓使用者「長按儲存」
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function() {
+                    const overlay = document.createElement('div');
+                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center;';
+                    
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '❌ 關閉返回';
+                    closeBtn.style.cssText = 'margin-top:20px; padding:10px 20px; font-size:1.1rem; border-radius:8px; background:#e74c3c; color:white; border:none; cursor:pointer;';
+                    closeBtn.onclick = () => document.body.removeChild(overlay);
+                    
+                    const hint = document.createElement('div');
+                    hint.innerHTML = '👆 <b>請長按上方圖片，選擇「儲存圖片」</b><br><span style="font-size:0.9rem;">(以此方式解決臉書/LINE瀏覽器無法下載的問題)</span>';
+                    hint.style.cssText = 'color:white; text-align:center; margin-top:15px; line-height:1.5; font-size:1.1rem;';
+                    
+                    const img = document.createElement('img');
+                    img.src = reader.result;
+                    img.style.cssText = 'max-width:95%; max-height:70%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto;';
+                    
+                    overlay.appendChild(img);
+                    overlay.appendChild(hint);
+                    overlay.appendChild(closeBtn);
+                    document.body.appendChild(overlay);
+                    
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                };
+            } else {
+                // 【電腦模式】維持原來的直接下載行為
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = finalFileName;
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+                
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
         }, 'image/png');
 
     }).catch(err => {
