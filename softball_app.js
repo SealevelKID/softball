@@ -1261,46 +1261,57 @@ document.getElementById('btn-download').addEventListener('click', () => {
             const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
             
             if (isSocialWebView) {
-                // 【手機社群模式 (LINE/FB)】顯示專屬視窗，提供「關閉」與「分享」按鈕
+                // 【手機社群模式 (LINE/FB)】顯示專屬視窗，提供「關閉」與「分享」按鈕，並加入防呆機制
                 const reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
                     const overlay = document.createElement('div');
-                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px; box-sizing: border-box;';
+                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px; box-sizing: border-box;';
                     
                     const img = document.createElement('img');
                     img.src = reader.result;
-                    img.style.cssText = 'max-width:100%; max-height:60vh; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); margin-bottom: 25px;';
+                    // 確保長按功能暢通無阻 (-webkit-touch-callout: default)
+                    img.style.cssText = 'max-width:100%; max-height:55vh; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); margin-bottom: 15px; pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
                     
+                    // 新增：防呆文字提示，讓使用者知道還能「長按」
+                    const hintDiv = document.createElement('div');
+                    hintDiv.innerHTML = '💡 若按鈕無反應，請直接👆<b style="color:#f1c40f;">長按上方圖片</b>儲存';
+                    hintDiv.style.cssText = 'color:white; font-size:1rem; margin-bottom:20px; text-align:center;';
+
                     // 建立按鈕容器
                     const btnContainer = document.createElement('div');
-                    btnContainer.style.cssText = 'display:flex; gap:20px;';
+                    btnContainer.style.cssText = 'display:flex; gap:15px;';
 
                     // 1. 關閉按鈕
                     const closeBtn = document.createElement('button');
                     closeBtn.innerHTML = '❌ 關閉';
-                    closeBtn.style.cssText = 'padding:12px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    closeBtn.style.cssText = 'padding:12px 20px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
                     closeBtn.onclick = () => document.body.removeChild(overlay);
                     
-                    // 2. 分享按鈕 (呼叫手機原生分享選單)
+                    // 2. 分享按鈕 (加入 Try-Catch 攔截錯誤)
                     const shareBtn = document.createElement('button');
                     shareBtn.innerHTML = '📤 分享 / 儲存';
-                    shareBtn.style.cssText = 'padding:12px 25px; font-size:1.1rem; border-radius:8px; background:#3498db; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    shareBtn.style.cssText = 'padding:12px 20px; font-size:1.1rem; border-radius:8px; background:#3498db; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
                     shareBtn.onclick = async () => {
-                        const file = new File([blob], finalFileName, { type: 'image/png' });
-                        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                            try {
+                        try {
+                            // 嘗試建立 File 物件 (某些 LINE 瀏覽器會在這裡報錯導致無反應)
+                            const file = new File([blob], finalFileName, { type: 'image/png' });
+                            
+                            if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
                                 await navigator.share({
                                     files: [file],
                                     title: '賽程表',
                                     text: '分享這張賽程表給球友！'
                                 });
-                            } catch (err) {
-                                console.log("使用者取消分享", err);
+                            } else {
+                                // 故意拋出錯誤，讓系統進入 catch 區塊顯示警告
+                                throw new Error("Share API not supported or files not allowed.");
                             }
-                        } else {
-                            // 若手機極舊不支援分享，給予退路提示
-                            alert('⚠️ 您的手機不支援直接分享，請點選右上/右下角選單「以預設瀏覽器開啟」後再下載。');
+                        } catch (err) {
+                            // 排除使用者自己按取消的情況 (AbortError)
+                            if (err.name !== 'AbortError') {
+                                alert('⚠️ 您的 LINE 阻擋了分享功能！\n\n👉 請直接「長按上方圖片」選擇「儲存圖片」。\n👉 或點選右上角選單「以預設瀏覽器開啟」。');
+                            }
                         }
                     };
 
@@ -1308,6 +1319,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
                     btnContainer.appendChild(shareBtn);
                     
                     overlay.appendChild(img);
+                    overlay.appendChild(hintDiv); // 加入提示文字
                     overlay.appendChild(btnContainer);
                     document.body.appendChild(overlay);
                     
