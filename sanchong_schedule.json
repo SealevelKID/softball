@@ -2553,7 +2553,7 @@
     "away_team": "虎林",
     "home_team": "高林運動",
     "status": "normal",
-    "note": "8:00及8:55的賽程為春季季後賽補賽"
+    "note": "春季"
   },
   {
     "date": "2027-01-31",
@@ -2562,7 +2562,7 @@
     "away_team": "海樂森",
     "home_team": "泓利達",
     "status": "normal",
-    "note": "8:00及8:55的賽程為春季季後賽補賽"
+    "note": "春季"
   },
   {
     "date": "2027-01-31",
@@ -2571,7 +2571,7 @@
     "away_team": "高階2/3(勝)",
     "home_team": "高階1/4(勝)",
     "status": "normal",
-    "note": null
+    "note": "季後賽"
   },
   {
     "date": "2027-01-31",
@@ -2580,7 +2580,7 @@
     "away_team": "高階2/3(敗)",
     "home_team": "高階1/4(敗)",
     "status": "normal",
-    "note": null
+    "note": "季後賽"
   },
   {
     "date": "2027-01-31",
