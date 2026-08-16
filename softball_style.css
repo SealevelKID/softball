@@ -340,3 +340,62 @@ td[contenteditable="true"]:hover {
 #scheduleHead th {
     border-bottom: 2px solid #2c3e50;
 }
+/* ========================================= */
+/* 新增：雙欄分割視圖 (Split View) 樣式 */
+/* ========================================= */
+.split-view-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右各半，1:1 */
+    gap: 15px; /* 左右欄的間距 */
+    align-items: start; /* 確保內容靠上對齊，不要硬被拉伸高度 */
+    width: 100%;
+}
+
+.split-left-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 【修改】改為網格排列，一行兩個 */
+    gap: 10px; 
+    align-content: start; /* 確保內容靠上對齊，不要硬被往下拉伸 */
+}
+/* 若手機螢幕太窄，自動微調左側月份按鈕字體大小 */
+@media (max-width: 480px) {
+    .split-left-menu .filter-btn {
+        font-size: 0.85rem;
+        padding: 10px 2px;
+    }
+}
+
+.split-right-content {
+    display: flex;
+    flex-direction: column; /* 右側日期也是直排向下 */
+    gap: 10px; /* 日期按鈕之間的間距 */
+}
+/* ========================================= */
+/* 新增：ON/OFF 雙格切換開關樣式 */
+/* ========================================= */
+.segmented-control {
+    display: inline-flex;
+    background-color: #e0e6ed;
+    border-radius: 25px;
+    padding: 3px;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+.segmented-btn {
+    border: none;
+    background: transparent;
+    color: #7f8c8d;
+    border-radius: 22px;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.segmented-btn.active {
+    background-color: #3498db; /* 使用主題藍色 */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
