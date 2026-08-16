@@ -27,6 +27,7 @@ body {
     border: 1px solid #bdc3c7;
     border-radius: 25px;
     outline: none;
+    font-size: 1rem; /* 【新增】強制設定輸入框字體為 1rem */
 }
 
 /* --- 截圖區塊與表格樣式 --- */
@@ -144,7 +145,6 @@ td[contenteditable="true"]:hover {
 /* 新增：統一的按鈕與選單樣式 */
 /* ========================================= */
 
-/* 統一的系統按鈕 (取代原本的 capsule-btn 與 btn) */
 .sys-btn {
     flex: 0 0 auto;
     padding: 10px 20px;
@@ -156,6 +156,7 @@ td[contenteditable="true"]:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap; /* 防止按鈕文字換行 */
+    font-size: 1rem; /* 【新增】確保搜尋按鈕與導覽列按鈕基準字體皆為 1rem */
 }
 
 /* 按鈕亮起 (Active) 與 主要操作 (Primary) 的底色統一 */
@@ -206,19 +207,18 @@ td[contenteditable="true"]:hover {
 }
 
 .filter-btn {
-    padding: 8px 2px; /* 【修改】統一縮小左右內距，把空間留給文字 */
+    padding: 8px 2px;
     border: 1px solid var(--accent-color);
     border-radius: 8px;
     background-color: white;
     color: var(--accent-color);
     cursor: pointer;
-    /* 【修改】利用 clamp 函數讓字體自動縮放：最小 0.7rem，視窗寬度比例，最大 0.95rem */
-    font-size: clamp(0.7rem, 2.5vw, 0.95rem); 
+    font-size: 1rem; /* 【修改】取消自動縮放，強制固定為 1rem */
     font-weight: bold;
     transition: all 0.2s ease;
-    white-space: nowrap; /* 【新增】強制文字不換行，與狀態標籤保持同一行 */
-    width: 100%; /* 【新增】確保填滿 Grid 的每一格 */
-    box-sizing: border-box; /* 【新增】避免邊框把寬度撐破 */
+    white-space: nowrap; 
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .filter-btn.active {
