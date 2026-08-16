@@ -786,19 +786,31 @@ function drawDateTable(selectedDate) {
 
                     const homeHTML = formatTeamName(displayHome);
                     const awayHTML = formatTeamName(displayAway);
+                    
+                    // 先取得備註內容，用來判斷是否要啟動防護罩(安全距離)
+                    const mNote = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || '');
 
                     const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
-                    const leftTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;";
-                    const rightTeamStyle = "outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s; " + borderStyle;
+                    
+                    // 【修改】動態設定內距。如果有備註，左邊格子右側留 24px，右邊格子左側留 24px 避免文字重疊
+                    const leftPadding = mNote ? "5px 24px 5px 5px" : "5px";
+                    const rightPadding = mNote ? "5px 5px 5px 24px" : "5px";
 
-                    const tdHome = `<td class="editable-cell" contenteditable="false" style="${isAwayFirst ? rightTeamStyle : leftTeamStyle}" onblur="saveEdit('${matchId}', 'home_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${homeHTML}</td>`;
-                    const tdAway = `<td class="editable-cell" contenteditable="false" style="${isAwayFirst ? leftTeamStyle : rightTeamStyle}" onblur="saveEdit('${matchId}', 'away_team', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${awayHTML}</td>`;
+                    const leftTeamStyle = `outline: none; vertical-align: middle; padding: ${leftPadding}; transition: background-color 0.2s; position: relative;`;
+                    const rightTeamStyle = `outline: none; vertical-align: middle; padding: ${rightPadding}; transition: background-color 0.2s; ${borderStyle}`;
 
-                    if (isAwayFirst) {
-                        rowHTML += tdAway + tdHome;
-                    } else {
-                        rowHTML += tdHome + tdAway;
-                    }
+                    let leftHTML = isAwayFirst ? awayHTML : homeHTML;
+                    let rightHTML = isAwayFirst ? homeHTML : awayHTML;
+                    let leftField = isAwayFirst ? 'away_team' : 'home_team';
+                    let rightField = isAwayFirst ? 'home_team' : 'away_team';
+
+                    // 【修改】字體縮小為 0.75rem，並加入 pointer-events: none 確保滑鼠點擊不會被這塊小標籤擋住
+                    const noteBadge = mNote ? `<div contenteditable="false" style="position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); color: #c0392b; font-size: 0.75rem; font-weight: bold; background: white; padding: 1px 2px; border-radius: 4px; z-index: 5; white-space: nowrap; box-shadow: 0 0 3px rgba(0,0,0,0.1); pointer-events: none;">${mNote}</div>` : '';
+
+                    const tdLeft = `<td class="editable-cell" contenteditable="false" style="${leftTeamStyle}" onblur="saveEdit('${matchId}', '${leftField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${leftHTML}${noteBadge}</td>`;
+                    const tdRight = `<td class="editable-cell" contenteditable="false" style="${rightTeamStyle}" onblur="saveEdit('${matchId}', '${rightField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${rightHTML}</td>`;
+
+                    rowHTML += tdLeft + tdRight;
                 }
             } else {
                 // 這個時段沒有正常賽程。檢查該場地今天是否有「雨備日」註記
@@ -844,29 +856,9 @@ function drawDateTable(selectedDate) {
     const dailyNoteId = `${selectedDate}_daily`;
     const cachedDailyNote = cachedEdits[dailyNoteId] || {};
     
-    // ================= 新增：自動收集並合併該日期的所有備註 =================
-    // 1. 從當天所有的比賽中，提取有值的 note，並去除重複
-    const allNotes = [];
-    matches.forEach(m => {
-        // 如果這場比賽有隊伍（不是雨備日或空堂），且有 note 內容
-        if (m.home_team && m.away_team && m.note) {
-            if (!allNotes.includes(m.note)) {
-                allNotes.push(m.note);
-            }
-        }
-    });
-    // 將收集到的備註用頓號合併成一個字串
-    const autoCombinedNote = allNotes.join("、");
-
-    // 2. 讀取暫存。優先順序：手動暫存 > 自動收集合併的 note > 第一場比賽的 daily_note
-    let displayDailyNote = "";
-    if (cachedDailyNote.daily_note !== undefined) {
-        displayDailyNote = cachedDailyNote.daily_note;
-    } else if (autoCombinedNote !== "") {
-        displayDailyNote = autoCombinedNote;
-    } else {
-        displayDailyNote = matches[0].daily_note || "";
-    }
+    // ================= 新增：讀取 JSON 中的每日總備註 (daily_note) =================
+    // 系統直接抓取該日期「第一場比賽」的 daily_note 欄位
+    const displayDailyNote = cachedDailyNote.daily_note !== undefined ? cachedDailyNote.daily_note : (matches[0].daily_note || "");
     // ====================================================================
 
     // 渲染紅色粗體備註文字，並套用 Flexbox 讓備註與更新日期並排！
@@ -1185,7 +1177,11 @@ document.getElementById('btn-download').addEventListener('click', () => {
     let titleText = document.getElementById('captureTitle').textContent.replace(/\s+/g, '');
     // 【修改】將檔名中的箭頭符號刪除，避免手機系統報錯
     titleText = titleText.replace(/〈/g, '').replace(/〉/g, '');
-    const finalFileName = `${regionName}${titleText}.png`;
+    
+    // 【新增】產生時間戳記 (YYMMDD_HHMMSS)
+    const now = new Date();
+    const ts = `${String(now.getFullYear()).slice(-2)}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+    const finalFileName = `${regionName}${titleText}_${ts}.png`;
 
     // ----------------------------------------------------
     // 👇 新增：在背景發送下載紀錄到 GAS API 👇
@@ -1260,10 +1256,11 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 return;
             }
             
-            // 判斷是否為手機裝置或 FB/LINE 等內建瀏覽器 (WebView)
-            const isMobileOrWebView = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|FBAN|FBAV|Line/i.test(navigator.userAgent);
+            // 【新增】雙重模式分流：精準抓取 FB 與 LINE 內建瀏覽器
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
             
-            if (isMobileOrWebView) {
+            if (isSocialWebView) {
                 // 【手機模式】產生 Base64 圖片並開啟黑底預覽視窗，讓使用者「長按儲存」
                 const reader = new FileReader();
                 reader.readAsDataURL(blob);
