@@ -951,7 +951,7 @@
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
-    "note": "........"
+    "note": "..."
   },
   {
     "date": "2026-08-30",
@@ -2049,7 +2049,8 @@
     "away_team": "北方之鷹",
     "home_team": "吉飛達",
     "status": "normal",
-    "note": "春季季後賽"
+    "note": "",
+    "daily_note": "春季季後賽(補6/14)"
   },
   {
     "date": "2026-11-29",
@@ -2058,7 +2059,7 @@
     "away_team": "銘佳工程",
     "home_team": "蛇王 德洛伊浪",
     "status": "normal",
-    "note": "春季季後賽"
+    "note": ""
   },
   {
     "date": "2026-11-29",
