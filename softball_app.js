@@ -891,7 +891,7 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
     if (isAllRegionsMode) {
         filterContainer.innerHTML += `
             <div style="display: flex; gap: 10px; width: 100%; align-items: center; border-top: 1px dashed #bdc3c7; padding-top: 10px; margin-top: 5px;">
-                <span style="font-size: 0.95rem; color: #7f8c8d; white-space: nowrap; flex-shrink: 0;">排序方式：</span>
+                <span style="font-size: 1rem; color: #7f8c8d; white-space: nowrap; flex-shrink: 0;">排序方式：</span>
                 <button class="filter-btn ${crossRegionSortMode === 'date' ? 'active' : ''}" style="flex: 1;" onclick="renderSearchResult('${keyword}', true, 'date')">📅 依日期</button>
                 <button class="filter-btn ${crossRegionSortMode === 'location' ? 'active' : ''}" style="flex: 1;" onclick="renderSearchResult('${keyword}', true, 'location')">🏟️ 依場地</button>
             </div>
