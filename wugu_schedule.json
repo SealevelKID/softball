@@ -4626,6 +4626,33 @@
     "note": "雨備日"
   },
   {
+    "date": "2027-01-03",
+    "location": "五股A",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2027-01-03",
+    "location": "五股B",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2027-01-03",
+    "location": "五股C",
+    "time": "全天",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
     "date": "2027-01-10",
     "time": "08:00",
     "location": "五股A",
