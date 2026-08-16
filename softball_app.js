@@ -1160,6 +1160,34 @@ async function renderSearchResult(keyword, forceAllRegions = false, sortMode = '
 }
 // ================= 截圖下載功能 (支援寬表格完整截圖，保留滑桿) =================
 document.getElementById('btn-download').addEventListener('click', () => {
+
+    // ====== 【新增優化：提早攔截社群瀏覽器】 ======
+    // 在開始耗時的截圖運算前，第一時間先檢查是不是 LINE/FB
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
+
+    if (isSocialWebView) {
+        const currentUrl = window.location.href;
+        // 動態取得目前的通訊協定 (http 或 https)，避免跳轉失敗
+        const currentProtocol = window.location.protocol.replace(':', ''); 
+
+        if (/android/i.test(ua)) {
+            // Android：使用 intent:// 語法強制跳轉至 Chrome
+            const intentUrl = `intent://${currentUrl.replace(/^https?:\/\//i, '')}#Intent;scheme=${currentProtocol};package=com.android.chrome;end`;
+            window.location.href = intentUrl;
+            
+            // 防呆：如果 1.5 秒後還留在這，代表沒成功跳轉，再顯示提示
+            setTimeout(() => {
+                alert("⚠️ LINE 阻擋了下載功能！\n\n👉 請點擊右上角「⋮」選單\n👉 選擇【以預設瀏覽器開啟】後再下載！");
+            }, 1500);
+        } else {
+            // iOS (iPhone) 或其他：直接彈出強制引導提示
+            alert("⚠️ 您的 LINE 阻擋了下載功能！\n\n👉 請點擊畫面右下角的「⏏️」或「⋯」圖示\n👉 選擇【以 Safari 開啟】或【以預設瀏覽器開啟】\n\n跳出 LINE 之後即可正常下載圖片！");
+        }
+        return; // ⚠️ 關鍵：直接中斷，不執行下方耗時的截圖程式！
+    }
+
+    // ================= 下方為一般瀏覽器的正常截圖與下載邏輯 =================
     const targetElement = document.getElementById('captureArea');
 
     // 動態萃取地區名稱 (根據是否為跨區模式改變)
@@ -1173,80 +1201,64 @@ document.getElementById('btn-download').addEventListener('click', () => {
         }
     }
 
-    // ====== 【關鍵字：階段三 - 攔截下載按鈕事件】 ======
     let titleText = document.getElementById('captureTitle').textContent.replace(/\s+/g, '');
-    // 【修改】將檔名中的箭頭符號刪除，避免手機系統報錯
     titleText = titleText.replace(/〈/g, '').replace(/〉/g, '');
     
-    // 【新增】產生時間戳記 (YYMMDD_HHMMSS)
+    // 產生時間戳記
     const now = new Date();
     const ts = `${String(now.getFullYear()).slice(-2)}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
     const finalFileName = `${regionName}${titleText}_${ts}.png`;
 
-    // ----------------------------------------------------
-    // 👇 新增：在背景發送下載紀錄到 GAS API 👇
-    // ----------------------------------------------------
+    // 傳送下載紀錄到 GAS API (因為上面已經擋掉 LINE，所以這裡紀錄到的都會是真正的成功下載)
     try {
-        // 1. 判斷下載類型 (有跨區字眼為跨區搜尋，有日期格式為單區日期，否則為單區搜尋)
         let downloadType = "單區搜尋";
         if (isAllRegionsMode) downloadType = "跨區搜尋";
         else if (titleText.includes("賽程") && !titleText.includes("區")) downloadType = "單區日期";
 
-        // 2. 整理傳送資料，並過濾掉多餘的字眼，讓報表更乾淨
         const payload = {
             region: isAllRegionsMode ? "跨區" : regionName.replace("_", ""),
             downloadType: downloadType,
             target: titleText.replace("賽程", "").replace("跨區總", "").replace("本區", "")
         };
 
-        // 3. 在背景非同步發送 POST 請求 (不使用 await，以免卡住截圖流程)
         fetch(GAS_API_URL, {
             method: 'POST',
             body: JSON.stringify(payload),
-            headers: {
-                'Content-Type': 'text/plain;charset=utf-8' // 避免 GAS 發生 CORS 阻擋
-            }
-        })
-            .then(res => console.log("✅ 下載紀錄已成功發送至後台"))
-            .catch(err => console.error("❌ 下載紀錄發送失敗", err));
-
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+        }).then(res => console.log("✅ 下載紀錄已成功發送至後台")).catch(err => console.error("❌ 下載紀錄發送失敗", err));
     } catch (error) {
         console.error("下載紀錄準備失敗", error);
     }
-    // ----------------------------------------------------
-    // 👆 新增結束 👆
-    // ----------------------------------------------------
 
+    // 按鈕狀態改變
     const btn = document.getElementById('btn-download');
     const originalText = btn.textContent;
     btn.textContent = "⏳ 產生圖片中...";
     btn.disabled = true;
 
-    // 💡 1. 紀錄所有原始狀態，包含現在的滑動位置
+    // 紀錄版面狀態並展開寬度
     const originalOverflowX = targetElement.style.overflowX;
     const originalMaxWidth = targetElement.style.maxWidth;
     const originalWidth = targetElement.style.width;
     const originalScrollLeft = targetElement.scrollLeft;
 
-    // 💡 2. 截圖前：強制展開寬度，並將滑動條推回最左邊，避免右側空白
     targetElement.scrollLeft = 0;
     targetElement.style.overflowX = 'visible';
     targetElement.style.maxWidth = 'none';
-    // 改用精確的「數字像素」寬度，取代 max-content，防呆避免寬度變成 0
     targetElement.style.width = targetElement.scrollWidth + 'px';
 
-    // 💡 3. 呼叫 html2canvas
+    // 執行截圖
     html2canvas(targetElement, {
         scale: 2,
         backgroundColor: '#ffffff',
-        width: targetElement.scrollWidth,  // 再次明確告知畫布要多寬
-        height: targetElement.scrollHeight // 明確告知畫布要多高
+        width: targetElement.scrollWidth,
+        height: targetElement.scrollHeight
     }).then(canvas => {
-        // 💡 4. 截圖完成，立刻恢復原本「有滑桿」的版面設定！
+        // 恢復版面
         targetElement.style.overflowX = originalOverflowX;
         targetElement.style.maxWidth = originalMaxWidth;
         targetElement.style.width = originalWidth;
-        targetElement.scrollLeft = originalScrollLeft; // 恢復使用者原本滑動的位置
+        targetElement.scrollLeft = originalScrollLeft;
 
         canvas.toBlob(function (blob) {
             if (blob === null) {
@@ -1256,97 +1268,24 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 return;
             }
             
-            // 【新增】雙重模式分流：精準抓取 FB 與 LINE 內建瀏覽器
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
+            // 直接執行原生下載 (因為能走到這裡的，一定是一般瀏覽器)
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.download = finalFileName;
+            link.href = url;
+            link.click();
+            URL.revokeObjectURL(url);
             
-            if (isSocialWebView) {
-                // 【手機社群模式 (LINE/FB)】顯示專屬視窗，提供「關閉」與「分享」按鈕，並加入防呆機制
-                const reader = new FileReader();
-                reader.readAsDataURL(blob);
-                reader.onloadend = function() {
-                    const overlay = document.createElement('div');
-                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px; box-sizing: border-box;';
-                    
-                    const img = document.createElement('img');
-                    img.src = reader.result;
-                    // 確保長按功能暢通無阻 (-webkit-touch-callout: default)
-                    img.style.cssText = 'max-width:100%; max-height:55vh; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); margin-bottom: 15px; pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
-                    
-                    // 新增：防呆文字提示，讓使用者知道還能「長按」
-                    const hintDiv = document.createElement('div');
-                    hintDiv.innerHTML = '💡 若按鈕無反應，請直接👆<b style="color:#f1c40f;">長按上方圖片</b>儲存';
-                    hintDiv.style.cssText = 'color:white; font-size:1rem; margin-bottom:20px; text-align:center;';
-
-                    // 建立按鈕容器
-                    const btnContainer = document.createElement('div');
-                    btnContainer.style.cssText = 'display:flex; gap:15px;';
-
-                    // 1. 關閉按鈕
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '❌ 關閉';
-                    closeBtn.style.cssText = 'padding:12px 20px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
-                    closeBtn.onclick = () => document.body.removeChild(overlay);
-                    
-                    // 2. 分享按鈕 (加入 Try-Catch 攔截錯誤)
-                    const shareBtn = document.createElement('button');
-                    shareBtn.innerHTML = '📤 分享 / 儲存';
-                    shareBtn.style.cssText = 'padding:12px 20px; font-size:1.1rem; border-radius:8px; background:#3498db; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
-                    shareBtn.onclick = async () => {
-                        try {
-                            // 嘗試建立 File 物件 (某些 LINE 瀏覽器會在這裡報錯導致無反應)
-                            const file = new File([blob], finalFileName, { type: 'image/png' });
-                            
-                            if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-                                await navigator.share({
-                                    files: [file],
-                                    title: '賽程表',
-                                    text: '分享這張賽程表給球友！'
-                                });
-                            } else {
-                                // 故意拋出錯誤，讓系統進入 catch 區塊顯示警告
-                                throw new Error("Share API not supported or files not allowed.");
-                            }
-                        } catch (err) {
-                            // 排除使用者自己按取消的情況 (AbortError)
-                            if (err.name !== 'AbortError') {
-                                alert('⚠️ 您的 LINE 阻擋了分享功能！\n\n👉 請直接「長按上方圖片」選擇「儲存圖片」。\n👉 或點選右上角選單「以預設瀏覽器開啟」。');
-                            }
-                        }
-                    };
-
-                    btnContainer.appendChild(closeBtn);
-                    btnContainer.appendChild(shareBtn);
-                    
-                    overlay.appendChild(img);
-                    overlay.appendChild(hintDiv); // 加入提示文字
-                    overlay.appendChild(btnContainer);
-                    document.body.appendChild(overlay);
-                    
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                };
-            } else {
-                // 【一般瀏覽器模式】維持原來的直接下載行為
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.download = finalFileName;
-                link.href = url;
-                link.click();
-                URL.revokeObjectURL(url);
-                
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }
-        }, 'image/png'); // 這裡補回了缺少的收尾括號！
+            btn.textContent = originalText;
+            btn.disabled = false;
+            
+        }, 'image/png');
 
     }).catch(err => {
-        // 如果發生錯誤，也要把滑桿跟寬度恢復原狀
         targetElement.style.overflowX = originalOverflowX;
         targetElement.style.maxWidth = originalMaxWidth;
         targetElement.style.width = originalWidth;
         targetElement.scrollLeft = originalScrollLeft;
-
         console.error("截圖失敗", err);
         alert("截圖發生錯誤！");
         btn.textContent = originalText;
