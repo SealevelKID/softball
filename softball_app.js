@@ -5,6 +5,8 @@ let officialData = [];
 let allRegionsData = [];
 let isAllRegionsMode = false; // 紀錄目前是否為「跨區顯示」模式
 let crossRegionSortMode = 'date'; // 跨區排序模式：'date' 或 'location'
+// ====== 新增：紀錄日期頁面的檢視模式 ======
+let dateViewMode = 'split'; // 新增：紀錄日期頁面的檢視模式 ('split' 雙欄 或 'grid' 全部)
 
 // 紀錄目前是否為編輯模式
 let isEditMode = false;
@@ -265,89 +267,156 @@ async function fetchLastUpdateDate() {
     }
 }
 // ==========================================================
-// 切換按鈕的 Active 樣式 (修復藍色卡住的問題)
+// 切換按鈕的 Active 樣式 (並控制切換開關顯示)
 function setActiveButton(clickedBtn) {
-    // 將原本的 capsule-btn 改成新的 sys-btn
     document.querySelectorAll('.sys-btn').forEach(btn => btn.classList.remove('active'));
     if (clickedBtn) {
         clickedBtn.classList.add('active');
+
+        // 控制日期 ON/OFF 開關的顯示與隱藏
+        const viewSwitch = document.getElementById('date-view-switch');
+        if (viewSwitch) {
+            if (clickedBtn.id === 'btn-view-date') {
+                viewSwitch.style.display = 'inline-flex'; // 在日期頁面時顯示
+            } else {
+                viewSwitch.style.display = 'none'; // 點擊其他頁面時隱藏
+            }
+        }
     }
 }
 
-// 檢視模式 1：按日期檢視 (改為生成日期選單)
+// 檢視模式 1：按日期檢視 (支援 雙欄 / 全部 切換)
 function renderByDate() {
     saveState('dateMenu', null);
     document.getElementById('captureArea').style.display = 'none';
     document.getElementById('btn-download').style.display = 'none';
-    document.getElementById('schedule-container').innerHTML = '';
+
+    const container = document.getElementById('schedule-container');
+    container.innerHTML = '';
 
     const filterContainer = document.getElementById('filter-container');
-
-    // 👇---------- 從這裡開始替換 ----------👇
-    // 【修改】將 flex 改為 CSS Grid 網格系統，強制切成 4 等份
-    filterContainer.style.display = 'grid';
-    filterContainer.style.gridTemplateColumns = 'repeat(4, 1fr)'; // 固定同行 4 個
-    filterContainer.style.gap = '8px'; // 設定按鈕之間的間距
+    filterContainer.style.display = 'block';
     filterContainer.innerHTML = '';
 
-    // 取得所有不重複的日期並排序
     const dates = [...new Set(officialData.map(match => match.date))].sort();
 
-// ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】 ======
-    dates.forEach(date => {
+    // ==========================================
+    // 共用邏輯：建立單一日期按鈕 (保留完整年份)
+    // ==========================================
+    const createDateBtn = (dateStr) => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
-        
-        // 保持使用 flex 讓按鈕自動撐滿並絕對等寬
-        btn.style.flex = '1 1 0%';
-        btn.style.minWidth = '115px'; 
         btn.style.boxSizing = 'border-box';
-        btn.style.textAlign = 'center';
-        
-        const status = scheduleStatus[date];
-        
+        btn.style.width = '100%';
+        btn.style.padding = '8px 5px';
+        btn.style.fontSize = '0.95rem';
+        btn.style.lineHeight = '1.2';
+
+        const status = scheduleStatus[dateStr];
+
         if (status === '完賽') {
-            btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(完)</span>`;
-            btn.style.backgroundColor = '#ecf0f1'; 
+            btn.innerHTML = `${dateStr} <span style="font-size: 0.85em; font-weight: normal;">(完)</span>`;
+            btn.style.backgroundColor = '#ecf0f1';
             btn.style.color = '#7f8c8d';
             btn.style.borderColor = '#bdc3c7';
-            btn.style.fontSize = '0.85rem';
-            btn.style.padding = '8px 2px';
         } else if (status === '延賽') {
-            btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(延)</span>`;
+            btn.innerHTML = `${dateStr} <span style="font-size: 0.85em; font-weight: normal;">(延)</span>`;
             btn.style.backgroundColor = '#fde8e8';
             btn.style.color = '#e74c3c';
             btn.style.borderColor = '#e74c3c';
-            btn.style.fontSize = '0.85rem';
-            btn.style.padding = '8px 2px';
         } else if (status === '雨備') {
-            // 【新增】雨備狀態，顯示 (備) 並套用配合試算表的淺綠色系
-            btn.innerHTML = `${date} <span style="font-size: 0.85em; font-weight: normal;">(備)</span>`;
-            btn.style.backgroundColor = '#e8f8f5'; // 淺綠底色
-            btn.style.color = '#1abc9c'; // 綠色文字
-            btn.style.borderColor = '#1abc9c'; // 綠色邊框
-            btn.style.fontSize = '0.85rem';
-            btn.style.padding = '8px 2px';
+            btn.innerHTML = `${dateStr} <span style="font-size: 0.85em; font-weight: normal;">(備)</span>`;
+            btn.style.backgroundColor = '#e3f2fd'; // 淺藍色背景
+            btn.style.color = '#2980b9';           // 深藍色文字
+            btn.style.borderColor = '#3498db';     // 藍色邊框
         } else {
-            btn.textContent = date;
-            btn.style.fontSize = '0.95rem';
-            btn.style.padding = '8px 15px';
+            btn.textContent = dateStr;
         }
 
         btn.onclick = () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('#filter-container .filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
-            // 【修改這裡】嚴格指定只有「完賽」或「延賽」才彈出通知卡片
-            // 如果是「雨備」或是無狀態的正常日，就直接畫出賽程表格
+
             if (status === '完賽' || status === '延賽') {
-                showStatusPopup(date, status);
+                showStatusPopup(dateStr, status);
             } else {
-                drawDateTable(date);
+                drawDateTable(dateStr);
             }
         };
-        filterContainer.appendChild(btn);
-    });
+        return btn;
+    };
+
+    // ==========================================
+    // 依據當前模式進行渲染
+    // ==========================================
+    if (dateViewMode === 'grid') {
+        // --- 模式：全部顯示 (一行三個) ---
+        filterContainer.style.display = 'grid';
+        filterContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        filterContainer.style.gap = '8px';
+
+        dates.forEach(date => {
+            filterContainer.appendChild(createDateBtn(date));
+        });
+
+    } else {
+        // --- 模式：雙欄分割 (左月份、右日期) ---
+        const groupedDates = {};
+        dates.forEach(date => {
+            const monthKey = date.substring(0, 7);
+            if (!groupedDates[monthKey]) groupedDates[monthKey] = [];
+            groupedDates[monthKey].push(date);
+        });
+
+        const splitView = document.createElement('div');
+        splitView.className = 'split-view-container';
+
+        const leftMenu = document.createElement('div');
+        leftMenu.className = 'split-left-menu';
+
+        const rightContent = document.createElement('div');
+        rightContent.className = 'split-right-content';
+
+        splitView.appendChild(leftMenu);
+        splitView.appendChild(rightContent);
+        filterContainer.appendChild(splitView);
+
+        let isFirstMonth = true;
+
+        Object.keys(groupedDates).sort().forEach(monthKey => {
+            const monthDates = groupedDates[monthKey];
+            const [year, month] = monthKey.split('-');
+            const displayMonth = parseInt(month, 10);
+
+            const monthBtn = document.createElement('button');
+            monthBtn.className = 'filter-btn';
+            monthBtn.style.padding = '8px 5px';
+            monthBtn.style.fontSize = '0.95rem';
+            monthBtn.style.lineHeight = '1.2';
+            monthBtn.innerHTML = `${displayMonth}月 <span style="font-size:0.85rem; font-weight:normal;">(${monthDates.length}場)</span>`;
+
+            monthBtn.onclick = () => {
+                leftMenu.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                monthBtn.classList.add('active');
+
+                document.getElementById('captureArea').style.display = 'none';
+                document.getElementById('btn-download').style.display = 'none';
+                container.innerHTML = '';
+
+                rightContent.innerHTML = '';
+                monthDates.forEach(date => {
+                    rightContent.appendChild(createDateBtn(date));
+                });
+            };
+
+            leftMenu.appendChild(monthBtn);
+
+            if (isFirstMonth) {
+                monthBtn.click();
+                isFirstMonth = false;
+            }
+        });
+    }
 } // renderByDate 結束
 
 // ====== 【關鍵字：階段二 - 變色按鈕與彈出卡片】下方的 showStatusPopup ======
@@ -788,6 +857,11 @@ initSystem();
 // 檢視模式 3：搜尋結果 (動態表頭與標題，支援跨區切換)
 async function renderSearchResult(keyword, forceAllRegions = false, sortMode = 'date') {
     saveState('search', keyword);
+
+    // 進入搜尋結果時強制隱藏日期切換開關 (更新為新版開關 ID)
+    const viewSwitch = document.getElementById('date-view-switch');
+    if (viewSwitch) viewSwitch.style.display = 'none';
+
     const container = document.getElementById('schedule-container');
     const captureArea = document.getElementById('captureArea');
     const scheduleHead = document.getElementById('scheduleHead');
@@ -1293,18 +1367,60 @@ if (navContainer && !document.getElementById('btn-advancement')) {
     const advBtn = document.createElement('button');
     advBtn.className = 'sys-btn';
     advBtn.id = 'btn-advancement';
-    advBtn.textContent = '晉級設定';
+    advBtn.textContent = '晉級';
     navContainer.appendChild(advBtn);
 
     // 綁定點擊事件 (修改為建構中鎖定狀態)
     advBtn.style.opacity = '0.5';
     advBtn.style.cursor = 'not-allowed';
-    advBtn.innerHTML = '晉級設定 🔒'; // 增加鎖頭圖示增加視覺提示
+    advBtn.innerHTML = '晉級 🔒'; // 將文字簡化為「晉級」
 
     advBtn.addEventListener('click', (e) => {
-        // 取消原本的 setActiveButton 與 renderAdvancementSetup 渲染動作
         alert('此功能建構中，敬請期待！');
     });
+
+    // ================= 新增：日期模式切換開關 (ON/OFF 樣式) =================
+    const switchContainer = document.createElement('div');
+    switchContainer.id = 'date-view-switch';
+    switchContainer.className = 'segmented-control';
+    // 【修改】因為網頁一打開就是在日期頁面，所以直接讓它預設顯示
+    switchContainer.style.display = 'inline-flex';
+
+    const btnSplit = document.createElement('button');
+    btnSplit.className = 'segmented-btn active'; // 預設「雙欄」亮起
+    btnSplit.textContent = '雙欄';
+
+    const btnGrid = document.createElement('button');
+    btnGrid.className = 'segmented-btn';
+    btnGrid.textContent = '全部';
+
+    switchContainer.appendChild(btnSplit);
+    switchContainer.appendChild(btnGrid);
+
+    // 關鍵：將這組開關插入在「隊伍 (btn-view-stats)」按鈕的前面，這樣就會在「日期」的正旁邊
+    const statsBtn = document.getElementById('btn-view-stats');
+    if (statsBtn) {
+        navContainer.insertBefore(switchContainer, statsBtn);
+    }
+
+    // 綁定「雙欄」點擊事件
+    btnSplit.addEventListener('click', () => {
+        if (dateViewMode === 'split') return; // 如果已經是雙欄就不動作
+        dateViewMode = 'split';
+        btnSplit.classList.add('active');
+        btnGrid.classList.remove('active');
+        renderByDate();
+    });
+
+    // 綁定「全部」點擊事件
+    btnGrid.addEventListener('click', () => {
+        if (dateViewMode === 'grid') return; // 如果已經是全部就不動作
+        dateViewMode = 'grid';
+        btnGrid.classList.add('active');
+        btnSplit.classList.remove('active');
+        renderByDate();
+    });
+    // ==========================================================
 
     // 2. 覆寫原本的「返回」按鈕邏輯，讓它可以支援從晉級設定頁面返回
     const oldBackBtn = document.getElementById('btn-back');
