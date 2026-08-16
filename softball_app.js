@@ -624,7 +624,28 @@ function drawDateTable(selectedDate) {
     isEditMode = false;
 
     captureArea.style.display = 'block';
-    title.textContent = `${selectedDate} 賽程`;
+    
+    // ================= 新增：計算左右切換箭頭 =================
+    const allDates = [...new Set(officialData.map(m => m.date))].sort();
+    const currentIndex = allDates.indexOf(selectedDate);
+    
+    let leftArrow = '';
+    let rightArrow = '';
+    
+    // 如果不是第一天，顯示左箭頭
+    if (currentIndex > 0) {
+        const prevDate = allDates[currentIndex - 1];
+        leftArrow = `<span style="cursor: pointer; padding: 0 20px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${prevDate}')">〈</span>`;
+    }
+    // 如果不是最後一天，顯示右箭頭
+    if (currentIndex < allDates.length - 1) {
+        const nextDate = allDates[currentIndex + 1];
+        rightArrow = `<span style="cursor: pointer; padding: 0 20px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${nextDate}')">〉</span>`;
+    }
+    
+    // 將箭頭與標題組合 (改用 innerHTML 渲染)
+    title.innerHTML = `${leftArrow} ${selectedDate} 賽程 ${rightArrow}`;
+    // ==========================================================
 
     // 💡 1. 先將資料過濾提上來，算出這天總共有「幾個場地」
     const matches = officialData.filter(m => m.date === selectedDate);
@@ -806,6 +827,69 @@ function drawDateTable(selectedDate) {
         });
         scheduleBody.innerHTML += `<tr>${rowHTML}</tr>`;
     });
+
+    // ================= 新增：表格下方的每日備註欄位 =================
+    let noteContainer = document.getElementById('daily-note-container');
+    if (!noteContainer) {
+        // 如果還沒有這個區塊，就動態建立一個，並安插在表格的下方
+        noteContainer = document.createElement('div');
+        noteContainer.id = 'daily-note-container';
+        const table = document.getElementById('scheduleTable');
+        table.parentNode.insertBefore(noteContainer, table.nextSibling);
+    }
+    
+    // 定義這天備註專屬的暫存 ID (例如: 2026-08-23_daily)
+    const dailyNoteId = `${selectedDate}_daily`;
+    const cachedDailyNote = cachedEdits[dailyNoteId] || {};
+    
+    // ================= 新增：自動收集並合併該日期的所有備註 =================
+    // 1. 從當天所有的比賽中，提取有值的 note，並去除重複
+    const allNotes = [];
+    matches.forEach(m => {
+        // 如果這場比賽有隊伍（不是雨備日或空堂），且有 note 內容
+        if (m.home_team && m.away_team && m.note) {
+            if (!allNotes.includes(m.note)) {
+                allNotes.push(m.note);
+            }
+        }
+    });
+    // 將收集到的備註用頓號合併成一個字串
+    const autoCombinedNote = allNotes.join("、");
+
+    // 2. 讀取暫存。優先順序：手動暫存 > 自動收集合併的 note > 第一場比賽的 daily_note
+    let displayDailyNote = "";
+    if (cachedDailyNote.daily_note !== undefined) {
+        displayDailyNote = cachedDailyNote.daily_note;
+    } else if (autoCombinedNote !== "") {
+        displayDailyNote = autoCombinedNote;
+    } else {
+        displayDailyNote = matches[0].daily_note || "";
+    }
+    // ====================================================================
+
+    // 渲染紅色粗體備註文字，並套用 Flexbox 讓備註與更新日期並排！
+    noteContainer.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 8px; padding: 0 5px;">
+            <div style="flex: 1; text-align: left;">
+                <span style="color: red; font-weight: bold; font-size: 1.2rem;">備註：</span>
+                <span class="editable-cell" contenteditable="false" style="color: red; font-weight: bold; font-size: 1.2rem; outline: none; transition: background-color 0.2s; min-width: 50px; display: inline-block; cursor: text;" onblur="saveEdit('${dailyNoteId}', 'daily_note', this.innerText)" title="點擊編輯按鈕後可修改">${displayDailyNote}</span>
+            </div>
+            <div id="dynamic-update-date" style="color: #bdc3c7; font-size: 0.85rem; white-space: nowrap; margin-left: 10px;">
+                讀取中...
+            </div>
+        </div>
+    `;
+
+    // 抓取原本 HTML 中的更新日期文字，並塞入我們新建立的右側區塊
+    const originalUpdateContainer = document.getElementById('update-date-container');
+    const dynamicUpdateDate = document.getElementById('dynamic-update-date');
+    if (originalUpdateContainer && dynamicUpdateDate) {
+        dynamicUpdateDate.textContent = originalUpdateContainer.textContent;
+        // 隱藏原本會佔據換行空間的舊區塊
+        originalUpdateContainer.style.display = 'none'; 
+    }
+    // ==============================================================
+
     // 👆---------- 替換到這裡結束 ----------👆
 }
 
