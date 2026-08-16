@@ -1261,33 +1261,54 @@ document.getElementById('btn-download').addEventListener('click', () => {
             const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
             
             if (isSocialWebView) {
-                // 【手機社群模式 (LINE/FB)】放棄實體下載按鈕，改為明確引導長按儲存
+                // 【手機社群模式 (LINE/FB)】顯示專屬視窗，提供「關閉」與「分享」按鈕
                 const reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
                     const overlay = document.createElement('div');
-                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center;';
+                    overlay.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px; box-sizing: border-box;';
                     
                     const img = document.createElement('img');
                     img.src = reader.result;
-                    // 確保長按功能暢通無阻 (-webkit-touch-callout: default)
-                    img.style.cssText = 'max-width:95%; max-height:65%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
+                    img.style.cssText = 'max-width:100%; max-height:60vh; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); margin-bottom: 25px;';
                     
-                    // 新增：防呆提示文字，明確告知使用者該怎麼做
-                    const hintDiv = document.createElement('div');
-                    hintDiv.innerHTML = '⚠️ LINE 等社群軟體不支援直接下載<br>請👆 <span style="color:#f1c40f; font-size:1.2rem; font-weight:bold;">長按上方圖片</span> 選擇「儲存圖片」';
-                    hintDiv.style.cssText = 'color:white; text-align:center; margin-top:15px; font-size:1rem; line-height:1.5; background:rgba(231, 76, 60, 0.2); padding:10px 15px; border-radius:8px; border:1px solid #e74c3c;';
+                    // 建立按鈕容器
+                    const btnContainer = document.createElement('div');
+                    btnContainer.style.cssText = 'display:flex; gap:20px;';
 
                     // 1. 關閉按鈕
                     const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '❌ 關閉返回';
-                    closeBtn.style.cssText = 'margin-top:20px; padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    closeBtn.innerHTML = '❌ 關閉';
+                    closeBtn.style.cssText = 'padding:12px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
                     closeBtn.onclick = () => document.body.removeChild(overlay);
                     
-                    // 將圖片、提示文字與關閉按鈕裝入黑底畫面
+                    // 2. 分享按鈕 (呼叫手機原生分享選單)
+                    const shareBtn = document.createElement('button');
+                    shareBtn.innerHTML = '📤 分享 / 儲存';
+                    shareBtn.style.cssText = 'padding:12px 25px; font-size:1.1rem; border-radius:8px; background:#3498db; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    shareBtn.onclick = async () => {
+                        const file = new File([blob], finalFileName, { type: 'image/png' });
+                        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                            try {
+                                await navigator.share({
+                                    files: [file],
+                                    title: '賽程表',
+                                    text: '分享這張賽程表給球友！'
+                                });
+                            } catch (err) {
+                                console.log("使用者取消分享", err);
+                            }
+                        } else {
+                            // 若手機極舊不支援分享，給予退路提示
+                            alert('⚠️ 您的手機不支援直接分享，請點選右上/右下角選單「以預設瀏覽器開啟」後再下載。');
+                        }
+                    };
+
+                    btnContainer.appendChild(closeBtn);
+                    btnContainer.appendChild(shareBtn);
+                    
                     overlay.appendChild(img);
-                    overlay.appendChild(hintDiv);
-                    overlay.appendChild(closeBtn);
+                    overlay.appendChild(btnContainer);
                     document.body.appendChild(overlay);
                     
                     btn.textContent = originalText;
