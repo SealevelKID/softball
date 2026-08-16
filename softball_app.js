@@ -1261,7 +1261,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
             const isSocialWebView = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Line") > -1);
             
             if (isSocialWebView) {
-                // 【手機社群模式】產生 Base64 圖片並開啟黑底預覽視窗，直接提供「關閉」與「下載」按鈕
+                // 【手機社群模式 (LINE/FB)】放棄實體下載按鈕，改為明確引導長按儲存
                 const reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
@@ -1270,33 +1270,24 @@ document.getElementById('btn-download').addEventListener('click', () => {
                     
                     const img = document.createElement('img');
                     img.src = reader.result;
-                    // 加入 -webkit-touch-callout: default 作為隱形保險
-                    img.style.cssText = 'max-width:95%; max-height:70%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
+                    // 確保長按功能暢通無阻 (-webkit-touch-callout: default)
+                    img.style.cssText = 'max-width:95%; max-height:65%; border:2px solid white; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.5); pointer-events:auto; -webkit-touch-callout:default; user-select:auto;';
                     
-                    // 建立兩顆按鈕的容器 (並排顯示)
-                    const btnContainer = document.createElement('div');
-                    btnContainer.style.cssText = 'display:flex; gap:20px; margin-top:20px;';
+                    // 新增：防呆提示文字，明確告知使用者該怎麼做
+                    const hintDiv = document.createElement('div');
+                    hintDiv.innerHTML = '⚠️ LINE 等社群軟體不支援直接下載<br>請👆 <span style="color:#f1c40f; font-size:1.2rem; font-weight:bold;">長按上方圖片</span> 選擇「儲存圖片」';
+                    hintDiv.style.cssText = 'color:white; text-align:center; margin-top:15px; font-size:1rem; line-height:1.5; background:rgba(231, 76, 60, 0.2); padding:10px 15px; border-radius:8px; border:1px solid #e74c3c;';
 
                     // 1. 關閉按鈕
                     const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '❌ 關閉';
-                    closeBtn.style.cssText = 'padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
+                    closeBtn.innerHTML = '❌ 關閉返回';
+                    closeBtn.style.cssText = 'margin-top:20px; padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#7f8c8d; color:white; border:none; cursor:pointer; font-weight:bold; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
                     closeBtn.onclick = () => document.body.removeChild(overlay);
                     
-                    // 2. 下載按鈕 (直接使用 a 標籤觸發下載)
-                    const dlBtn = document.createElement('a');
-                    dlBtn.innerHTML = '📥 下載';
-                    dlBtn.href = reader.result;
-                    dlBtn.download = finalFileName;
-                    dlBtn.style.cssText = 'padding:10px 25px; font-size:1.1rem; border-radius:8px; background:#27ae60; color:white; border:none; cursor:pointer; font-weight:bold; text-decoration:none; display:inline-block; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.3);';
-
-                    // 將按鈕裝入容器
-                    btnContainer.appendChild(closeBtn);
-                    btnContainer.appendChild(dlBtn);
-                    
-                    // 將圖片與按鈕容器裝入黑底畫面
+                    // 將圖片、提示文字與關閉按鈕裝入黑底畫面
                     overlay.appendChild(img);
-                    overlay.appendChild(btnContainer);
+                    overlay.appendChild(hintDiv);
+                    overlay.appendChild(closeBtn);
                     document.body.appendChild(overlay);
                     
                     btn.textContent = originalText;
