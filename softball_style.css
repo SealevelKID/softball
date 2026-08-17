@@ -399,3 +399,29 @@ td[contenteditable="true"]:hover {
     color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+/* ========================================= */
+/* 新增：管理者拖曳交換 (Drag & Drop) 視覺效果 */
+/* ========================================= */
+
+/* 1. 必須在編輯模式(draggable="true")開啟時，游標才顯示為抓取手勢 */
+.draggable-cell[draggable="true"] {
+    cursor: grab;
+}
+
+/* 2. 滑鼠按住準備拖曳時的游標手勢 */
+.draggable-cell[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+/* 3. 「正在被拖曳中」的元素本身：半透明、藍底虛線 */
+.dragging {
+    opacity: 0.5;
+    background-color: #e8f4fd !important;
+    border: 2px dashed #3498db !important;
+}
+
+/* 4. 「被拖曳對象經過」的目標區域：橘黃色底與橘色虛線框，提示可放下 */
+.drag-over {
+    background-color: #fcf6e5 !important;
+    border: 2px dashed #e67e22 !important;
+}
