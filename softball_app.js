@@ -1,6 +1,153 @@
 // 全域狀態：儲存官方唯讀總表
 let officialData = [];
 
+// ====== 新增：管理者 Live 模式偵測 ======
+let isAdminMode = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost');
+if (isAdminMode) console.log("🛠️ 偵測到 Live Server，已解鎖管理者模式！");
+
+// ====== 新增：下載更新後的 JSON 檔案 ======
+function downloadUpdatedJSON() {
+    // 1. 先將暫存的打字修改 (Cache) 寫回 officialData 總表裡
+    const cachedEdits = getCache();
+    officialData.forEach(match => {
+        const matchId = `${match.date}_${match.time}_${match.location}`;
+        if (cachedEdits[matchId]) {
+            if (cachedEdits[matchId].home_team !== undefined) match.home_team = cachedEdits[matchId].home_team;
+            if (cachedEdits[matchId].away_team !== undefined) match.away_team = cachedEdits[matchId].away_team;
+            if (cachedEdits[matchId].note !== undefined) match.note = cachedEdits[matchId].note;
+        }
+    });
+    
+    // 處理每日備註 (daily_note) 寫入當天第一場比賽
+    const uniqueDates = [...new Set(officialData.map(m => m.date))];
+    uniqueDates.forEach(date => {
+        const dailyNoteId = `${date}_daily`;
+        if (cachedEdits[dailyNoteId] && cachedEdits[dailyNoteId].daily_note !== undefined) {
+            const firstMatch = officialData.find(m => m.date === date);
+            if (firstMatch) firstMatch.daily_note = cachedEdits[dailyNoteId].daily_note;
+        }
+    });
+
+    // 2. 確保過濾與排序，避免意外的資料錯亂
+    officialData.sort((a, b) => {
+        if (a.date !== b.date) return a.date.localeCompare(b.date);
+        return (a.time || '').localeCompare(b.time || '');
+    });
+
+    // 3. 將記憶體中的資料轉為格式化 (縮排2格) 的 JSON 字串
+    const dataStr = JSON.stringify(officialData, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    // 動態取得目前的 JSON 檔名 (例如 sanchong_schedule.json)
+    let baseFilename = typeof DATA_URL !== 'undefined' ? DATA_URL : 'schedule.json';
+    
+    // 產生時間戳記 (格式：YYYYMMDD_HHMMSS)
+    const now = new Date();
+    const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+    
+    // 將原本的 .json 取代為 _時間戳記.json
+    let finalFilename = baseFilename.replace('.json', `_${ts}.json`);
+
+    link.download = finalFilename;
+    link.href = url;
+    link.click();
+    URL.revokeObjectURL(url);
+
+    // 提示訊息加入更名提醒
+    alert(`✅ 已產生更新後的檔案：\n${finalFilename}\n\n👉 您可以隨意切換日期、拖曳或打字，系統會自動記住，直到您點擊儲存為止。\n\n⚠️ 覆蓋專案舊檔時，記得將時間戳記刪除（改回 ${baseFilename}），網頁才能正常讀取喔！`);
+}
+// ============================================
+
+// ====== 新增：拖曳交換 (Drag & Drop) 核心邏輯 ======
+let dragSourceMatchId = null;
+let dragSourceField = null;
+
+function handleDragStart(e, matchId, field) {
+    // 三重防呆：必須是管理者 + 開啟編輯模式 + 處於拖曳子模式
+    if (!isAdminMode || !isEditMode || editModeType !== 'drag') {
+        e.preventDefault();
+        return;
+    }
+    dragSourceMatchId = matchId;
+    dragSourceField = field;
+    e.target.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+}
+
+function handleDragOver(e) {
+    if (!isAdminMode) return;
+    e.preventDefault(); // 必須呼叫，否則無法觸發 drop
+    e.dataTransfer.dropEffect = 'move';
+}
+
+function handleDragEnter(e) {
+    if (!isAdminMode) return;
+    e.preventDefault();
+    const td = e.target.closest('td');
+    if (td) td.classList.add('drag-over');
+}
+
+function handleDragLeave(e) {
+    if (!isAdminMode) return;
+    const td = e.target.closest('td');
+    if (td) td.classList.remove('drag-over');
+}
+
+function handleDrop(e, targetMatchId, targetField) {
+    if (!isAdminMode) return;
+    e.stopPropagation();
+    
+    const td = e.target.closest('td');
+    if (td) td.classList.remove('drag-over');
+
+    if (dragSourceMatchId && dragSourceField && targetMatchId && targetField) {
+        // 如果是自己拖給自己，不需要交換
+        if (dragSourceMatchId === targetMatchId && dragSourceField === targetField) return;
+
+        // 執行記憶體資料交換
+        swapTeamData(dragSourceMatchId, dragSourceField, targetMatchId, targetField);
+    }
+}
+
+function handleDragEnd(e) {
+    if (!isAdminMode) return;
+    e.target.classList.remove('dragging');
+    document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    dragSourceMatchId = null;
+    dragSourceField = null;
+}
+
+// 實際交換 officialData 中的兩筆資料並重繪畫面
+function swapTeamData(matchId1, field1, matchId2, field2) {
+    // 利用底線拆解出日期、時間、場地
+    const [date1, time1, loc1] = matchId1.split('_');
+    const [date2, time2, loc2] = matchId2.split('_');
+
+    // 找出在 officialData 中的真實索引
+    const idx1 = officialData.findIndex(m => m.date === date1 && m.time === time1 && m.location === loc1);
+    const idx2 = officialData.findIndex(m => m.date === date2 && m.time === time2 && m.location === loc2);
+
+    if (idx1 !== -1 && idx2 !== -1) {
+        // 核心：直接交換記憶體裡兩個欄位的值 (away_team / home_team)
+        const temp = officialData[idx1][field1];
+        officialData[idx1][field1] = officialData[idx2][field2];
+        officialData[idx2][field2] = temp;
+
+        // ====== 關鍵修復：將拖曳的結果「同步寫入」打字的暫存空間 ======
+        saveEdit(matchId1, field1, officialData[idx1][field1]);
+        saveEdit(matchId2, field2, officialData[idx2][field2]);
+        // ========================================================
+
+        console.log(`🔄 已交換: ${officialData[idx1][field1]} 與 ${officialData[idx2][field2]}`);
+
+        // 直接拿該場比賽的日期，呼叫原本的畫表函數重新渲染畫面
+        drawDateTable(date1);
+    }
+}
+// ===================================================
+
 // 全域狀態：儲存跨區所有資料
 let allRegionsData = [];
 let isAllRegionsMode = false; // 紀錄目前是否為「跨區顯示」模式
@@ -8,24 +155,70 @@ let crossRegionSortMode = 'date'; // 跨區排序模式：'date' 或 'location'
 // ====== 新增：紀錄日期頁面的檢視模式 ======
 let dateViewMode = 'split'; // 新增：紀錄日期頁面的檢視模式 ('split' 雙欄 或 'grid' 全部)
 
-// 紀錄目前是否為編輯模式
+// 紀錄目前是否為編輯模式，以及處於哪種子模式
 let isEditMode = false;
+let editModeType = 'type'; // 'type' (打字) 或 'drag' (拖曳)
 
-// 新增：GAS API 網址 (請替換為你在階段一取得的網址)
+// 切換編輯模式的函數
+function toggleEditMode() {
+    isEditMode = !isEditMode;
+    const editBtn = document.getElementById('btn-toggle-edit');
+    const editSwitch = document.getElementById('edit-mode-switch');
+
+    if (isEditMode) {
+        editBtn.textContent = '完成編輯';
+        editBtn.classList.add('active'); // 亮起藍色
+        if (isAdminMode && editSwitch) {
+            editSwitch.style.display = 'inline-flex'; // 顯示打字/拖曳開關
+        }
+        applyEditModeSettings(); // 依據模式套用設定
+    } else {
+        editBtn.textContent = '編輯';
+        editBtn.classList.remove('active'); // 恢復原本顏色
+        if (editSwitch) editSwitch.style.display = 'none'; // 隱藏開關
+
+        // 將所有可編輯欄位上鎖
+        document.querySelectorAll('.editable-cell').forEach(cell => {
+            cell.setAttribute('contenteditable', 'false');
+            cell.style.backgroundColor = ''; // 恢復原本顏色
+            if (isAdminMode && cell.classList.contains('draggable-cell')) {
+                cell.setAttribute('draggable', 'false');
+            }
+        });
+    }
+}
+
+// ====== 新增：依據模式(打字/拖曳)套用不同屬性，避免衝突 ======
+function applyEditModeSettings() {
+    document.querySelectorAll('.editable-cell').forEach(cell => {
+        cell.style.backgroundColor = '#fdf8e3'; // 黃底提示可編輯
+        
+        if (editModeType === 'type') {
+            // 【打字模式】：開啟打字，關閉拖曳
+            cell.setAttribute('contenteditable', 'true');
+            if (isAdminMode && cell.classList.contains('draggable-cell')) {
+                cell.setAttribute('draggable', 'false');
+            }
+        } else if (editModeType === 'drag') {
+            // 【拖曳模式】：關閉打字，開啟拖曳
+            cell.setAttribute('contenteditable', 'false'); 
+            if (isAdminMode && cell.classList.contains('draggable-cell')) {
+                cell.setAttribute('draggable', 'true');
+            }
+        }
+    });
+}
+
 const GAS_API_URL = "https://script.google.com/macros/s/AKfycbwhl53MHRxavzgmPTH0Y7Hbc7DCF5BhilpbqtocetOlFUVelND6HS6L25Viu3ezNNOF/exec";
 
-// 新增：用來儲存從 API 抓回來的「完賽/延賽」狀態
 let scheduleStatus = {};
 
-// 新增：向 GAS API 獲取狀態資料
-// ====== 【關鍵字：階段二 - 自動比對當前地區狀態】 ======
 async function fetchScheduleStatus() {
     try {
         const response = await fetch(GAS_API_URL);
         const result = await response.json();
 
         if (result.success) {
-            // 判斷當前網頁是哪一個地區
             let currentRegion = "未知";
             if (typeof DATA_URL !== 'undefined') {
                 if (DATA_URL.includes('xinzhuang')) currentRegion = '新莊';
@@ -34,36 +227,11 @@ async function fetchScheduleStatus() {
                 else if (DATA_URL.includes('wugu')) currentRegion = '五股';
             }
 
-            // 只提取屬於當前地區的日期狀態
             scheduleStatus = result.data[currentRegion] || {};
             console.log(`✅ 成功讀取【${currentRegion}】賽程狀態:`, scheduleStatus);
         }
     } catch (error) {
         console.error("❌ 讀取賽程狀態失敗:", error);
-    }
-}
-
-// 切換編輯模式的函數
-function toggleEditMode() {
-    isEditMode = !isEditMode;
-    const editBtn = document.getElementById('btn-toggle-edit');
-
-    if (isEditMode) {
-        editBtn.textContent = '完成編輯';
-        editBtn.classList.add('active'); // 亮起藍色
-        // 將所有可編輯欄位解鎖
-        document.querySelectorAll('.editable-cell').forEach(cell => {
-            cell.setAttribute('contenteditable', 'true');
-            cell.style.backgroundColor = '#fdf8e3'; // 給一點微微的黃色底色提示可編輯
-        });
-    } else {
-        editBtn.textContent = '編輯';
-        editBtn.classList.remove('active'); // 恢復原本顏色
-        // 將所有可編輯欄位上鎖
-        document.querySelectorAll('.editable-cell').forEach(cell => {
-            cell.setAttribute('contenteditable', 'false');
-            cell.style.backgroundColor = ''; // 恢復原本顏色
-        });
     }
 }
 
@@ -229,7 +397,23 @@ async function initSystem() {
             }
         });
         // ==============================================================
+        // ====== 新增：如果是在 Live 環境，動態加入「儲存 JSON」按鈕 ======
+        if (isAdminMode) {
+            const navContainer = document.querySelector('.nav-container');
+            if (navContainer && !document.getElementById('btn-download-json')) {
+                const btnSaveJson = document.createElement('button');
+                btnSaveJson.id = 'btn-download-json';
+                btnSaveJson.className = 'sys-btn';
+                btnSaveJson.style.backgroundColor = '#e74c3c'; // 紅色底色，強烈提示
+                btnSaveJson.style.color = 'white';
+                btnSaveJson.innerHTML = '💾 儲存 JSON';
+                btnSaveJson.onclick = downloadUpdatedJSON;
 
+                // 將按鈕附加在導覽列最後面（靠右側）
+                navContainer.appendChild(btnSaveJson);
+            }
+        }
+        // ================================================================
     } catch (error) {
         document.getElementById('schedule-container').innerHTML =
             `<div style="color:red; text-align:center; padding:20px; font-weight:bold;">資料載入失敗，請確認 ${typeof DATA_URL !== 'undefined' ? DATA_URL : 'schedule.json'} 是否存在。<br>錯誤訊息：${error.message}</div>`;
@@ -559,7 +743,6 @@ function setupTableButtons() {
     btnDownload.style.right = '15px';
     btnDownload.style.left = 'auto';
     btnDownload.style.zIndex = '10';
-    // 淡化下載按鈕
     btnDownload.style.opacity = '0.8';
     btnDownload.style.backgroundColor = '#f8f9fa';
     btnDownload.style.color = '#7f8c8d';
@@ -576,18 +759,63 @@ function setupTableButtons() {
     }
 
     btnEdit.style.display = 'inline-block';
-    btnEdit.textContent = '編輯';
-    btnEdit.classList.remove('active');
+    btnEdit.textContent = isEditMode ? '完成編輯' : '編輯';
+    if (isEditMode) btnEdit.classList.add('active');
+    else btnEdit.classList.remove('active');
     btnEdit.style.position = 'absolute';
-    btnEdit.style.top = '55px'; // 向下移避開主標題
+    btnEdit.style.top = '55px'; 
     btnEdit.style.left = '15px';
     btnEdit.style.right = 'auto';
     btnEdit.style.zIndex = '10';
-    // 淡化編輯按鈕
     btnEdit.style.opacity = '0.8';
-    btnEdit.style.backgroundColor = '#f8f9fa';
-    btnEdit.style.color = '#7f8c8d';
+    btnEdit.style.backgroundColor = isEditMode ? '#3498db' : '#f8f9fa';
+    btnEdit.style.color = isEditMode ? 'white' : '#7f8c8d';
     btnEdit.style.border = '1px solid #bdc3c7';
+
+    // ====== 新增：打字/拖曳切換開關 (僅管理者可見) ======
+    let editSwitch = document.getElementById('edit-mode-switch');
+    if (isAdminMode) {
+        if (!editSwitch) {
+            editSwitch = document.createElement('div');
+            editSwitch.id = 'edit-mode-switch';
+            editSwitch.className = 'segmented-control';
+            editSwitch.setAttribute('data-html2canvas-ignore', 'true');
+            
+            const btnType = document.createElement('button');
+            btnType.className = `segmented-btn ${editModeType === 'type' ? 'active' : ''}`;
+            btnType.textContent = '📝 打字';
+            
+            const btnDrag = document.createElement('button');
+            btnDrag.className = `segmented-btn ${editModeType === 'drag' ? 'active' : ''}`;
+            btnDrag.textContent = '✋ 拖曳';
+            
+            btnType.onclick = () => {
+                editModeType = 'type';
+                btnType.classList.add('active');
+                btnDrag.classList.remove('active');
+                if (isEditMode) applyEditModeSettings();
+            };
+            
+            btnDrag.onclick = () => {
+                editModeType = 'drag';
+                btnDrag.classList.add('active');
+                btnType.classList.remove('active');
+                if (isEditMode) applyEditModeSettings();
+            };
+            
+            editSwitch.appendChild(btnType);
+            editSwitch.appendChild(btnDrag);
+            captureArea.appendChild(editSwitch);
+        }
+
+        // 固定在「編輯」按鈕的右邊
+        editSwitch.style.position = 'absolute';
+        editSwitch.style.top = '55px'; 
+        editSwitch.style.left = '115px'; 
+        editSwitch.style.zIndex = '10';
+        editSwitch.style.display = isEditMode ? 'inline-flex' : 'none'; 
+    }
+    // ===============================================
 
     // 【修改】判斷是否為五股區
     const isWugu = document.title.includes('五股');
@@ -597,6 +825,7 @@ function setupTableButtons() {
             const sl = captureArea.scrollLeft;
             if (btnEdit) btnEdit.style.transform = `translateX(${sl}px)`;
             if (btnDownload) btnDownload.style.transform = `translateX(${sl}px)`;
+            if (editSwitch) editSwitch.style.transform = `translateX(${sl}px)`; // 加入連動
         };
         captureArea.addEventListener('scroll', syncButtons);
         window.addEventListener('resize', syncButtons);
@@ -606,6 +835,7 @@ function setupTableButtons() {
         // 非五股區，強制清除可能的位移殘留，釘死在左上與右上
         if (btnEdit) btnEdit.style.transform = 'none';
         if (btnDownload) btnDownload.style.transform = 'none';
+        if (editSwitch) editSwitch.style.transform = 'none'; // 加入連動
     }
 }
 
@@ -620,18 +850,17 @@ function drawDateTable(selectedDate) {
     // 【關鍵修正】切換日期畫新表格時，強制清空原本可能殘留的延賽/完賽卡片
     document.getElementById('schedule-container').innerHTML = '';
 
-    // 每次重新畫表格時，預設重置為「非編輯模式」
-    isEditMode = false;
+    // 【修改】：移除 isEditMode = false; 讓拖曳和編輯模式可以跨網頁重繪保持開啟
 
     captureArea.style.display = 'block';
-    
+
     // ================= 新增：計算左右切換箭頭 =================
     const allDates = [...new Set(officialData.map(m => m.date))].sort();
     const currentIndex = allDates.indexOf(selectedDate);
-    
+
     let leftArrow = '';
     let rightArrow = '';
-    
+
     // 如果不是第一天，顯示左箭頭
     if (currentIndex > 0) {
         const prevDate = allDates[currentIndex - 1];
@@ -644,7 +873,7 @@ function drawDateTable(selectedDate) {
         // 【修改】同上
         rightArrow = `<span data-html2canvas-ignore="true" style="cursor: pointer; padding: 0 5px; margin: 0 8px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${nextDate}')">〉</span>`;
     }
-    
+
     // 將箭頭與標題組合 (改用 innerHTML 渲染)
     title.innerHTML = `${leftArrow} <span style="display:inline-block;">${selectedDate} 賽程</span> ${rightArrow}`;
     // ==========================================================
@@ -686,7 +915,7 @@ function drawDateTable(selectedDate) {
         document.getElementById('scheduleTable').style.minWidth = '100%';
     }
 
-    // ================= 按鈕位置自動跟隨固定邏輯 =================
+// ================= 按鈕位置自動跟隨固定邏輯 =================
     const btnDownload = document.getElementById('btn-download');
     btnDownload.style.display = 'inline-block';
     btnDownload.style.position = 'absolute';
@@ -725,6 +954,51 @@ function drawDateTable(selectedDate) {
     btnEdit.style.color = '#7f8c8d';
     btnEdit.style.border = '1px solid #bdc3c7';
 
+    // ====== 新增：打字/拖曳切換開關 (僅管理者可見) ======
+    let editSwitch = document.getElementById('edit-mode-switch');
+    if (isAdminMode) {
+        if (!editSwitch) {
+            editSwitch = document.createElement('div');
+            editSwitch.id = 'edit-mode-switch';
+            editSwitch.className = 'segmented-control';
+            editSwitch.setAttribute('data-html2canvas-ignore', 'true');
+            
+            const btnType = document.createElement('button');
+            btnType.className = `segmented-btn ${editModeType === 'type' ? 'active' : ''}`;
+            btnType.textContent = '📝 打字';
+            
+            const btnDrag = document.createElement('button');
+            btnDrag.className = `segmented-btn ${editModeType === 'drag' ? 'active' : ''}`;
+            btnDrag.textContent = '✋ 拖曳';
+            
+            btnType.onclick = () => {
+                editModeType = 'type';
+                btnType.classList.add('active');
+                btnDrag.classList.remove('active');
+                if (isEditMode) applyEditModeSettings();
+            };
+            
+            btnDrag.onclick = () => {
+                editModeType = 'drag';
+                btnDrag.classList.add('active');
+                btnType.classList.remove('active');
+                if (isEditMode) applyEditModeSettings();
+            };
+            
+            editSwitch.appendChild(btnType);
+            editSwitch.appendChild(btnDrag);
+            captureArea.appendChild(editSwitch);
+        }
+
+        // 固定在「編輯」按鈕的右邊
+        editSwitch.style.position = 'absolute';
+        editSwitch.style.top = '55px'; 
+        editSwitch.style.left = '115px'; 
+        editSwitch.style.zIndex = '10';
+        editSwitch.style.display = isEditMode ? 'inline-flex' : 'none'; 
+    }
+    // ===============================================
+
     // 💡 3. 只有「場地多導致有捲軸」時，才啟動滑動抵銷邏輯
     if (hasManyLocations) {
         if (!captureArea._scrollSyncBound) {
@@ -732,6 +1006,7 @@ function drawDateTable(selectedDate) {
                 const sl = captureArea.scrollLeft;
                 if (btnEdit) btnEdit.style.transform = `translateX(${sl}px)`;
                 if (btnDownload) btnDownload.style.transform = `translateX(${sl}px)`;
+                if (editSwitch) editSwitch.style.transform = `translateX(${sl}px)`; // 加入連動
             };
             captureArea.addEventListener('scroll', syncButtons);
             window.addEventListener('resize', syncButtons);
@@ -742,6 +1017,7 @@ function drawDateTable(selectedDate) {
         // 沒有滑動需求時，強制清除可能殘留的位移，讓按鈕乖乖待在左右上角
         if (btnEdit) btnEdit.style.transform = 'none';
         if (btnDownload) btnDownload.style.transform = 'none';
+        if (editSwitch) editSwitch.style.transform = 'none'; // 加入連動
     }
     // ==============================================================
 
@@ -786,12 +1062,12 @@ function drawDateTable(selectedDate) {
 
                     const homeHTML = formatTeamName(displayHome);
                     const awayHTML = formatTeamName(displayAway);
-                    
+
                     // 先取得備註內容，用來判斷是否要啟動防護罩(安全距離)
                     const mNote = cachedMatch.note !== undefined ? cachedMatch.note : (match.note || '');
 
                     const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
-                    
+
                     // 【修改】動態設定內距。如果有備註，左邊格子右側留 24px，右邊格子左側留 24px 避免文字重疊
                     const leftPadding = mNote ? "5px 24px 5px 5px" : "5px";
                     const rightPadding = mNote ? "5px 5px 5px 24px" : "5px";
@@ -804,13 +1080,23 @@ function drawDateTable(selectedDate) {
                     let leftField = isAwayFirst ? 'away_team' : 'home_team';
                     let rightField = isAwayFirst ? 'home_team' : 'away_team';
 
-                    // 【修改】字體縮小為 0.75rem，並加入 pointer-events: none 確保滑鼠點擊不會被這塊小標籤擋住
+                    // 💡 【重要修復】：補回不小心被刪除的 noteBadge 宣告
                     const noteBadge = mNote ? `<div contenteditable="false" style="position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); color: #c0392b; font-size: 0.75rem; font-weight: bold; background: white; padding: 1px 2px; border-radius: 4px; z-index: 5; white-space: nowrap; box-shadow: 0 0 3px rgba(0,0,0,0.1); pointer-events: none;">${mNote}</div>` : '';
 
-                    const tdLeft = `<td class="editable-cell" contenteditable="false" style="${leftTeamStyle}" onblur="saveEdit('${matchId}', '${leftField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${leftHTML}${noteBadge}</td>`;
-                    const tdRight = `<td class="editable-cell" contenteditable="false" style="${rightTeamStyle}" onblur="saveEdit('${matchId}', '${rightField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${rightHTML}</td>`;
+                    // ====== 新增：加入 Drag & Drop 標籤與判斷 ======
+                    const dragClass = isAdminMode ? " draggable-cell" : "";
+                    
+                    // 【修改】預設為 draggable="false"，必須等點擊「編輯」按鈕後才由系統開啟為 true
+                    const dragAttrLeft = isAdminMode ? `draggable="false" ondragstart="handleDragStart(event, '${matchId}', '${leftField}')" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, '${matchId}', '${leftField}')" ondragend="handleDragEnd(event)"` : "";
+                    
+                    const dragAttrRight = isAdminMode ? `draggable="false" ondragstart="handleDragStart(event, '${matchId}', '${rightField}')" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, '${matchId}', '${rightField}')" ondragend="handleDragEnd(event)"` : "";
+
+                    const tdLeft = `<td class="editable-cell${dragClass}" contenteditable="false" ${dragAttrLeft} style="${leftTeamStyle}" onblur="saveEdit('${matchId}', '${leftField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${leftHTML}${noteBadge}</td>`;
+                    
+                    const tdRight = `<td class="editable-cell${dragClass}" contenteditable="false" ${dragAttrRight} style="${rightTeamStyle}" onblur="saveEdit('${matchId}', '${rightField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可修改">${rightHTML}</td>`;
 
                     rowHTML += tdLeft + tdRight;
+                    // ============================================
                 }
             } else {
                 // 這個時段沒有正常賽程。檢查該場地今天是否有「雨備日」註記
@@ -851,11 +1137,11 @@ function drawDateTable(selectedDate) {
         const table = document.getElementById('scheduleTable');
         table.parentNode.insertBefore(noteContainer, table.nextSibling);
     }
-    
+
     // 定義這天備註專屬的暫存 ID (例如: 2026-08-23_daily)
     const dailyNoteId = `${selectedDate}_daily`;
     const cachedDailyNote = cachedEdits[dailyNoteId] || {};
-    
+
     // ================= 新增：讀取 JSON 中的每日總備註 (daily_note) =================
     // 系統直接抓取該日期「第一場比賽」的 daily_note 欄位
     const displayDailyNote = cachedDailyNote.daily_note !== undefined ? cachedDailyNote.daily_note : (matches[0].daily_note || "");
@@ -880,11 +1166,16 @@ function drawDateTable(selectedDate) {
     if (originalUpdateContainer && dynamicUpdateDate) {
         dynamicUpdateDate.textContent = originalUpdateContainer.textContent;
         // 隱藏原本會佔據換行空間的舊區塊
-        originalUpdateContainer.style.display = 'none'; 
+        originalUpdateContainer.style.display = 'none';
     }
     // ==============================================================
 
-    // 👆---------- 替換到這裡結束 ----------👆
+    // ====== 新增：保留編輯與拖曳狀態 ======
+    // 如果重新畫表前處於編輯模式，畫完表後立刻重新套用屬性（讓小手模式持續生效）
+    if (isEditMode) {
+        applyEditModeSettings();
+    }
+    // =======================================
 }
 
 // 共用元件：產生單一賽程卡片 DOM
@@ -1169,13 +1460,13 @@ document.getElementById('btn-download').addEventListener('click', () => {
     if (isSocialWebView) {
         const currentUrl = window.location.href;
         // 動態取得目前的通訊協定 (http 或 https)，避免跳轉失敗
-        const currentProtocol = window.location.protocol.replace(':', ''); 
+        const currentProtocol = window.location.protocol.replace(':', '');
 
         if (/android/i.test(ua)) {
             // Android：使用 intent:// 語法強制跳轉至 Chrome
             const intentUrl = `intent://${currentUrl.replace(/^https?:\/\//i, '')}#Intent;scheme=${currentProtocol};package=com.android.chrome;end`;
             window.location.href = intentUrl;
-            
+
             // 防呆：如果 1.5 秒後還留在這，代表沒成功跳轉，再顯示提示
             setTimeout(() => {
                 alert("請點擊右上角「⋮」選單\n👉 選擇【以預設瀏覽器開啟】後再下載！");
@@ -1203,7 +1494,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
 
     let titleText = document.getElementById('captureTitle').textContent.replace(/\s+/g, '');
     titleText = titleText.replace(/〈/g, '').replace(/〉/g, '');
-    
+
     // 產生時間戳記
     const now = new Date();
     const ts = `${String(now.getFullYear()).slice(-2)}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
@@ -1267,7 +1558,7 @@ document.getElementById('btn-download').addEventListener('click', () => {
                 btn.disabled = false;
                 return;
             }
-            
+
             // 直接執行原生下載 (因為能走到這裡的，一定是一般瀏覽器)
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
@@ -1275,10 +1566,10 @@ document.getElementById('btn-download').addEventListener('click', () => {
             link.href = url;
             link.click();
             URL.revokeObjectURL(url);
-            
+
             btn.textContent = originalText;
             btn.disabled = false;
-            
+
         }, 'image/png');
 
     }).catch(err => {
@@ -1444,8 +1735,9 @@ function saveEdit(matchId, field, value) {
         data[matchId] = {};
     }
 
-    // 更新該場比賽的特定欄位 (去除頭尾多餘空白)
-    data[matchId][field] = value.trim();
+    // 確保傳入的是字串，避免 null 造成 trim() 報錯
+    let textValue = (value !== null && value !== undefined) ? String(value) : '';
+    data[matchId][field] = textValue.trim();
 
     // 儲存回 localStorage 並更新「最後修改時間戳記」
     localStorage.setItem(CACHE_KEY, JSON.stringify({
