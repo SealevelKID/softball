@@ -141,7 +141,8 @@
     "home_team": "玖格工程",
     "away_team": "夯DEEP",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/17更動"
   },
   {
     "date": "2026-08-30",
@@ -219,7 +220,7 @@
     "date": "2026-08-30",
     "time": "12:00",
     "location": "三重B",
-    "home_team": "英業達",
+    "home_team": "三田土",
     "away_team": "羊騷殿",
     "status": "normal",
     "note": null
@@ -238,7 +239,7 @@
     "time": "13:00",
     "location": "三重B",
     "home_team": "吉鴻冷凍",
-    "away_team": "英業達",
+    "away_team": "三田土",
     "status": "normal",
     "note": null
   },
@@ -1273,9 +1274,10 @@
     "time": "08:00",
     "location": "三重A",
     "home_team": "昶碩",
-    "away_team": "英業達",
+    "away_team": "三田土",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/17更動"
   },
   {
     "date": "2026-11-15",
@@ -1290,7 +1292,7 @@
     "date": "2026-11-15",
     "time": "08:55",
     "location": "三重A",
-    "home_team": "英業達",
+    "home_team": "三田土",
     "away_team": "馬利歐",
     "status": "normal",
     "note": null
@@ -1434,10 +1436,11 @@
     "date": "2026-11-29",
     "time": "08:00",
     "location": "三重A",
-    "home_team": "英業達",
+    "home_team": "三田土",
     "away_team": "民雄企業",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/17更動"
   },
   {
     "date": "2026-11-29",
@@ -1471,7 +1474,7 @@
     "time": "09:50",
     "location": "三重A",
     "home_team": "拉早場",
-    "away_team": "英業達",
+    "away_team": "三田土",
     "status": "normal",
     "note": null
   },
@@ -1578,10 +1581,11 @@
     "date": "2026-12-13",
     "location": "三重A",
     "time": "08:00",
-    "home_team": "泓利達",
-    "away_team": "微風整形",
+    "home_team": "微風整形",
+    "away_team": "海樂森",
     "status": "normal",
-    "note": ""
+    "note": "",
+    "daily_note": "8/17更動"
   },
   {
     "date": "2026-12-13",
@@ -1614,8 +1618,8 @@
     "date": "2026-12-13",
     "location": "三重A",
     "time": "09:50",
-    "home_team": "微風整形",
-    "away_team": "海樂森",
+    "home_team": "泓利達",
+    "away_team": "微風整形",
     "status": "normal",
     "note": ""
   },
@@ -1695,8 +1699,8 @@
     "date": "2026-12-13",
     "location": "三重B",
     "time": "13:30",
-    "home_team": "網龍",
-    "away_team": "冠緯",
+    "home_team": "冠緯",
+    "away_team": "五股同濟會",
     "status": "normal",
     "note": ""
   },
@@ -1713,8 +1717,8 @@
     "date": "2026-12-13",
     "location": "三重B",
     "time": "14:25",
-    "home_team": "冠緯",
-    "away_team": "五股同濟會",
+    "home_team": "網龍",
+    "away_team": "冠緯",
     "status": "normal",
     "note": ""
   },
@@ -1902,10 +1906,11 @@
     "date": "2026-12-27",
     "time": "08:00",
     "location": "三重A",
-    "home_team": "英業達",
+    "home_team": "三田土",
     "away_team": "鵬偉空調",
     "status": "normal",
-    "note": ""
+    "note": "",
+    "daily_note": "8/17更動"
   },
   {
     "date": "2026-12-27",
@@ -1921,7 +1926,7 @@
     "time": "08:55",
     "location": "三重A",
     "home_team": "Haier",
-    "away_team": "英業達",
+    "away_team": "三田土",
     "status": "normal",
     "note": ""
   },
@@ -2067,14 +2072,15 @@
     "away_team": "五股同濟會",
     "home_team": "泓陞自動化",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/17更動"
   },
   {
     "date": "2027-01-10",
     "location": "三重B",
     "time": "08:00",
-    "away_team": "鮮乳坊",
-    "home_team": "SD迅龍",
+    "away_team": "冠緯",
+    "home_team": "KARASUMI",
     "status": "normal",
     "note": null
   },
@@ -2091,8 +2097,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "08:55",
-    "away_team": "玖格工程",
-    "home_team": "鮮乳坊",
+    "away_team": "KARASUMI",
+    "home_team": "德興堆高機",
     "status": "normal",
     "note": null
   },
@@ -2109,8 +2115,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "09:50",
-    "away_team": "SD迅龍",
-    "home_team": "玖格工程",
+    "away_team": "德興堆高機",
+    "home_team": "冠緯",
     "status": "normal",
     "note": null
   },
@@ -2127,8 +2133,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "10:45",
-    "away_team": "打鐵兄弟(國聖)",
-    "home_team": "黑旋風",
+    "away_team": "鮮乳坊",
+    "home_team": "SD迅龍",
     "status": "normal",
     "note": null
   },
@@ -2145,8 +2151,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "11:40",
-    "away_team": "夯DEEP",
-    "home_team": "打鐵兄弟(國聖)",
+    "away_team": "玖格工程",
+    "home_team": "鮮乳坊",
     "status": "normal",
     "note": null
   },
@@ -2163,8 +2169,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "12:35",
-    "away_team": "黑旋風",
-    "home_team": "夯DEEP",
+    "away_team": "SD迅龍",
+    "home_team": "玖格工程",
     "status": "normal",
     "note": null
   },
@@ -2181,8 +2187,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "13:30",
-    "away_team": "德興堆高機",
-    "home_team": "冠緯",
+    "away_team": "打鐵兄弟(國聖)",
+    "home_team": "黑旋風",
     "status": "normal",
     "note": null
   },
@@ -2199,8 +2205,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "14:25",
-    "away_team": "KARASUMI",
-    "home_team": "德興堆高機",
+    "away_team": "夯DEEP",
+    "home_team": "打鐵兄弟(國聖)",
     "status": "normal",
     "note": null
   },
@@ -2217,8 +2223,8 @@
     "date": "2027-01-10",
     "location": "三重B",
     "time": "15:20",
-    "away_team": "冠緯",
-    "home_team": "KARASUMI",
+    "away_team": "黑旋風",
+    "home_team": "夯DEEP",
     "status": "normal",
     "note": null
   },
@@ -2388,10 +2394,11 @@
     "date": "2027-01-24",
     "time": "08:00",
     "location": "三重A",
-    "home_team": "KARASUMI",
-    "away_team": "泓陞自動化",
+    "home_team": "搖滾鯉魚",
+    "away_team": "海樂森",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/17更動"
   },
   {
     "date": "2027-01-24",
@@ -2406,8 +2413,8 @@
     "date": "2027-01-24",
     "time": "08:55",
     "location": "三重A",
-    "home_team": "泓陞自動化",
-    "away_team": "MONKEYS",
+    "home_team": "海樂森",
+    "away_team": "CRAZ",
     "status": "normal",
     "note": null
   },
@@ -2424,8 +2431,8 @@
     "date": "2027-01-24",
     "time": "09:50",
     "location": "三重A",
-    "home_team": "MONKEYS",
-    "away_team": "KARASUMI",
+    "home_team": "CRAZ",
+    "away_team": "搖滾鯉魚",
     "status": "normal",
     "note": null
   },
@@ -2442,8 +2449,8 @@
     "date": "2027-01-24",
     "time": "10:45",
     "location": "三重A",
-    "home_team": "搖滾鯉魚",
-    "away_team": "海樂森",
+    "home_team": "KARASUMI",
+    "away_team": "泓陞自動化",
     "status": "normal",
     "note": null
   },
@@ -2460,8 +2467,8 @@
     "date": "2027-01-24",
     "time": "11:40",
     "location": "三重A",
-    "home_team": "海樂森",
-    "away_team": "CRAZ",
+    "home_team": "泓陞自動化",
+    "away_team": "MONKEYS",
     "status": "normal",
     "note": null
   },
@@ -2478,8 +2485,8 @@
     "date": "2027-01-24",
     "time": "12:35",
     "location": "三重A",
-    "home_team": "CRAZ",
-    "away_team": "搖滾鯉魚",
+    "home_team": "MONKEYS",
+    "away_team": "KARASUMI",
     "status": "normal",
     "note": null
   },
