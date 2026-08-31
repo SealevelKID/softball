@@ -1762,7 +1762,8 @@
     "away_team": "K1Hooters",
     "home_team": "K9MCUBA",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": ""
   },
   {
     "date": "2026-09-13",
@@ -2452,7 +2453,7 @@
     "date": "2026-10-18",
     "location": "五股C",
     "time": "12:00",
-    "home_team": "I11LARDISAI",
+    "home_team": "J11LARDISAI",
     "away_team": "J6CRAZ",
     "status": "normal",
     "note": ""
@@ -2480,7 +2481,7 @@
     "location": "五股C",
     "time": "13:00",
     "home_team": "J8永岳",
-    "away_team": "I11LARDISAI",
+    "away_team": "J11LARDISAI",
     "status": "normal",
     "note": ""
   },
