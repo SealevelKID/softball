@@ -19,9 +19,20 @@ function downloadUpdatedJSON() {
     });
     
     // 處理每日備註 (daily_note) 寫入當天第一場比賽
+    // --- 新增：動態判斷當前區域 ---
+    let regionCode = "未知";
+    if (typeof DATA_URL !== 'undefined') {
+        if (DATA_URL.includes('xinzhuang')) regionCode = '新莊';
+        else if (DATA_URL.includes('sanchong')) regionCode = '三重';
+        else if (DATA_URL.includes('shulin')) regionCode = '樹林';
+        else if (DATA_URL.includes('wugu')) regionCode = '五股';
+    }
+    // ----------------------------
+
     const uniqueDates = [...new Set(officialData.map(m => m.date))];
     uniqueDates.forEach(date => {
-        const dailyNoteId = `${date}_daily`;
+        // 修改：在 ID 中加入 regionCode 避免跨區污染
+        const dailyNoteId = `${date}_${regionCode}_daily`; 
         if (cachedEdits[dailyNoteId] && cachedEdits[dailyNoteId].daily_note !== undefined) {
             const firstMatch = officialData.find(m => m.date === date);
             if (firstMatch) firstMatch.daily_note = cachedEdits[dailyNoteId].daily_note;
@@ -1138,8 +1149,18 @@ function drawDateTable(selectedDate) {
         table.parentNode.insertBefore(noteContainer, table.nextSibling);
     }
 
-    // 定義這天備註專屬的暫存 ID (例如: 2026-08-23_daily)
-    const dailyNoteId = `${selectedDate}_daily`;
+    // --- 新增：動態判斷當前區域 ---
+    let regionCode = "未知";
+    if (typeof DATA_URL !== 'undefined') {
+        if (DATA_URL.includes('xinzhuang')) regionCode = '新莊';
+        else if (DATA_URL.includes('sanchong')) regionCode = '三重';
+        else if (DATA_URL.includes('shulin')) regionCode = '樹林';
+        else if (DATA_URL.includes('wugu')) regionCode = '五股';
+    }
+    // ----------------------------
+
+    // 定義這天備註專屬的暫存 ID (加入地區名稱防污染，例如: 2026-08-23_三重_daily)
+    const dailyNoteId = `${selectedDate}_${regionCode}_daily`;
     const cachedDailyNote = cachedEdits[dailyNoteId] || {};
 
     // ================= 新增：讀取 JSON 中的每日總備註 (daily_note) =================
