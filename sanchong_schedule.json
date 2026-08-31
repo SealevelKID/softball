@@ -304,7 +304,8 @@
     "away_team": "樂活獅",
     "home_team": "吉飛達汽車修護",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "8/31更動"
   },
   {
     "date": "2026-09-13",
@@ -418,8 +419,8 @@
     "date": "2026-09-13",
     "time": "14:00",
     "location": "三重B",
-    "away_team": "艾格利森",
-    "home_team": "稻鄉",
+    "away_team": "稻鄉",
+    "home_team": "爛透了",
     "status": "normal",
     "note": null
   },
@@ -454,8 +455,8 @@
     "date": "2026-09-13",
     "time": "16:00",
     "location": "三重B",
-    "away_team": "稻鄉",
-    "home_team": "爛透了",
+    "away_team": "艾格利森",
+    "home_team": "稻鄉",
     "status": "normal",
     "note": null
   },
