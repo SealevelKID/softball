@@ -546,7 +546,8 @@
     "home_team": "G5昶碩",
     "away_team": "G4築群工程",
     "status": "normal",
-    "note": ""
+    "note": "",
+    "daily_note": "好日子→良助工程"
   },
   {
     "date": "2026-08-09",
@@ -588,7 +589,7 @@
     "date": "2026-08-09",
     "time": "09:00",
     "location": "五股C",
-    "home_team": "S9好日子",
+    "home_team": "S9良助工程",
     "away_team": "S3卡溜也好",
     "status": "normal",
     "note": ""
@@ -616,7 +617,7 @@
     "time": "10:00",
     "location": "五股C",
     "home_team": "S6鉅登",
-    "away_team": "S9好日子",
+    "away_team": "S9良助工程",
     "status": "normal",
     "note": ""
   },
@@ -796,8 +797,8 @@
     "date": "2026-08-16",
     "time": "08:00",
     "location": "五股B",
-    "home_team": "J2五股同濟會",
-    "away_team": "J8永岳",
+    "home_team": "J8永岳",
+    "away_team": "J2五股同濟會",
     "status": "normal",
     "note": ""
   },
@@ -823,7 +824,7 @@
     "date": "2026-08-16",
     "time": "09:00",
     "location": "五股B",
-    "home_team": "J8永岳",
+    "home_team": "J2五股同濟會",
     "away_team": "J5HIT",
     "status": "normal",
     "note": ""
@@ -851,7 +852,7 @@
     "time": "10:00",
     "location": "五股B",
     "home_team": "J5HIT",
-    "away_team": "J2五股同濟會",
+    "away_team": "J8永岳",
     "status": "normal",
     "note": ""
   },
@@ -1763,7 +1764,7 @@
     "home_team": "K9MCUBA",
     "status": "normal",
     "note": null,
-    "daily_note": ""
+    "daily_note": "好日子→良助工程"
   },
   {
     "date": "2026-09-13",
@@ -1941,7 +1942,7 @@
     "time": "14:00",
     "location": "五股C",
     "away_team": "S1雷進順機車行",
-    "home_team": "S9好日子",
+    "home_team": "S9良助工程",
     "status": "normal",
     "note": null
   },
@@ -1994,7 +1995,7 @@
     "date": "2026-09-13",
     "time": "16:00",
     "location": "五股C",
-    "away_team": "S9好日子",
+    "away_team": "S9良助工程",
     "home_team": "S5聯辰藍鷹",
     "status": "normal",
     "note": null
@@ -2006,7 +2007,8 @@
     "home_team": "F4鮮乳坊",
     "away_team": "F9高鼎",
     "status": "normal",
-    "note": null
+    "note": null,
+    "daily_note": "好日子→良助工程"
   },
   {
     "date": "2026-09-20",
@@ -2094,7 +2096,7 @@
     "time": "11:00",
     "location": "五股B",
     "home_team": "H5生特",
-    "away_team": "H4羊騷殿",
+    "away_team": "H6德興堆高機",
     "status": "normal",
     "note": null
   },
@@ -2103,7 +2105,7 @@
     "time": "11:00",
     "location": "五股C",
     "home_team": "S4三民會館",
-    "away_team": "S9好日子",
+    "away_team": "S9良助工程",
     "status": "normal",
     "note": null
   },
@@ -2120,8 +2122,8 @@
     "date": "2026-09-20",
     "time": "12:00",
     "location": "五股B",
-    "home_team": "H4羊騷殿",
-    "away_team": "H6德興堆高機",
+    "home_team": "H6德興堆高機",
+    "away_team": "H4羊騷殿",
     "status": "normal",
     "note": null
   },
@@ -2129,7 +2131,7 @@
     "date": "2026-09-20",
     "time": "12:00",
     "location": "五股C",
-    "home_team": "S9好日子",
+    "home_team": "S9良助工程",
     "away_team": "S2Big Foot",
     "status": "normal",
     "note": null
@@ -2147,7 +2149,7 @@
     "date": "2026-09-20",
     "time": "13:00",
     "location": "五股B",
-    "home_team": "H6德興堆高機",
+    "home_team": "H4羊騷殿",
     "away_team": "H5生特",
     "status": "normal",
     "note": null
