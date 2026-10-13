@@ -136,14 +136,26 @@ function swapTeamData(matchId1, field1, matchId2, field2) {
     const [date1, time1, loc1] = matchId1.split('_');
     const [date2, time2, loc2] = matchId2.split('_');
 
-    // 找出在 officialData 中的真實索引
-    const idx1 = officialData.findIndex(m => m.date === date1 && m.time === time1 && m.location === loc1);
-    const idx2 = officialData.findIndex(m => m.date === date2 && m.time === time2 && m.location === loc2);
+    // 找出在 officialData 中的真實索引 (修改為 let 以便動態賦值)
+    let idx1 = officialData.findIndex(m => m.date === date1 && m.time === time1 && m.location === loc1);
+    let idx2 = officialData.findIndex(m => m.date === date2 && m.time === time2 && m.location === loc2);
+
+    // ====== 新增：如果來源或目標是空白格子（找不到資料），自動建立空賽程 ======
+    if (idx1 === -1) {
+        officialData.push({ date: date1, time: time1, location: loc1, home_team: "", away_team: "", status: "normal" });
+        idx1 = officialData.length - 1;
+    }
+    if (idx2 === -1) {
+        officialData.push({ date: date2, time: time2, location: loc2, home_team: "", away_team: "", status: "normal" });
+        idx2 = officialData.length - 1;
+    }
+    // ======================================================================
 
     if (idx1 !== -1 && idx2 !== -1) {
         // 核心：直接交換記憶體裡兩個欄位的值 (away_team / home_team)
-        const temp = officialData[idx1][field1];
-        officialData[idx1][field1] = officialData[idx2][field2];
+        // 加上 || "" 避免取到 undefined 變成顯示 "undefined"
+        const temp = officialData[idx1][field1] || "";
+        officialData[idx1][field1] = officialData[idx2][field2] || "";
         officialData[idx2][field2] = temp;
 
         // ====== 關鍵修復：將拖曳的結果「同步寫入」打字的暫存空間 ======
@@ -1131,8 +1143,27 @@ function drawDateTable(selectedDate) {
                     // 標記該場地已經產生雨備
                     rainBackupRendered[loc] = true;
                 } else {
-                    // 只是單純沒比賽的空堂
-                    rowHTML += `<td></td><td style="${borderStyle}"></td>`;
+                    // ====== 修改：讓空白格子也能接收拖曳與打字編輯 ======
+                    // 動態組裝虛擬的 matchId
+                    const emptyMatchId = `${selectedDate}_${time}_${loc}`;
+                    // 根據地區判斷左右欄位是對應主隊還是客隊
+                    const isAwayFirst = document.title.includes('樹林') || document.title.includes('五股');
+                    const emptyLeftField = isAwayFirst ? 'away_team' : 'home_team';
+                    const emptyRightField = isAwayFirst ? 'home_team' : 'away_team';
+
+                    const dragClass = isAdminMode ? " draggable-cell" : "";
+                    
+                    // 綁定左側空白格的拖曳與編輯屬性
+                    const dragAttrLeftEmpty = isAdminMode ? `draggable="false" ondragstart="handleDragStart(event, '${emptyMatchId}', '${emptyLeftField}')" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, '${emptyMatchId}', '${emptyLeftField}')" ondragend="handleDragEnd(event)"` : "";
+                    const leftTeamStyle = `outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s;`;
+                    
+                    // 綁定右側空白格的拖曳與編輯屬性
+                    const dragAttrRightEmpty = isAdminMode ? `draggable="false" ondragstart="handleDragStart(event, '${emptyMatchId}', '${emptyRightField}')" ondragover="handleDragOver(event)" ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, '${emptyMatchId}', '${emptyRightField}')" ondragend="handleDragEnd(event)"` : "";
+                    const rightTeamStyle = `outline: none; vertical-align: middle; padding: 5px; transition: background-color 0.2s; ${borderStyle}`;
+
+                    rowHTML += `<td class="editable-cell${dragClass}" contenteditable="false" ${dragAttrLeftEmpty} style="${leftTeamStyle}" onblur="saveEdit('${emptyMatchId}', '${emptyLeftField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可輸入或拖曳隊伍"></td>`;
+                    rowHTML += `<td class="editable-cell${dragClass}" contenteditable="false" ${dragAttrRightEmpty} style="${rightTeamStyle}" onblur="saveEdit('${emptyMatchId}', '${emptyRightField}', this.innerText.replace(/\\r?\\n/g, ''))" title="點擊編輯按鈕後可輸入或拖曳隊伍"></td>`;
+                    // =======================================================
                 }
             }
         });
