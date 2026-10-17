@@ -2300,7 +2300,7 @@
   },
   {
     "date": "2026-10-11",
-    "time": "全天",
+    "time": "08:55",
     "location": "五股A",
     "home_team": null,
     "away_team": null,
@@ -2309,7 +2309,7 @@
   },
   {
     "date": "2026-10-11",
-    "time": "全天",
+    "time": "08:55",
     "location": "五股B",
     "home_team": null,
     "away_team": null,
@@ -2318,7 +2318,7 @@
   },
   {
     "date": "2026-10-11",
-    "time": "全天",
+    "time": "08:55",
     "location": "五股C",
     "home_team": null,
     "away_team": null,
@@ -2355,7 +2355,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "09:00",
+    "time": "08:55",
     "home_team": "I1Haier",
     "away_team": "I4Swfit Dragon",
     "status": "normal",
@@ -2364,7 +2364,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "09:00",
+    "time": "08:55",
     "home_team": "E9台灣聚特",
     "away_team": "E3TP",
     "status": "normal",
@@ -2373,7 +2373,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "09:00",
+    "time": "08:55",
     "home_team": "I8士筌實業",
     "away_team": "I5ASKEY",
     "status": "normal",
@@ -2382,7 +2382,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "10:00",
+    "time": "09:50",
     "home_team": "I7KARASUMI",
     "away_team": "I1Haier",
     "status": "normal",
@@ -2391,7 +2391,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "10:00",
+    "time": "09:50",
     "home_team": "E6活力",
     "away_team": "E9台灣聚特",
     "status": "normal",
@@ -2400,7 +2400,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "10:00",
+    "time": "09:50",
     "home_team": "I2山寨",
     "away_team": "I8士筌實業",
     "status": "normal",
@@ -2409,7 +2409,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "11:00",
+    "time": "10:45",
     "home_team": "B2長生堂",
     "away_team": "B1翔義工程",
     "status": "normal",
@@ -2418,7 +2418,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "11:00",
+    "time": "10:45",
     "home_team": "B7雄聖石材",
     "away_team": "B9康德科技",
     "status": "normal",
@@ -2427,7 +2427,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "11:00",
+    "time": "10:45",
     "home_team": "J6CRAZ",
     "away_team": "J8永岳",
     "status": "normal",
@@ -2436,7 +2436,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "12:00",
+    "time": "11:40",
     "home_team": "B1翔義工程",
     "away_team": "B3薇安科技",
     "status": "normal",
@@ -2445,7 +2445,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "12:00",
+    "time": "11:40",
     "home_team": "B8永欣鋁業",
     "away_team": "B7雄聖石材",
     "status": "normal",
@@ -2454,7 +2454,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "12:00",
+    "time": "11:40",
     "home_team": "J11LARDISAI",
     "away_team": "J6CRAZ",
     "status": "normal",
@@ -2463,7 +2463,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "13:00",
+    "time": "12:35",
     "home_team": "B3薇安科技",
     "away_team": "B2長生堂",
     "status": "normal",
@@ -2472,7 +2472,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "13:00",
+    "time": "12:35",
     "home_team": "B9康德科技",
     "away_team": "B8永欣鋁業",
     "status": "normal",
@@ -2481,7 +2481,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "13:00",
+    "time": "12:35",
     "home_team": "J8永岳",
     "away_team": "J11LARDISAI",
     "status": "normal",
@@ -2490,7 +2490,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "14:00",
+    "time": "13:30",
     "home_team": "A8東大輪胎",
     "away_team": "A5泓利達",
     "status": "normal",
@@ -2499,7 +2499,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "14:00",
+    "time": "13:30",
     "home_team": "H9MCU",
     "away_team": "H1文化國貿",
     "status": "normal",
@@ -2508,7 +2508,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "14:00",
+    "time": "13:30",
     "home_team": "J4新板獅子會",
     "away_team": "J9淡水鄉民",
     "status": "normal",
@@ -2517,7 +2517,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "15:00",
+    "time": "14:25",
     "home_team": "A5泓利達",
     "away_team": "A2高林運動",
     "status": "normal",
@@ -2526,7 +2526,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "15:00",
+    "time": "14:25",
     "home_team": "H1文化國貿",
     "away_team": "H5生特",
     "status": "normal",
@@ -2535,7 +2535,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "15:00",
+    "time": "14:25",
     "home_team": "J9淡水鄉民",
     "away_team": "J2五股同濟會",
     "status": "normal",
@@ -2544,7 +2544,7 @@
   {
     "date": "2026-10-18",
     "location": "五股A",
-    "time": "16:00",
+    "time": "15:20",
     "home_team": "A2高林運動",
     "away_team": "A8東大輪胎",
     "status": "normal",
@@ -2553,7 +2553,7 @@
   {
     "date": "2026-10-18",
     "location": "五股B",
-    "time": "16:00",
+    "time": "15:20",
     "home_team": "H5生特",
     "away_team": "H9MCU",
     "status": "normal",
@@ -2562,7 +2562,7 @@
   {
     "date": "2026-10-18",
     "location": "五股C",
-    "time": "16:00",
+    "time": "15:20",
     "home_team": "J2五股同濟會",
     "away_team": "J4新板獅子會",
     "status": "normal",
@@ -2585,6 +2585,24 @@
     "away_team": "L7鉅登",
     "status": "normal",
     "note": null
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股B",
+    "time": "08:55",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
+  },
+  {
+    "date": "2026-10-25",
+    "location": "五股C",
+    "time": "08:55",
+    "home_team": null,
+    "away_team": null,
+    "status": "rain_backup",
+    "note": "雨備日"
   },
   {
     "date": "2026-10-25",
@@ -2648,24 +2666,6 @@
     "away_team": "F8RICO",
     "status": "normal",
     "note": null
-  },
-  {
-    "date": "2026-10-25",
-    "location": "五股B",
-    "time": "全天",
-    "home_team": null,
-    "away_team": null,
-    "status": "rain_backup",
-    "note": "雨備日"
-  },
-  {
-    "date": "2026-10-25",
-    "location": "五股C",
-    "time": "全天",
-    "home_team": null,
-    "away_team": null,
-    "status": "rain_backup",
-    "note": "雨備日"
   },
   {
     "date": "2026-11-01",
@@ -4605,7 +4605,7 @@
   {
     "date": "2026-12-27",
     "location": "五股A",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
@@ -4614,7 +4614,7 @@
   {
     "date": "2026-12-27",
     "location": "五股B",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
@@ -4623,7 +4623,7 @@
   {
     "date": "2026-12-27",
     "location": "五股C",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
@@ -4632,7 +4632,7 @@
   {
     "date": "2027-01-03",
     "location": "五股A",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
@@ -4641,7 +4641,7 @@
   {
     "date": "2027-01-03",
     "location": "五股B",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
@@ -4650,7 +4650,7 @@
   {
     "date": "2027-01-03",
     "location": "五股C",
-    "time": "全天",
+    "time": "08:55",
     "home_team": null,
     "away_team": null,
     "status": "rain_backup",
