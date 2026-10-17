@@ -862,6 +862,131 @@ function setupTableButtons() {
     }
 }
 
+// ================= 新增：夏/冬季時間樣板 (方案 A) =================
+// 您可以在這裡手動設定全區統一的夏季與冬季時間
+const TIME_TEMPLATE_SUMMER = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+const TIME_TEMPLATE_WINTER = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20"];
+
+// ==============================================================================
+
+// ================= 新增：手動更新單一日期時間的函數 =================
+function updateTime(date, oldTime, newTime) {
+    if (!newTime || oldTime === newTime) return;
+
+    // 1. 更新 officialData 總表中的時間
+    let isUpdated = false;
+    officialData.forEach(match => {
+        if (match.date === date && match.time === oldTime) {
+            match.time = newTime;
+            isUpdated = true;
+        }
+    });
+
+    if (isUpdated) {
+        // 2. 同步遷移暫存(Cache)裡的 ID，避免該時段的打字對手紀錄遺失
+        const cache = getCache();
+        let cacheUpdated = false;
+        Object.keys(cache).forEach(key => {
+            if (key.startsWith(`${date}_${oldTime}_`)) {
+                const newKey = key.replace(`${date}_${oldTime}_`, `${date}_${newTime}_`);
+                cache[newKey] = cache[key];
+                delete cache[key];
+                cacheUpdated = true;
+            }
+        });
+        
+        if (cacheUpdated) {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                timestamp: Date.now(),
+                data: cache
+            }));
+        }
+
+        console.log(`🕒 ${date} 的時間已從 ${oldTime} 修改為 ${newTime}`);
+        
+        // 重新排序並重繪表格
+        officialData.sort((a, b) => {
+            if (a.date !== b.date) return a.date.localeCompare(b.date);
+            return (a.time || '').localeCompare(b.time || '');
+        });
+        drawDateTable(date);
+    }
+}
+// ================= 新增：一鍵批次替換「該日及後續所有日期」時間的函數 =================
+function batchUpdateTime(selectedDate, newTemplate) {
+    const targetDates = [...new Set(officialData.map(m => m.date))].filter(d => d >= selectedDate).sort();
+    if (targetDates.length === 0) return;
+
+    let cacheUpdated = false;
+    const cache = getCache();
+
+    targetDates.forEach(date => {
+        const matchesToday = officialData.filter(m => m.date === date);
+        if (matchesToday.length === 0) return;
+
+        // 1. 處理雨備賽程：將雨備的 time 標記為樣板的「第二個時段 (newTemplate[1])」
+        // 這是為了在畫表時，讓系統能精準識別這天是夏還是冬 (因為兩者的 08:00 是一樣的)
+        const signatureTime = newTemplate[1];
+        const rainMatches = matchesToday.filter(m => m.status === 'rain_backup');
+        
+        rainMatches.forEach(match => {
+            if (match.time !== signatureTime) {
+                Object.keys(cache).forEach(key => {
+                    if (key.startsWith(`${date}_${match.time}_`)) {
+                        const newKey = key.replace(`${date}_${match.time}_`, `${date}_${signatureTime}_`);
+                        cache[newKey] = cache[key];
+                        delete cache[key];
+                        cacheUpdated = true;
+                    }
+                });
+                match.time = signatureTime;
+            }
+        });
+
+        // 2. 處理正常賽事：依照順序對應替換
+        const normalMatches = matchesToday.filter(m => m.status !== 'rain_backup');
+        if (normalMatches.length > 0) {
+            const oldTimes = [...new Set(normalMatches.map(m => m.time))].sort();
+            oldTimes.forEach((oldTime, index) => {
+                const newTime = newTemplate[index];
+                if (newTime && oldTime !== newTime) {
+                    normalMatches.forEach(match => {
+                        if (match.time === oldTime) {
+                            match.time = newTime;
+                        }
+                    });
+
+                    Object.keys(cache).forEach(key => {
+                        if (key.startsWith(`${date}_${oldTime}_`)) {
+                            const newKey = key.replace(`${date}_${oldTime}_`, `${date}_${newTime}_`);
+                            cache[newKey] = cache[key];
+                            delete cache[key];
+                            cacheUpdated = true;
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    if (cacheUpdated) {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({
+            timestamp: Date.now(),
+            data: cache
+        }));
+    }
+
+    console.log(`🕒 ${selectedDate} 及之後的共 ${targetDates.length} 天，已一鍵套用新時間樣板`);
+
+    officialData.sort((a, b) => {
+        if (a.date !== b.date) return a.date.localeCompare(b.date);
+        return (a.time || '').localeCompare(b.time || '');
+    });
+    
+    drawDateTable(selectedDate);
+}
+// ======================================================================================
+
 // 核心功能 A：繪製「特定日期」的表格 (時間 | 場地A | 場地B ...)
 function drawDateTable(selectedDate) {
     saveState('dateTable', selectedDate);
@@ -872,8 +997,6 @@ function drawDateTable(selectedDate) {
 
     // 【關鍵修正】切換日期畫新表格時，強制清空原本可能殘留的延賽/完賽卡片
     document.getElementById('schedule-container').innerHTML = '';
-
-    // 【修改】：移除 isEditMode = false; 讓拖曳和編輯模式可以跨網頁重繪保持開啟
 
     captureArea.style.display = 'block';
 
@@ -887,13 +1010,11 @@ function drawDateTable(selectedDate) {
     // 如果不是第一天，顯示左箭頭
     if (currentIndex > 0) {
         const prevDate = allDates[currentIndex - 1];
-        // 【修改】縮小 padding 與 margin 讓箭頭靠中間，並加入 data-html2canvas-ignore="true" 讓截圖時自動消失
         leftArrow = `<span data-html2canvas-ignore="true" style="cursor: pointer; padding: 0 5px; margin: 0 8px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${prevDate}')">〈</span>`;
     }
     // 如果不是最後一天，顯示右箭頭
     if (currentIndex < allDates.length - 1) {
         const nextDate = allDates[currentIndex + 1];
-        // 【修改】同上
         rightArrow = `<span data-html2canvas-ignore="true" style="cursor: pointer; padding: 0 5px; margin: 0 8px; color: #3498db; user-select: none; font-weight: bold;" onclick="drawDateTable('${nextDate}')">〉</span>`;
     }
 
@@ -909,21 +1030,20 @@ function drawDateTable(selectedDate) {
     const normalMatches = matches.filter(m => m.status !== 'rain_backup');
     let times = [...new Set(normalMatches.map(m => m.time))].sort();
 
-    // 【新增邏輯】為了讓「雨備日」能夠往下跨滿整個下午，我們需要確保時間軸(times)包含完整的下午時段
+    // 【修改邏輯】動態判定這天是夏季還是冬季，以正確展開雨備日的時間軸
     const hasRainBackup = matches.some(m => m.status === 'rain_backup');
     if (hasRainBackup) {
-        if (times.length > 0) {
-            // 自動判斷當天的時間間隔（包含 55, 50, 45 分的通常是 55 分鐘制）
-            const is55Min = times.some(t => t.endsWith(':55') || t.endsWith(':50') || t.endsWith(':45'));
-            const fullTimes = is55Min
-                ? ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20"]
-                : ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
-            // 聯集合併並重新排序，確保時間軸補滿到下午
-            times = [...new Set([...times, ...fullTimes])].sort();
-        } else {
-            // 如果整天一場正常比賽都沒有，預設展開整點時間表來撐開大格子
-            times = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+        // 先嘗試讀取雨備專屬的「簽名時間」來判斷夏冬
+        const rainMatch = matches.find(m => m.status === 'rain_backup');
+        let isWinter = TIME_TEMPLATE_WINTER.includes(rainMatch.time) && !TIME_TEMPLATE_SUMMER.includes(rainMatch.time);
+        
+        // 若雨備無明顯特徵（例如剛匯入時時間是 "全天"），就退而求其次看正常比賽
+        if (!isWinter && times.length > 0) {
+            isWinter = times.some(t => TIME_TEMPLATE_WINTER.includes(t) && !TIME_TEMPLATE_SUMMER.includes(t));
         }
+
+        const fullTimes = isWinter ? TIME_TEMPLATE_WINTER : TIME_TEMPLATE_SUMMER;
+        times = [...new Set([...times, ...fullTimes])].sort();
     } else if (times.length === 0) {
         times = ["全天"];
     }
@@ -938,111 +1058,8 @@ function drawDateTable(selectedDate) {
         document.getElementById('scheduleTable').style.minWidth = '100%';
     }
 
-// ================= 按鈕位置自動跟隨固定邏輯 =================
-    const btnDownload = document.getElementById('btn-download');
-    btnDownload.style.display = 'inline-block';
-    btnDownload.style.position = 'absolute';
-    btnDownload.style.top = '55px'; // 向下移避開主標題
-    btnDownload.style.right = '15px'; // 基準點釘在右側
-    btnDownload.style.left = 'auto';
-    btnDownload.style.zIndex = '10';
-    // 確保下載按鈕保持淡化
-    btnDownload.style.opacity = '0.8';
-    btnDownload.style.backgroundColor = '#f8f9fa';
-    btnDownload.style.color = '#7f8c8d';
-    btnDownload.style.border = '1px solid #bdc3c7';
-
-    let btnEdit = document.getElementById('btn-toggle-edit');
-    if (!btnEdit) {
-        btnEdit = document.createElement('button');
-        btnEdit.id = 'btn-toggle-edit';
-        btnEdit.className = 'sys-btn';
-        btnEdit.setAttribute('data-html2canvas-ignore', 'true');
-        btnEdit.onclick = toggleEditMode;
-        captureArea.appendChild(btnEdit);
-    }
-
-    // 初始化編輯按鈕狀態
-    btnEdit.style.display = 'inline-block';
-    btnEdit.textContent = '編輯';
-    btnEdit.classList.remove('active');
-    btnEdit.style.position = 'absolute';
-    btnEdit.style.top = '55px'; // 向下移避開主標題
-    btnEdit.style.left = '15px'; // 基準點釘在左側
-    btnEdit.style.right = 'auto';
-    btnEdit.style.zIndex = '10';
-    // 確保編輯按鈕保持淡化
-    btnEdit.style.opacity = '0.8';
-    btnEdit.style.backgroundColor = '#f8f9fa';
-    btnEdit.style.color = '#7f8c8d';
-    btnEdit.style.border = '1px solid #bdc3c7';
-
-    // ====== 新增：打字/拖曳切換開關 (僅管理者可見) ======
-    let editSwitch = document.getElementById('edit-mode-switch');
-    if (isAdminMode) {
-        if (!editSwitch) {
-            editSwitch = document.createElement('div');
-            editSwitch.id = 'edit-mode-switch';
-            editSwitch.className = 'segmented-control';
-            editSwitch.setAttribute('data-html2canvas-ignore', 'true');
-            
-            const btnType = document.createElement('button');
-            btnType.className = `segmented-btn ${editModeType === 'type' ? 'active' : ''}`;
-            btnType.textContent = '📝 打字';
-            
-            const btnDrag = document.createElement('button');
-            btnDrag.className = `segmented-btn ${editModeType === 'drag' ? 'active' : ''}`;
-            btnDrag.textContent = '✋ 拖曳';
-            
-            btnType.onclick = () => {
-                editModeType = 'type';
-                btnType.classList.add('active');
-                btnDrag.classList.remove('active');
-                if (isEditMode) applyEditModeSettings();
-            };
-            
-            btnDrag.onclick = () => {
-                editModeType = 'drag';
-                btnDrag.classList.add('active');
-                btnType.classList.remove('active');
-                if (isEditMode) applyEditModeSettings();
-            };
-            
-            editSwitch.appendChild(btnType);
-            editSwitch.appendChild(btnDrag);
-            captureArea.appendChild(editSwitch);
-        }
-
-        // 固定在「編輯」按鈕的右邊
-        editSwitch.style.position = 'absolute';
-        editSwitch.style.top = '55px'; 
-        editSwitch.style.left = '115px'; 
-        editSwitch.style.zIndex = '10';
-        editSwitch.style.display = isEditMode ? 'inline-flex' : 'none'; 
-    }
-    // ===============================================
-
-    // 💡 3. 只有「場地多導致有捲軸」時，才啟動滑動抵銷邏輯
-    if (hasManyLocations) {
-        if (!captureArea._scrollSyncBound) {
-            const syncButtons = () => {
-                const sl = captureArea.scrollLeft;
-                if (btnEdit) btnEdit.style.transform = `translateX(${sl}px)`;
-                if (btnDownload) btnDownload.style.transform = `translateX(${sl}px)`;
-                if (editSwitch) editSwitch.style.transform = `translateX(${sl}px)`; // 加入連動
-            };
-            captureArea.addEventListener('scroll', syncButtons);
-            window.addEventListener('resize', syncButtons);
-            new ResizeObserver(syncButtons).observe(captureArea);
-            captureArea._scrollSyncBound = true;
-        }
-    } else {
-        // 沒有滑動需求時，強制清除可能殘留的位移，讓按鈕乖乖待在左右上角
-        if (btnEdit) btnEdit.style.transform = 'none';
-        if (btnDownload) btnDownload.style.transform = 'none';
-        if (editSwitch) editSwitch.style.transform = 'none'; // 加入連動
-    }
-    // ==============================================================
+    // 呼叫共用的按鈕設定邏輯
+    setupTableButtons();
 
     // 👇---------- 從這裡開始替換表頭與表身邏輯 ----------👇
 
@@ -1061,7 +1078,7 @@ function drawDateTable(selectedDate) {
     const rainBackupRendered = {};
 
     times.forEach((time, timeIndex) => {
-        let rowHTML = `<td style="border-right: 2px solid #2c3e50;">${time}</td>`;
+        let rowHTML = `<td class="editable-cell" contenteditable="false" style="border-right: 2px solid #2c3e50; outline: none; transition: background-color 0.2s; cursor: text;" onblur="updateTime('${selectedDate}', '${time}', this.innerText.replace(/\\r?\\n/g, '').trim())" title="點擊編輯按鈕後可修改時間">${time}</td>`;
 
         locations.forEach((loc, index) => {
             const borderStyle = (index < locations.length - 1) ? 'border-right: 2px solid #2c3e50;' : '';
@@ -1200,14 +1217,31 @@ function drawDateTable(selectedDate) {
     // ====================================================================
 
     // 渲染紅色粗體備註文字，並套用 Flexbox 讓備註與更新日期並排！
+    // 判斷當前是否為冬季 (使用冬季表第二場作為判斷基準)
+    const isCurrentlyWinter = times.includes(TIME_TEMPLATE_WINTER[1]);
+    const summerActive = !isCurrentlyWinter ? 'active' : '';
+    const winterActive = isCurrentlyWinter ? 'active' : '';
+
+    // 若為管理者，則生成一鍵替換按鈕的 HTML
+    const timeSwitchHTML = isAdminMode ? `
+        <div class="segmented-control" style="margin-right: 15px; margin-bottom: -5px;" data-html2canvas-ignore="true">
+            <button class="segmented-btn ${summerActive}" onclick="if(confirm('確定要將 ${selectedDate} 及【之後所有的賽程】切換為「夏季」時間表嗎？\\n(手動微調的時間可能會被覆蓋)')) batchUpdateTime('${selectedDate}', TIME_TEMPLATE_SUMMER)">☀️ 夏</button>
+            <button class="segmented-btn ${winterActive}" onclick="if(confirm('確定要將 ${selectedDate} 及【之後所有的賽程】切換為「冬季」時間表嗎？\\n(手動微調的時間可能會被覆蓋)')) batchUpdateTime('${selectedDate}', TIME_TEMPLATE_WINTER)">❄️ 冬</button>
+        </div>
+    ` : '';
+
     noteContainer.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 8px; padding: 0 5px;">
             <div style="flex: 1; text-align: left;">
                 <span style="color: red; font-weight: bold; font-size: 1.2rem;">備註：</span>
                 <span class="editable-cell" contenteditable="false" style="color: red; font-weight: bold; font-size: 1.2rem; outline: none; transition: background-color 0.2s; min-width: 50px; display: inline-block; cursor: text;" onblur="saveEdit('${dailyNoteId}', 'daily_note', this.innerText)" title="點擊編輯按鈕後可修改">${displayDailyNote}</span>
             </div>
-            <div id="dynamic-update-date" style="color: #bdc3c7; font-size: 0.85rem; white-space: nowrap; margin-left: 10px;">
-                讀取中...
+            
+            <div style="display: flex; align-items: flex-end;">
+                ${timeSwitchHTML}
+                <div id="dynamic-update-date" style="color: #bdc3c7; font-size: 0.85rem; white-space: nowrap;">
+                    讀取中...
+                </div>
             </div>
         </div>
     `;
